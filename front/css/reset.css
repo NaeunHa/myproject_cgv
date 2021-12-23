@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans KR', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 13px;
+    color: var(--cgv_text2);
+    font-weight: 400;
+}
+
+a{
+    color: var(--cgv_text2);
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+}
+
+:root {
+    /* color */
+    --cgv_red: #fb4357;
+    --cgv_text1: #222;
+    --cgv_text2: #666;
+    --cgv_border: #eee;
+}

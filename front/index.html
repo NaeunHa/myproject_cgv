@@ -5,8 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 그 이상의 감동. CGV</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
 </head>
 <body>
+    <header id="header">
+        <div class="header_top">
+            <div class="main_logo">
+                <a href="#"><img class="img_logo" src="img/logoRed.png" alt=""></a>
+                <span>cultureplex</span>
+            </div>
+            <nav class="user_nav">
+                <ul>
+                    <li class="signUp_wrap"><a href=""><img src="img/loginPassword.png" alt=""><span>로그인</span></a></li>
+                    <li class="signIn_wrap"><a href=""><img src="img/loginJoin.png" alt=""><span>회원가입</span></a></li>
+                    <li class="member_wrap"><a href=""><img src="img/loginMember.png" alt=""><span>MY CGV</span></a></li>
+                    <li class="customer_wrap"><a href=""><img src="img/loginCustomer.png" alt=""><span>고객센터</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav">
+            <div class="main_nav_wrap">
+                <nav class="main_nav">
+                    <ul>
+                        <li><a href="#" class="mn movie">영화</a></li>
+                        <li><a href="#" class="mn theater">극장</a></li>
+                        <li><a href="#" class="mn ticket">예매</a></li>
+                        <li><a href="#" class="mn store">스토어</a></li>
+                        <li><a href="#" class="mn event">이벤트</a></li>
+                    </ul>
+                </nav>
+                <div class="search_wrap"><input class="ip_search" type="text" placeholder="12월엔 매트릭스"><img src="img/search.png" alt=""></div>
+            </div>
+            <nav class="hidden_wrap">
+                <div class="sub_wrap">
+                    <ul class="sub_movie">
+                        <li><a href="#" class="movie_h2">영화</a></li>
+                        <li><a href="#" class="movie_chart">무비차트</a><li>
+                    </ul>
+                    <ul class="sub_theater">
+                        <li><a href="#" class="theater_h2">CGV 극장</a></li>
+                        <li><a href="#" class="theater_special">특별관</a></li>
+                    </ul>
+                    <ul class="sub_ticket">
+                        <li><a href="#" class="ticket_quick">빠른예매</a></li>
+                        <li><a href="#" class="ticket_schedule">상영스케줄</a></li>
+                    </ul>
+                    <ul class="sub_store">
+                        <li><a href="#" class="store_h2">스토어</a></li>
+                        <li><a href="#" class="store_ticket">영화관람권</a></li>
+                        <li><a href="#" class="store_giftcard">기프트카드</a></li>
+                        <li><a href="#" class="store_combo">콤보</a></li>
+                        <li><a href="#" class="store_popcorn">팝콘</a></li>
+                        <li><a href="#" class="store_beverage">음료</a></li>
+                        <li><a href="#" class="store_snack">스낵</a></li>
+                    </ul>
+                    <ul class="sub_event">
+                        <li><a href="#" class="event_h2">이벤트</a></li>
+                        <li><a href="#" class="event_special">SPECIAL</a></li>
+                        <li><a href="#" class="event_membership">멤버십/CLUB</a></li>
+                        <li><a href="#" class="event_discount">제휴/할인</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <header id="banner"></header>
     
+    <section id="section">
+        <article id="movie_lists"></article>
+        <article id="event"></article>
+        <article id="special_cinema"></article>
+        <article id="shop"></article>
+        <article id="about_pate"></article>
+    </section>
+
+    <footer id="footer">
+        <article class="company_nav"></article>
+        <article class="company_info"></article>
+    </footer>
+
+    <script src="js/index.js"></script>
 </body>
 </html>
