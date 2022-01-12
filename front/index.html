@@ -6,88 +6,445 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 그 이상의 감동. CGV</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     
 </head>
 <body>
-    <header id="header">
-        <div class="header_top">
-            <div class="main_logo">
-                <a href="#"><img class="img_logo" src="img/logoRed.png" alt=""></a>
-                <span>cultureplex</span>
-            </div>
-            <nav class="user_nav">
-                <ul>
-                    <li class="signUp_wrap"><a href=""><img src="img/loginPassword.png" alt=""><span>로그인</span></a></li>
-                    <li class="signIn_wrap"><a href=""><img src="img/loginJoin.png" alt=""><span>회원가입</span></a></li>
-                    <li class="member_wrap"><a href=""><img src="img/loginMember.png" alt=""><span>MY CGV</span></a></li>
-                    <li class="customer_wrap"><a href=""><img src="img/loginCustomer.png" alt=""><span>고객센터</span></a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="nav">
-            <div class="main_nav_wrap">
-                <nav class="main_nav">
-                    <ul>
-                        <li><a href="#" class="mn movie">영화</a></li>
-                        <li><a href="#" class="mn theater">극장</a></li>
-                        <li><a href="#" class="mn ticket">예매</a></li>
-                        <li><a href="#" class="mn store">스토어</a></li>
-                        <li><a href="#" class="mn event">이벤트</a></li>
-                    </ul>
-                </nav>
-                <div class="search_wrap"><input class="ip_search" type="text" placeholder="12월엔 매트릭스"><img src="img/search.png" alt=""></div>
-            </div>
-            <nav class="hidden_wrap">
-                <div class="sub_wrap">
-                    <ul class="sub_movie">
-                        <li><a href="#" class="movie_h2">영화</a></li>
-                        <li><a href="#" class="movie_chart">무비차트</a><li>
-                    </ul>
-                    <ul class="sub_theater">
-                        <li><a href="#" class="theater_h2">CGV 극장</a></li>
-                        <li><a href="#" class="theater_special">특별관</a></li>
-                    </ul>
-                    <ul class="sub_ticket">
-                        <li><a href="#" class="ticket_quick">빠른예매</a></li>
-                        <li><a href="#" class="ticket_schedule">상영스케줄</a></li>
-                    </ul>
-                    <ul class="sub_store">
-                        <li><a href="#" class="store_h2">스토어</a></li>
-                        <li><a href="#" class="store_ticket">영화관람권</a></li>
-                        <li><a href="#" class="store_giftcard">기프트카드</a></li>
-                        <li><a href="#" class="store_combo">콤보</a></li>
-                        <li><a href="#" class="store_popcorn">팝콘</a></li>
-                        <li><a href="#" class="store_beverage">음료</a></li>
-                        <li><a href="#" class="store_snack">스낵</a></li>
-                    </ul>
-                    <ul class="sub_event">
-                        <li><a href="#" class="event_h2">이벤트</a></li>
-                        <li><a href="#" class="event_special">SPECIAL</a></li>
-                        <li><a href="#" class="event_membership">멤버십/CLUB</a></li>
-                        <li><a href="#" class="event_discount">제휴/할인</a></li>
-                    </ul>
+    <div id="wrapper">
+        <header id="header">
+            <div class="header_content">
+                <div class="contents">
+                    <div class="main_logo">
+                        <a href="#"><img class="img_logo" src="img/logoRed.png" alt=""></a>
+                        <span>cultureplex</span>
+                    </div>
+                    <nav class="user_nav">
+                        <ul>
+                            <li class="signUp_wrap"><a href=""><img src="img/loginPassword.png" alt=""><span>로그인</span></a></li>
+                            <li class="signIn_wrap"><a href=""><img src="img/loginJoin.png" alt=""><span>회원가입</span></a></li>
+                            <li class="member_wrap"><a href=""><img src="img/loginMember.png" alt=""><span>MY CGV</span></a></li>
+                            <li class="customer_wrap"><a href=""><img src="img/loginCustomer.png" alt=""><span>고객센터</span></a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </nav>
-        </div>
-    </header>
+            </div>
+            <div class="nav active">
+                <div class="nav_wrap">
+                    <nav class="contents">
+                        <ul class="main_nav">
+                            <li>
+                                <a href="#" class="mn movie_btn">영화</a>
+                                <dl class="sub_nav">
+                                    <dt><a href="#" class="movie_h2">영화</a></dt>
+                                    <dd><a href="#" class="movie_chart">무비차트</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="#" class="mn theater_btn">극장</a>
+                                <dl class="sub_nav">
+                                    <dt><a href="#" class="theater_h2">CGV 극장</a></dt>
+                                    <dd><a href="#" class="theater_special">특별관</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="#" class="mn ticket_btn">예매</a>
+                                <dl class="sub_nav">
+                                    <dt><a href="#" class="ticket_quick">빠른예매</a></dt>
+                                    <dd><a href="#" class="ticket_schedule">상영스케줄</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="#" class="mn store_btn">스토어</a>
+                                <dl class="sub_nav">
+                                    <dt><a href="#" class="store_h2">스토어</a></dt>
+                                    <dd><a href="#" class="store_ticket">영화관람권</a></dd>
+                                    <dd><a href="#" class="store_giftcard">기프트카드</a></dd>
+                                    <dd><a href="#" class="store_combo">콤보</a></dd>
+                                    <dd><a href="#" class="store_popcorn">팝콘</a></dd>
+                                    <dd><a href="#" class="store_beverage">음료</a></dd>
+                                    <dd><a href="#" class="store_snack">스낵</a></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <a href="#" class="mn event_btn">이벤트</a>
+                                <dl class="sub_nav">
+                                    <dt><a href="#" class="event_h2">이벤트</a></dt>
+                                    <dd><a href="#" class="event_special">SPECIAL</a></dd>
+                                    <dd><a href="#" class="event_membership">멤버십/CLUB</a></dd>
+                                    <dd><a href="#" class="event_discount">제휴/할인</a></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <div class="search_wrap"><input class="ip_search" type="text" placeholder="12월엔 매트릭스"><img src="img/search.png" alt=""></div>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
-    <header id="banner"></header>
-    
-    <section id="section">
-        <article id="movie_lists"></article>
-        <article id="event"></article>
-        <article id="special_cinema"></article>
-        <article id="shop"></article>
-        <article id="about_pate"></article>
-    </section>
+        <section id="banner">
+            <div class="contents">
+                <div class="video_wrap">
+                    <video autoplay muted>
+                        <source type="video/mp4" src="video/teuksong_1080x608_0104.mp4">
+                    </video>
+                    <span class="banner_title">특송</span>
+                    <span class="banner_description">성공률 100% 드라이버 박소담<br>1월 12일 대개봉</span>
+                    <div class="banner_btns">
+                        <a href="#" class="detail_btn">상세보기</a>
+                        <a href="#" class="play_btn">Stop</a>
+                        <a href="#" class="sound_btn">Sound On</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer id="footer">
-        <article class="company_nav"></article>
-        <article class="company_info"></article>
-    </footer>
+        <section id="movie_lists">
+            <div class="contents">
+                <div class="controller">
+                    <div class="ctr_left">
+                        <a href="#" class="movie_chart_btn">무비차트</a>
+                        <a href="#" class="movie_reser_btn">상영예정작</a>
+                    </div>
+                    <div class="ctr_right">
+                        <a href="#" class="all_btn">전체보기</a>
+                    </div>
+                </div>
+                <div class="slide_container movies_wrap">
+                    <div class="slide">
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                                <div class="chart_count">1</div>
+                            </div>
+                            <div class="movie_title"><a href="#">스파이더맨-노웨이 홈</a></div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/poster2.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-15.png" alt="">
+                                </div>
+                                <div class="d_day">
+                                    <span>D-</span><span class="d_day_text">1</span>
+                                </div>
+                                <div class="chart_count">2</div>
+                            </div>
+                            <div class="movie_title"><a href="#">특송</a></div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title"><a href="#">스파이더맨-노웨이 홈</a></div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title"><a href="#">스파이더맨-노웨이 홈</a></div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title"><a href="#">스파이더맨-노웨이 홈</a></div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title">스파이더맨-노웨이 홈</div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title">스파이더맨-노웨이 홈</div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title">스파이더맨-노웨이 홈</div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title">스파이더맨-노웨이 홈</div>
+                        </div>
+                        <div class="movie">
+                            <div class="img_wrap">
+                                <div class="movie_poster">
+                                    <img src="img/spiderman.jpg" alt="">
+                                </div>
+                                <div class="limit_age">
+                                    <img src="img/grade-12.png" alt="">
+                                </div>
+                            </div>
+                            <div class="movie_title">스파이더맨-노웨이 홈</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="event_lists">
+            <div class="contents">
+                <div class="controller">
+                    <div class="ctr_left">EVENT</div>
+                    <div class="ctr_right">
+                        <a href="#" class="all_btn">전체보기</a>
+                    </div>
+                </div>
+                <div class="slide_container event_wrap">
+                    <div class="slide">
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event1.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event2.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event3.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event1.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event2.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                        <div class="event">
+                            <div class="img_wrap">
+                                <img src="img/event3.jpg" alt="">
+                            </div>
+                            <div class="event_title"><strong>PEAKERS 클라이밍짐 오픈</strong></div>
+                            <div class="event_term"><span class="event_start_date">2022.01.07</span> ~ <span class="event_end_date">2022.01.31</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="shop">
+            <div class="contents">
+                <ul class="goods_list_wrap">
+                    <li>
+                        <dl class="goods_list">
+                            <dt>영화관람권 <a href="" class="more_btn">더보기</a></dt>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/goods.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>CGV 영화관람권</h4><span>11,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/goods.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>CGV 영화관람권</h4><span>11,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/goods.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>CGV 영화관람권</h4><span>11,000원</span></div>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="goods_list">
+                            <dt>기프트카드<a href="" class="more_btn">더보기</a></dt>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/giftcard.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>50000원권</h4><span>50,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/giftcard.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>30000원권</h4><span>30,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/giftcard.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>10000원권</h4><span>10,000원</span></div>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <dl class="goods_list">
+                            <dt>콤보<a href="" class="more_btn">더보기</a></dt>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/combo.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>CGV 콤보</h4><span>9,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/combo.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>더블 콤보</h4><span>12,000원</span></div>
+                                </a>
+                            </dd>
+                            <dd>
+                                <a href="#">
+                                    <div class="goods_img"><img src="img/combo.jpg" alt=""></div>
+                                    <div class="goods_info_wrap"><h4>스몰세트</h4><span>6,500원</span></div>
+                                </a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="notice">
+            <div class="contents">
+                <div class="notice_container">
+                    <div class="notice_wrap">
+                        <div class="notice">
+                            <h4>공지사항</h4>
+                            <a href="" class="notice_content">[기타]22년 VIP 선정 기준 변경 및 추가 기준 관련 입니다</a>
+                            <a class="more_btn" href="#">더보기</a>
+                        </div>
+                        <div class="client_wrap">
+                            <div class="client">
+                                <h4>고객센터</h4>
+                                <div class="client_content">
+                                    <h4>1544-1122</h4>
+                                    <span>고객센터 운영시간 (평일 09:00~18:00)</span><br>
+                                    <span>업무시간 외 자동응답 안내 가능합니다.</span>
+                                </div>
+                            </div>
+                            <div class="client_btns">
+                                <a href="#">FAQ</a>
+                                <a href="#">1:1문의</a>
+                                <a href="#">분실물 문의</a>
+                                <a href="#">대관/단체 문의</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qr_container">
+                        <h4>앱 다운로드</h4>
+                        <span>CGV앱에서 더 편리하게 이용하세요</span>
+                        <div class="qr_img"><img src="img/img_qrcode.gif" alt=""></div>
+                        <span>QR코드를 스캔하고</span>
+                        <span>앱설치 페이지로 바로 이동하세요</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <footer id="footer">
+            <div class="contents">
+                <article class="company_nav">
+                    <ul class="policy_list">
+                        <li><a href="http://corp.cgv.co.kr/company/" target="_blank">회사소개</a></li>
+                        <li><a href="http://corp.cgv.co.kr/company/ir/financial/financial_list.aspx" target="_blank">IR</a></li>
+                        <li><a href="http://corp.cgv.co.kr/company/recruit/step/default.aspx" target="_blank">채용정보</a></li>
+                        <li><a href="http://corp.cgv.co.kr/company/advertize/ad_Default.aspx" target="_blank">광고/제휴/출점문의</a></li>
+                        <li><a href="http://www.cgv.co.kr/rules/service.aspx">이용약관</a></li>
+                        <li><a href="http://www.cgv.co.kr/rules/organized.aspx">편성기준</a></li>
+                        <li><a href="http://www.cgv.co.kr/rules/privacy.aspx"><strong>개인정보처리방침</strong></a></li>
+                        <li><a href="http://www.cgv.co.kr/rules/disclaimer.aspx">법적고지</a></li>
+                        <li><a href="http://www.cgv.co.kr/rules/emreject.aspx">이메일주소무단수집거부</a></li>
+                        <li><a href="http://corp.cgv.co.kr/company/ethicalManagement/ceoMessage.aspx" target="_blank">윤리경영</a></li>
+                        <li><a href="/company/cyberAudit.aspx" class="empha-red">사이버감사실</a></li>
+                    </ul>
+                </article>
+                <article class="company_info_wrap">
+                    <section class="company_info">
+                        <address>(04377)서울특별시 용산구 한강대로 23길 55, 아이파크몰 6층(한강로동)</address>
+                        <dl class="company_info_list">
+                            <dt>대표이사</dt>
+                            <dd>허민회</dd>
+                            <dt>사업자등록번호</dt>
+                            <dd>104-81-45690</dd>
+                            <dt>통신판매업신고번호</dt>
+                            <dd>2017-서울용산-0662 <a href="#none" onclick="goFtc()" class="btn_goFtc">사업자정보확인</a><a></a></dd>
+                        </dl>
+                        <dl class="company_info_list">
+                            <dt>호스팅사업자</dt>
+                            <dd>CJ올리브네트웍스</dd>
+                            <dt>개인정보보호 책임자</dt>
+                            <dd>심준범</dd>
+                            <dt>대표이메일</dt>
+                            <dd>cjcgvmaster@cj.net</dd>
+                            <dt>고객센터</dt>
+                            <dd>1544-1122</dd>
+                        </dl>
+                        <p class="copyright">© CJ CGV. All Rights Reserved</p>
+                    </section>
+                </article>
+            </div>
+        </footer>
+    </div>
     <script src="js/index.js"></script>
 </body>
 </html>

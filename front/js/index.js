@@ -1,16 +1,14 @@
 $(document).ready(function(){
-    $(".hidden_wrap").css({display:"none"});
     $(".mn").mouseover(function(){
         if(!$(".nav").hasClass("active")){
-            $(".hidden_wrap").slideDown(function(){
+            $(".sub_nav").slideDown(300,function(){
                 $(".nav").addClass("active");
             });
         }
     });
-    $(".hidden_wrap").mouseleave(function(){
-        $(".hidden_wrap").slideUp(function(){
+    $(".main_nav").mouseleave(function(){
+        $(".sub_nav").slideUp(300, function(){
             $(".nav").removeClass("active");
         });
     });
 })
-

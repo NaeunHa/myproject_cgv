@@ -1,0 +1,215 @@
+#header{
+    width: 100%;
+    position: relative;
+    z-index: 101;
+}
+/* header top */
+.header_content{
+    margin-bottom: 50px;
+    background-color: var(--cgv_white);
+    border-bottom: 1px solid var(--cgv_border);
+}
+.contents{
+    width: 980px;
+    margin: 0 auto;
+}
+.header_content .contents{
+    padding: 30px 6px 25px 5px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.main_logo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.img_logo{
+    width: 117px; height: 53px;
+}
+.main_logo span{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--cgv_text_222);
+    letter-spacing: 0.313em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    align-self: flex-end;
+}
+.user_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user_nav ul{
+    display: flex;
+    justify-content: center;
+}
+.user_nav ul li{
+    margin-left: 32px;
+}
+.user_nav ul li a {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user_nav ul li img{
+    width: 36px; height: 36px;
+}
+.user_nav ul li a span{
+    font-size: 12px;
+}
+/* main nav */
+.nav{
+    padding: 5px 0;
+    width: 100%; height: auto;
+    position: relative;
+    background-color: var(--cgv_white);
+    position: absolute;
+    top: 113px; left: 0;
+    z-index: 100;
+}
+.nav:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #a58e8e;
+}
+.nav:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 49px;
+    width: 100%;
+    height: 1px;
+    background-color: #fb4357;
+}
+.nav .contents{
+    position: relative;
+}
+.nav.active{
+    width: 100%; height: 300px;
+}
+.main_nav{
+    position: relative;
+    z-index: 100;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main_nav > li{
+    padding: 20px 0;
+    width: 162px;
+}
+.main_nav > li:first-child{
+    width: 137px;
+}
+.main_nav > li > a.mn{
+    position: absolute;
+    top: 7px;
+    color: var(--cgv_text_222);
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 900;
+}
+.main_nav li a.ticket_btn{color: var(--cgv_red);}
+
+.sub_nav{
+    padding: 20px 30px 0 0;
+    position: absolute;
+    top: 20px;
+    margin-bottom: 8px;
+    display: none;
+    z-index: 90;
+}
+.main_nav > li:first-child .sub_nav{
+    padding-left: 0px;
+}
+.main_nav > li:first-child .sub_nav::before{
+    display: none;
+}
+.main_nav li dl a{
+    width: 137px; height: 30px;
+    line-height: 1.5;
+}
+.sub_nav dt{
+    width: 100%;
+    padding-top: 18px;
+    padding-right: 20px;
+}
+.sub_nav dt a{
+    width: 100%; height: 100%;
+    font-size: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--cgv_text_222);
+    line-height: 1.5;
+}
+
+.sub_nav dt a:hover{
+    text-decoration: underline;
+}
+.sub_nav dt + dd{
+    margin-top: 8px;
+}
+.sub_nav dd{
+    width: 137px; height: 30px;
+    padding-right: 20px;
+}
+.sub_nav dd a{
+    width: 100%; height: 100%;
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+}
+.sub_nav dd a:hover{
+    text-decoration: underline;
+}
+.nav.active .sub_nav{
+    display: block;
+}
+.search_wrap{
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    top: 7px;
+    padding: 0 10px;
+}
+.ip_search{
+    width: 180px; height: 24px;
+    outline: none;
+    border: none;
+}
+.ip_search::placeholder{
+    font-weight: 500;
+}
+.search_wrap img{
+    margin-left: 7px;
+    width: 26px; height: 26px;
+}
+.search_wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 1px;
+    height: 20px;
+    background-color: #eee;
+}
+.search_wrap::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 1px;
+    height: 20px;
+    background-color: #eee;
+}
