@@ -182,13 +182,13 @@
     border-radius: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .d_day span{
     font-size: 10px;
     color: var(--cgv_red);
-    line-height: 2.2;
+    line-height: 22px;
     font-weight: 700;
-    
 }
 .chart_count{
     position: absolute;
@@ -215,7 +215,42 @@
     white-space: nowrap;
     font-weight: 900;
 }
-
+.movie_hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+.movie_hover a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 34px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 34px;
+    border-radius: 4px;
+}
+.movie_hover .movie_detail_btn{
+    color: #666;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.movie_hover .movie_reserve_btn{
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+}
+.movie_hover a:hover{
+    opacity: 0.8;
+}
 #event_lists{
     padding: 60px 0 6px;
 }
