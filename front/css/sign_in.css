@@ -1,9 +1,13 @@
 #sign_in{
     width: 100%;
 }
-.si_container{
-    margin: 0 auto;
+#sign_in .contents{
     padding: 30px 30px ;
+    display: flex;
+    justify-content: center;
+}
+.si_container{
+    margin-right: 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -21,6 +25,7 @@
     text-align: center;
     line-height: 37px;
     z-index: 2;
+    cursor: pointer;
 }
 .si_wrap{
     position: relative;
@@ -93,4 +98,14 @@
 .oauth2_naver{
     margin: 0 71px;
     cursor: pointer;
+}
+
+.random_img{
+    padding: 10px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+}
+.random_img img{
+    width: 220px;
 }

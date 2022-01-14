@@ -7,7 +7,6 @@
     vertical-align: baseline;
     word-break: break-all;
     color: var(--cgv_text_666);
-
 }
 a{
     color: var(--cgv_text_666);
@@ -20,6 +19,12 @@ ul, li{
 
 img{
     vertical-align: middle;
+}
+
+@font-face {
+    font-family: cjone;
+    src: url(../font/CJ+ONLYONE+Medium.ttf);
+    font-weight: 100;
 }
 
 :root {

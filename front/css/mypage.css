@@ -1,0 +1,131 @@
+#mypage{
+    margin-top: 50px;
+    width: 100%;
+}
+#mypage span,h1,h2,h3,h4,strong,div{
+    color: var(--cgv_text_222);
+}
+.info_wrap{
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    background-color: #e2e2e0;
+}
+.info_box{
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_box:first-child{
+    margin-right: 30px;
+}
+.my_info{
+    padding: 10px 60px;
+    width: auto;
+    border-right: 5px solid #ffffff;
+}
+.membership_icon{
+    margin-right: 10px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background-color: var(--cgv_red);
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cgv_white);
+}
+.my_info h1{
+    margin-right: 10px;
+    font-size: 30px;
+}
+.my_info span{
+    margin-top: 20px;
+    align-self: center;
+    font-size: 13px;
+}
+.sub_info_box{
+    display: flex;
+    justify-content: center;
+}
+.sub_info{
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_info h2{
+    font-size: 20px;
+}
+.sub_info span{
+    font-size: 13px;
+}
+.sub_info div:last-child{
+    margin-left: 20px;
+}
+.sub_info strong, span{
+    font-size: 23px;
+}
+.sub_info strong{
+    text-decoration: underline;
+    color: #943588;
+}
+
+.box_container{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.description_box{
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+.description_box h3{
+    margin-right: 20px;
+    font-size: 17px;
+}
+.description_box a{
+    font-size: 13px;
+    text-decoration: underline;
+}
+.inner_box{
+    margin-top: 8px;
+    padding: 20px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: left;
+}
+.empty{
+    font-size: 13px;
+    color: var(--cgv_text_666);
+}
+.content_box{
+    margin-right: 9px;
+}
+.content_box a{
+    position: relative;
+    width: 180px; height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content_box h4{
+    font-size: 16px;
+}
+.poster_img{
+    margin: 5px 0;
+    width: 170px; 
+    border-radius: 10px;
+}
+.grade_img{
+    width: 20px;
+    position: absolute;
+    top: 30px; left: 10px;
+}
+.content_box span{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--cgv_text_666);
+}
