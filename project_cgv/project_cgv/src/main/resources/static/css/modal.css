@@ -1,0 +1,161 @@
+/* 모달창 */
+#modal{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.window{
+    width: 700px; height: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+.popup{
+    padding: 5px;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.modal_title{
+    width: 100%; height: 50px;
+    line-height: 50px;
+    padding-left: 19px;
+    border: 1px solid #707070;
+    color: #f2f0e5;
+    font-weight: 400;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+.modal_content{
+    padding: 10px 30px;
+    margin-top: 5px;
+    width: 100%; height: 100%;
+    background-color: var(--cgv_white);
+    box-sizing: border-box;
+}
+.modal_content_title{
+    padding: 15px 0;
+    font-size: 26px;
+    color: var(--cgv_text_222);
+    text-align: center;
+    font-weight: 900;
+    border-bottom: 1px dashed #ccc9c7;
+}
+.modal_content_wrap{
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+.modal_content_top{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.goodbad_box{
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #e2e0d1;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.good_img{
+    width: 32px; height: 30px;
+    background: url(/img/sprite_egg.png) -23px 5px no-repeat;
+}
+.bad_img{
+    margin-right: 5px;
+    width: 35px; height: 30px;
+    background: url(/img/sprite_egg.png) 0 -200px no-repeat;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.middle img{
+    width: 62px;
+    border-radius: 50%;
+}
+.middle_content{
+    margin-top: 3px;
+    display: flex;
+}
+.watche_user{
+    margin-right: 3px;
+    padding: 3px;
+    font-size: 10px;
+    text-align: center;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+}
+.middle span{
+    line-height: 1.5;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+}
+.on{
+    border: 3px solid #b21d1b;
+}
+.modal_content_bottom{
+    padding: 20px 10px 0 10px;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.modal_content_bottom textarea{
+    padding: 10px;
+    width: 100%; height: 80px;
+    resize: none;
+    outline: none;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.submit_box{
+    margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.length_wrap, .text_length{
+    font-size: 13px;
+}
+.ok_btn{
+    margin-left: 10px;
+    padding: 8px;
+    color: var(--cgv_white);
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: var(--cgv_red);
+    cursor: pointer;
+}
+.close_btn{
+    display: block;
+    position: absolute;
+    top: 20px; left: auto; right: 20px;
+    width: 18px; height: 18px;
+    background: url(/img/sprite_btn.png) -72px -62px no-repeat;
+    border: none;
+    font-size: 0px;
+    line-height: 0;
+    zoom: 1;
+    cursor: pointer;
+}

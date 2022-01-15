@@ -1,0 +1,205 @@
+#movie_dtl .contents{
+    padding: 20px 0;
+}
+#movie_dtl span,h1,h3,h4,a,p{
+    color: var(--cgv_text_222);
+}
+.md_title{
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    border-bottom: 2px solid #000;
+}
+.md_container{
+    display: flex;
+    justify-content: left;
+}
+.img_wrap{
+    position: relative;
+}
+.img_wrap .movie_poster{
+    width: 185px; height: auto;
+}
+.img_wrap .grade_img{
+    width: 25px;
+    position: absolute;
+    top: 3px; left: 3px;
+}
+.md_content_wrap{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.md_content_wrap span{
+    font-size: 12.5px;
+    font-weight: 900;
+}
+.title_wrap{
+    display: flex;
+    align-items: center;
+}
+.movie_title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: -8px;
+}
+.movie_title_eng{
+    color: var(--cgv_text_666) !important;
+}
+.status_box{
+    margin-left: 20px;
+    padding: 5px;
+    width: auto; height: 15px;
+    font-size: 13px;
+    font-weight: 900;
+    border: 2px solid #3e82a4;
+    color: #3e82a4;
+}
+.btn_box{
+    position: relative;
+}
+.btn_box button{
+    width: 104px; height: 33px;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.reserve_btn{
+    color: var(--cgv_white);
+    border: 1px solid var(--cgv_red) !important;
+    background-color: var(--cgv_red) !important;
+}
+.msg_box{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.msg_icon{
+    margin-right: 5px;
+    width: 15px; height: 15px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.541);
+    font-weight: 900;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.541);
+    cursor: pointer;
+}
+.msg_box .msg_text{
+    padding: 0 8px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 30px;
+    color: var(--cgv_white) !important;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.349);
+    opacity: 0;
+}
+.msg_icon:hover ~ .msg_text.on{
+    opacity: 1;
+}
+.md_description{
+    margin-top: 30px;
+}
+.description_wrap{
+    margin-bottom: 20px;
+    border: 3px solid #f6f6f6;
+}
+.description_title{
+    padding: 10px;
+    height: 39px;
+    line-height: 39px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cgv_text_222);
+    background-color:#f6f6f6;
+}
+.description_content{
+    padding: 10px 15px;
+    min-height: 100px;
+    line-height: 27px;
+}
+.trailer_wrap{
+    text-align: center;
+    background-color: #000;
+}
+.trailer_wrap video{
+    width: 940px;
+}
+.review_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: le;
+    padding: 0 30px;
+}
+.review_box{
+    padding: 30px 10px;
+    width: 437px; height: 150px;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.user_profile img{
+    width: 62px; height: 62px;
+    border-radius: 50%;
+}
+.review_content{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.writer_info{
+    display: flex;
+    align-items: center;
+}
+.review_icon{
+    margin-right: 6px;
+    width: 22px; height: 22px;
+}
+.bad_icon{
+    background: url(/images/sprite_egg.png) 0px 0 no-repeat;
+}
+.good_icon{
+    background: url(/images/sprite_egg.png) -24px 0 no-repeat;
+}
+.user_nick_name{
+    font-size: 13px;
+    color: var(--cgv_text_666) !important;
+    font-weight: 700;
+}
+.review_text{
+    width: 100%; height: 91px;
+    font-size: 12px;
+    line-height: 1.5;
+    overflow: hidden;
+}
+.review_info{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.review_info span{
+    font-size: 13px;
+}
+.like_wrap::before{
+    content: '';
+    width: 2px; height: 2px;
+    background-color: rgb(133, 133, 133);
+    position: absolute; top: 10px; left: -10px;
+}
+.like_wrap{
+    margin-left: 15px;
+    position: relative;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+.like_wrap img{
+    width: 15px;
+    margin-right: 5px;
+}

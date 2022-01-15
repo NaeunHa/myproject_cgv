@@ -1,0 +1,66 @@
+#movie_chart{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: -74.5px;
+}
+#movie_chart span,h1,h3,h4,a,p{
+    color: var(--cgv_text_222);
+}
+.movie_list{
+    padding: 10px 0;
+    margin-left: -63px;
+    width: 107%; height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.movie_wrap{
+    margin-bottom: 50px;
+    margin-left: 63px;
+    width: 197px; height: 400px;
+    position: relative;
+}
+#movie_chart .list_title{
+    padding: 20px 0;
+    font-size: 25px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+.lank_num{
+    margin-bottom: 4px;
+    width: 100%; height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+}
+#movie_chart .img_wrap img{
+    width: 197px; height: auto;
+    margin-bottom: 10px;
+}
+.limit_age img{
+    position: absolute;
+    top: 37px; left: 4px;
+    width: 23px; height: auto;
+}
+#movie_chart span{
+    font-size: 12px;
+    color: var(--cgv_text_666);
+}
+#movie_chart .dday_date{
+    color: var(--cgv_red);
+    font-weight: 900;
+}
+#movie_chart .reserve_btn{
+    margin-top: 7px;
+    display: block;
+    width: 97px; height: 25px;
+    background-color: var(--cgv_red);
+    border-radius: 5px;
+    color: var(--cgv_white);
+    text-align: center;
+    line-height: 25px;
+}

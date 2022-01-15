@@ -1,6 +1,5 @@
 $(document).ready(function () {
     
-    
     $('.mn').on({
         mouseenter: function (e) {
             var target = e.target;
