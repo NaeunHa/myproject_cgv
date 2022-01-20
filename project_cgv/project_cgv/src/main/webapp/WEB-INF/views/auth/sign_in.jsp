@@ -22,16 +22,16 @@
                 <div class="si_wrap">
                     <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
                     <form action="">
-                        <input type="text" class="ip_id ip_box">
-                        <input type="password" class="ip_pw ip_box">
+                        <input type="text" name="userId" class="ip_id ip_box">
+                        <input type="password" name="userPw" class="ip_pw ip_box">
                         <button type="button" class="si_btn">로그인</button>
                         <div class="save_id">
-                            <input type="checkbox" id="setId">
+                            <input type="checkbox" name="setId" id="setId">
                             <label for="save_id">아이디 저장</label>
                         </div>
                         <div class="find_info">
-                            <a href="#" class="find_id">아이디 찾기</a>
-                            <a href="#" class="find_pw">비밀번호 찾기</a>
+                            <a href="/find-id" class="find_id">아이디 찾기</a>
+                            <a href="/find-password" class="find_pw">비밀번호 찾기</a>
                         </div>
                     </form>
                     <button type="button" class="oauth2_naver"><img src="/images/btn_loginNaver.jpg" alt=""></button>
@@ -44,6 +44,6 @@
         </div>
     </section>
     <jsp:include page="../include/footer.jsp"></jsp:include>
-    <script type="text/javascript" src="/js/header.js"></script>
+    <script type="text/javascript" src="/js/sign_in.js"></script>
 </body>
 </html>

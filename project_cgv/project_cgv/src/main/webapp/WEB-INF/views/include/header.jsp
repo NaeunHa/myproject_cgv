@@ -19,9 +19,9 @@
             </div>
             <nav class="user_nav">
                 <ul>
-                    <li class="signUp_wrap"><a href="/auth/signin"><img src="/images/loginPassword.png" alt=""><span>로그인</span></a></li>
-                    <li class="signIn_wrap"><a href="/auth/signup"><img src="/images/loginJoin.png" alt=""><span>회원가입</span></a></li>
-                    <li class="member_wrap"><a href="/user/mycgv"><img src="/images/loginMember.png" alt=""><span>MY CGV</span></a></li>
+                    <li class="signUp_wrap"><a href="/auth/sign-in"><img src="/images/loginPassword.png" alt=""><span>로그인</span></a></li>
+                    <li class="signIn_wrap"><a href="/auth/check-phone"><img src="/images/loginJoin.png" alt=""><span>회원가입</span></a></li>
+                    <li class="member_wrap"><a href="/user/my-cgv"><img src="/images/loginMember.png" alt=""><span>MY CGV</span></a></li>
                     <li class="customer_wrap"><a href="#"><img src="/images/loginCustomer.png" alt=""><span>고객센터</span></a></li>
                 </ul>
             </nav>
@@ -75,7 +75,7 @@
                         </dl>
                     </li>
                 </ul>
-                <div class="search_wrap"><input class="ip_search" type="text" placeholder="12월엔 매트릭스"><img src="/images/search.png" alt=""></div>
+                <div class="search_wrap"><input class="ip_search" type="text" placeholder="2월엔 해적"><img src="/images/search.png" alt=""></div>
             </div>
         </div>
     </nav>

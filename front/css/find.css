@@ -96,6 +96,7 @@
 .contact_wrap{
     padding: 30px 20px;
     border: 2px solid #d5d4cd;
+    background-color: #f9f7ec;
 }
 .contact_wrap dl{
     display: flex;

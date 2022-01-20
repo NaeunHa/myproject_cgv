@@ -11,13 +11,37 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-    <!-- coolsms 본인인증 -->
+    <section id="self_authentication"></section>
     <!-- 약관동의 -->
     <!-- 정보 입력 -->
     <section id="sign_up">
         <div class="contents">
+            <div class="img_container">
+                <img src="img/img_join_hd.jpg" alt="">
+            </div>
             <div class="su_container">
                 <div class="tab">회원가입</div>
+                <!-- coolsms 본인인증 -->
+                <div class="self_authentication_container">
+                    <div class="box_content">
+                        <h3>휴대폰 인증을 통해 본인인증 후 회원가입을 할 수 있습니다.</h3>
+                        <div class="inner_box">
+                            <h4>휴대폰으로 인증하기</h4>
+                            <div>
+                                <input type="text" placeholder="010" readonly> -
+                                <input type="text" id="phone_middle"> - 
+                                <input type="text" id="phone_end">
+                                <button type="button" class="certification_btn">인증하기</button>
+                            </div>
+                            <div>
+                                <input type="text" id="code_number">
+                                <button type="button" class="certification_code_btn">인증하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 회원가입 -->
                 <form action="" class="su_form">
                     <dl>
                         <!-- TODO : 인증된 이름 -->

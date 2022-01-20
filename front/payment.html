@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제!!</title>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js" ></script>
+    <!-- iamport.payment.js -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+</head>
+<body>
+    <button type="button" id="pay_btn">결제하기</button>
+
+    <script>
+        const pay_btn = document.querySelector('#pay_btn');
+        // console.log(window.IMP);
+        var IMP = window.IMP; 
+        IMP.init("imp40436278"); // 관리자콘솔
+        var IMP_paramObj = null;
+
+        pay_btn.onclick =  () => {
+            IMP_paramObj = {
+                pg: "html5_inicis", // 이니시스
+                pay_method: "card",
+                merchant_uid: "merchant_" + new Date().getTime, // 중복위험! UUID 사용해도 되고 시간 사용해도 됨
+                name: "티켓",
+                amount: 1000,
+                buyer_email: "nanee706@gmail.com",
+                buyer_name: "하나은",
+                buyer_tel: "010-6670-4411",
+                buyer_addr: "부산광역시 강서구 명지국제5로 30",
+                buyer_postcode: "01181"
+            }
+
+            IMP.request_pay(IMP_paramObj, 
+                function (rsp) { // callback
+                    if (rsp.success) {
+                        // 결제 성공
+                        alert('결제성공');
+                        // $.ajax({
+                        //     url: "https://api.iamport.kr/users/getToken", // 예: https://www.myservice.com/payments/complete
+                        //         method: "POST",
+                        //         headers: { "Content-Type": "application/json" },
+                        //         data: {
+                        //             imp_uid: rsp.imp_uid,
+                        //             merchant_uid: rsp.merchant_uid
+                        //         }
+                        //     }).done(function (data) {
+                        //         // 가맹점 서버 결제 API 성공시 로직
+                        //         alert('결제 성공');
+                        // })
+                    } else {
+                        // 결제 실패
+                        alert('결제에 실패했습니다. 에러내용 : ' + rsp.error_msg);
+                    }
+            });
+        }
+    </script>
+
+</body>
+</html>

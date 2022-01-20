@@ -16,6 +16,23 @@ spring:
   mvc:    view:      prefix: /WEB-INF/views/
       suffix: .jsp
     static-path-pattern: /**
+    
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: nanee0706@gmail.com
+    password: ubfrhntboefqwijf
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+  
   security:    user:      name: test
       password: 1234
     

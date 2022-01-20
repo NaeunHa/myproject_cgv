@@ -1,14 +1,21 @@
 #sign_up{
+    padding-top: 40px;
     width: 100%; height: auto;
     position: relative;
 }
-.su_container{ 
+.img_container{
+    text-align: center;
+}
+.img_container img{
+	width: 600px; height: auto;
+}
+#su_container{ 
 	padding: 50px 0 200px;
 	width: 100%; height:100%;
 	position: relative;
 }
 .tab{
-    margin-bottom: -2.5px;
+    margin-bottom: -1px;
     width: 100px; height: 37px;
     background-color: var(--cgv_red);
     border-radius: 10px 10px 0 0;
@@ -20,12 +27,64 @@
     z-index: 2;
     position: relative;
 }
+.self_authentication_container{
+    border-top: 3px solid #898987;
+    display: flex;
+    flex-direction: column;
+}
+.box_content{
+    padding: 45px 60px 50px;
+    align-items: center;
+}
+.box_content h3{
+    margin: 20px 0;
+    text-align: center;
+}
+.inner_box{
+    border-top: 2px solid #898989;
+    background-color: #f7f6ea;
+    padding: 20px;
+    text-align: center;
+}
+.inner_box div{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.inner_box div input{
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    outline: none;
+    border: 1px solid #898989;
+}
+#param_phone{
+    width: 208px !important;
+}
+.inner_box span{
+    line-height: 35px;
+    font-size: 13px;
+}
+.inner_box button{
+    margin-left: 10px;
+    padding: 8px 10px;
+    width: auto;
+    background-color: var(--cgv_red);
+    font-size: 13px;
+    color: var(--cgv_white);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.inner_box input{
+	width: 208px !important;
+}
 .su_form{
-    border-top: 2px solid #898987;
-    border-bottom: 2px solid #898987;
     display: flex;
     flex-direction: column;
     position: relative;
+    border-top: 3px solid #898987;
 }
 .su_form dl{
     display: flex;
@@ -38,6 +97,7 @@
     text-align: left;
     font-weight: 900;
     background-color: #e8e8e8;
+    border-bottom: 1px solid var(--cgv_white);
 }
 .su_form dd{
     padding: 20px;
@@ -77,6 +137,13 @@
     margin-top: 5px;
     font-size: 13px;
     color: var(--cgv_red);
+	display: none;
+}
+.su_form .success_msg{
+    margin-top: 5px;
+    font-size: 13px;
+    color: blue;
+	display: none;
 }
 .su_form select{
     margin-right: 5px;
