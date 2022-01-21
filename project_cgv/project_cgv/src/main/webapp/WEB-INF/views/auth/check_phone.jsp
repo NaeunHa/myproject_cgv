@@ -23,20 +23,20 @@
         	<div class="img_container">
                 <img src="/images/img_join_hd.jpg" alt="">
             </div> 
-            <div id="su_container" class="container">
+            <div class="container">
                 <div class="tab">회원가입</div>
-                <div class="self_authentication_container" >
+                <div class="wrap_form" >
                     <div class="box_content">
                         <h3>휴대폰 인증을 통해 본인인증 후 회원가입을 할 수 있습니다.</h3>
                         <div class="inner_box">
                             <h4>휴대폰으로 인증하기</h4>
                             <div>
-                             	<input type="tel" id="phone_num" maxlength="11">
-                                <button type="button" class="certification_btn">인증하기</button>
+                             	<input type="tel" class="item_ip phone" maxlength="11">
+                                <button type="button" class="submit_btn">인증하기</button>
                             </div>
-                            <div class="sa_code_inputs">
-                                <input type="text" id="code_number">
-                                <button type="button" class="certification_code_btn">인증하기</button>
+                            <div class="sa_code_box">
+                                <input type="text"class="item_ip phone" maxlength="6">
+                                <button type="button" class="submit_btn">인증하기</button>
                             </div>
                         </div>
                     </div>

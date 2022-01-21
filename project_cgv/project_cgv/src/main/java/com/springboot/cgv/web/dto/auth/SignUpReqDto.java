@@ -3,6 +3,8 @@ package com.springboot.cgv.web.dto.auth;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.springboot.cgv.domain.user.User;
 
 import lombok.Data;
@@ -27,10 +29,11 @@ public class SignUpReqDto { // Request Dto (요청)
 		return User.builder()
 				.userid(userid)
 				.username(username)
-				.password(password)
+				.password(new BCryptPasswordEncoder().encode(password))
 				.birthday(birthday)
 				.phone(phone)
 				.email(email)
+				.role("ROLE_USER")
 				.build();
 	}
 }

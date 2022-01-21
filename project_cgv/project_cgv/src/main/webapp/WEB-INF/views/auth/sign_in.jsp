@@ -20,13 +20,16 @@
             <div class="si_container">
                 <div class="tab">로그인</div>
                 <div class="si_wrap">
-                    <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
-                    <form action="">
-                        <input type="text" name="userId" class="ip_id ip_box">
-                        <input type="password" name="userPw" class="ip_pw ip_box">
-                        <button type="button" class="si_btn">로그인</button>
+                    <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>  
+                    <form action="/auth/sign-in" method="post">
+                    	<c:if test="${error }l">
+                    		<p> Error : <c:out value="${exception }"/> </p>
+                    	</c:if>
+                        <input type="text" name="username" class="ip_id ip_box">
+                        <input type="password" name="password" class="ip_pw ip_box">
+                        <button type="submit" class="si_btn">로그인</button>
                         <div class="save_id">
-                            <input type="checkbox" name="setId" id="setId">
+                            <input type="checkbox" id="setId" name="remember-me">
                             <label for="save_id">아이디 저장</label>
                         </div>
                         <div class="find_info">

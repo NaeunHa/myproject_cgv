@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 
 @Builder
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
 	
 	private int id;
@@ -21,6 +19,7 @@ public class User {
 	private String phone;
 	private String email;
 	private String role;
+	private String provider;
 	private Date create_date;
 	private Date update_date;
 

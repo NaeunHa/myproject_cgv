@@ -1,10 +1,11 @@
 package com.springboot.cgv.web.controller;
 
+import javax.validation.Valid;
+
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.cgv.web.dto.auth.SignUpReqDto;
@@ -23,14 +24,19 @@ public class AuthController {
 	
 	@PostMapping("/sign-up/sendSMS/{phonNum}")
 	public String sendSMS(@PathVariable String phonNum) {
-		String authenticationCode = "123456";
-//		authenticationCode = coolSMSService.sendAuthenticationCode(phonNum);
+		String authenticationCode = "";
+		int result = authService.checkPhone(phonNum);
+		if(result != 1) {
+			authenticationCode = "123456";
+	//		authenticationCode = coolSMSService.sendAuthenticationCode(phonNum);	
+		}else {
+			authenticationCode = Integer.toString(result);
+		}
 		return authenticationCode;
 	}
 	
 	@PostMapping("/sign-up/confirm-id/{userId}")
 	public int confirmId(@PathVariable String userId) {
-		System.out.println(userId);
 		int result = 0;
 		result = authService.confirmId(userId);
 		System.out.println(result);
@@ -38,11 +44,8 @@ public class AuthController {
 	}
 	
 	@PostMapping("/sign-up")
-	public int signup(@RequestBody SignUpReqDto signUpReqDto) {
-		System.out.println(signUpReqDto);
-		int result = 0;
-		result = authService.signup(signUpReqDto);
-		return result;
+	public Object signup(@Valid SignUpReqDto signUpReqDto, BindingResult bindingResult) {
+		return  authService.validCheck(signUpReqDto, bindingResult);
 	}
 	
 }

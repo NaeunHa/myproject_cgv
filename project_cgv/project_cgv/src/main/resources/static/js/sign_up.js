@@ -1,114 +1,20 @@
-const email_site_select = document.querySelector('.select_email_site');
-const select_year = document.querySelector('#select_year');
-const select_month = document.querySelector('#select_month');
-const select_day = document.querySelector('#select_day');
+const item_select = document.querySelectorAll('.item_select');
+// [0]: year, [1]: month, [2]: day, [3]: email_site
 const item_ip =  document.querySelectorAll('.item_ip'); 
-const submit_btn = document.querySelector('.submit_btn');
-const error_msg = document.querySelectorAll('.error_msg');
-const success_msg = document.querySelector('.success_msg');
-//  [0]:이름, [1]:아이디, [2]:비밀번호, [3]:비밀번호 확인, [4]: 이메일id
-const param_phone = document.querySelector('#param_phone');
-
-var signUpData = {
-	username : "",
-	userid : "",
-	password : "",
-	phone : param_phone.value,
-	birthday : "",
-	email : ""
-}
+// [0]:이름, [1]:아이디, [2]:비밀번호, [3]:비밀번호 확인, [4]: 폰번호, [5]:이메일 id, [6]:이메일 사이트
+const submit_btn = document.querySelectorAll('.submit_btn');
+// [0]: 아이디 중복 확인, [1]: 회원가입
+const errorMsg = document.querySelectorAll('.errorMsg');
+const successMsg = document.querySelector('.successMsg');
 
 var signUpFlag = new Array();
 for(let i = 0; i < 6; i++){
 	signUpFlag.push(false);
 }
-// [0]:이름, [1]:아이디, [2]:비밀번호 확인, [3]:생일-년도, [4]:생일-월, [5]:생일-일, [6]:이메일
-
+// [0]:이름, [1]:아이디, [2]:비밀번호 확인,
+// [3]:생일-년도, [4]:생일-월, [5]:생일-일, [6]:이메일id
 
 let selected_email_val = "";
-let selected_val = "";
-let user_email =  "";
-
-function insertDateOptions(select_year, select_month, select_day){
-	let now = new Date();
-	let year = now.getFullYear();
-	let month = now.getMonth() + 1;
-	let day = now.getDate();
-		
-	for(let i = 1900; i <= year ; i++){
-	    if(i == year){
-	        select_year.innerHTML += `<option value="${i}" selected="selected">${i}</option>`;
-	    }else{
-	        select_year.innerHTML += `<option value="${i}">${i}</option>`;
-	    }
-	};
-	
-	var last_day = 31;
-	
-	for(let i = 1; i <= 12; i++){
-	    if(i == month){
-	        select_month.innerHTML += `<option value="${i}" selected="selected">${i}</option>`;
-	    }else{
-	        select_month.innerHTML += `<option value="${i}">${i}</option>`;
-	    }
-	
-	    if( i == 2 ) {
-	    	last_day = 28;
-	    }else if( (i % 2) == 0){
-	    	last_day = 30;
-	    }
-	    
-		for(let j = 1; j <= last_day; j++){
-		    if(j == day){
-		        select_day.innerHTML += `<option value="${j}" selected="selected">${j}</option>`;
-		    }else{
-		        select_day.innerHTML += `<option value="${j}">${j}</option>`;
-		    }
-		}
-	};
-}
-
-function checkId(user_id, success_msg, error_msg){
-	console.log(user_id.value);
-
-	$.ajax({
-		type: "post",
-		url: "/auth/sign-up/confirm-id/" + user_id.value,
-		success: function(data){
-			if(data == 0){
-				id_confirm_btn.style.display = "none";
-				error_msg.style.display = "none";
-				success_msg.style.display = "block";
-				item_ip[1].setAttribute("readonly", "readonly");
-				signUpData.userid = user_id.value;
-				signUpFlag[1] = true;
-			}else{
-				error_msg.style.display = "block";
-				success_msg.style.display = "none";
-				signUpFlag[1] = false;
-			}
-		},
-		error: function(){
-			alert('비동기처리 오류');
-		}
-	});
-}
-
-function checkEmail() {
-	const user_email_id = document.querySelector('#user_email_id');
-	user_email = user_email_id.value + '@' + selected_val;
-	
-	var regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	
-	if(regEmail.test(user_email)){
-		error_msg[3].style.display = "none";
-		signUpData.email = user_email;
-		signUpFlag[6] = true;
-	}else{
-		error_msg[3].style.display = "block";
-		signUpFlag[6] = false;
-	}
-}
 
 function noKeyPressF5(e){
 	if(e.keyCode == 116){
@@ -132,122 +38,303 @@ function noKeyPressF5(e){
 	}
 }
 
+function setDateOption(select_day, month, day){
+	var last_day = 31;
+
+	if( month == 2 ) {
+		last_day = 28;
+	}else if( (month % 2) == 0){
+		last_day = 30;
+	}
+	
+	if(day == 0){
+		for(let j = 1; j <= last_day; j++){
+			if(j == 1){
+				select_day.innerHTML += `<option value="${j}" selected="selected">${j}</option>`;
+			}else{
+				select_day.innerHTML += `<option value="${j}">${j}</option>`;
+			}
+		}
+	}else{
+		for(let j = 1; j <= last_day; j++){
+			if(j == day){
+				select_day.innerHTML += `<option value="${j}" selected="selected">${j}</option>`;
+			}else{
+				select_day.innerHTML += `<option value="${j}">${j}</option>`;
+			}
+		}
+	}
+}
+
+function insertDateOptions(select_year, select_month, select_day){
+	let now = new Date();
+	let year = now.getFullYear();
+	let month = now.getMonth() + 1;
+	let day = now.getDate();
+		
+	for(let i = 1900; i <= year ; i++){
+		if(i == year){
+			select_year.innerHTML += `<option value="${i}" selected="selected">${i}</option>`;
+		}else{
+			select_year.innerHTML += `<option value="${i}">${i}</option>`;
+		}
+	};
+
+
+	for(let i = 1; i <= 12; i++){
+		if(i == month){
+			select_month.innerHTML += `<option value="${i}" selected="selected">${i}</option>`;
+		}else{
+			select_month.innerHTML += `<option value="${i}">${i}</option>`;
+		}
+	
+		setDateOption(select_day, i, day);
+	};
+}
+
+function clearMsgNode(msg){
+	while(msg.hasChildNodes()){
+		msg.removeChild(msg.firstChild);
+	}
+	msg.style.display = 'none';
+}
+
+// errorMsg -  [0]:아이디, [1]:비밀번호, [2]:비밀번호 확인, [3]: 이메일
+// successMsg - id
+function messageService(indexNumber, msgText, msgFlag){
+//	const errorMsg = document.querySelectorAll('.errorMsg');
+//	const successMsg = document.querySelector('.successMsg');
+	
+	//msg를 모두 clear하는 작업
+	clearMsgNode(errorMsg[indexNumber]);
+	clearMsgNode(successMsg);
+	
+	let msgTextNode = document.createTextNode(msgText);
+		
+	if(msgFlag == 0){ //0: errorMsg 로 처리
+		errorMsg[indexNumber].appendChild(msgTextNode);
+		errorMsg[indexNumber].style.display = 'block';
+	}else{ // 1: succesMsg 로 처리
+		successMsg.appendChild(msgTextNode);
+		successMsg.style.display = 'block';
+	}
+}
+
+function checkId(id){
+
+	$.ajax({
+		type: "post",
+		url: "/auth/sign-up/confirm-id/" + id.value,
+		success: function(data){
+			console.log(data);
+			if(data == 0){
+				submit_btn[0].style.display = "none";
+				let msg = "사용가능한 아이디 입니다."
+				messageService(0, msg, 1);
+				item_ip[1].setAttribute("readonly", "readonly");
+				signUpFlag[1] = true;
+			}else{
+				let msg = "사용할 수 없는 아이디 입니다."
+				messageService(0, msg, 0);
+				item_ip[1].focus();
+				signUpFlag[1] = false;
+			}
+		},
+		error: function(){
+			alert('비동기처리 오류');
+		}
+	});
+}
+
+function passwordCheck(id,password){
+    if(! /^[a-z0-9#?!@$%^&*-]{8,12}$/.test(password)){
+        let msg = '숫자, 영문자, 특수문자 조합으로 8~12자리를 사용해야 합니다.';
+        return msg;
+    }
+    
+    var checkNumber = password.search(/[0-9]/g);
+    var checkEnglish = password.search(/[a-z]/ig);
+	var checkSpecialChar = password.search(/[#?!@$ %^&*-]/g);
+    
+    // 빈값확인
+    if(checkNumber <0 || checkEnglish <0 || checkSpecialChar <0){
+        let msg = '숫자, 영문자, 특수문자를 혼용하여야 합니다.';
+        return msg;
+    }
+    
+    if(/(\w)\1\1\1/.test(password)){
+        let msg = '444같은 문자를 4번 이상 사용하실 수 없습니다.';
+        return msg;
+    }
+    
+    if(password.search(id) > -1){
+        let msg = '비밀번호에 아이디가 포함되었습니다.';
+        return msg;
+    }
+
+    return 'true'; // 성공시 문자열 true 반환 (return값들이 String이기 때문에)
+}
+
+function checkEmail() {
+	let user_email = item_ip[5].value + '@' + item_ip[6].value;
+	
+	var regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	
+	if(regEmail.test(user_email)){
+		signUpFlag[6] = true;
+		clearMsgNode(errorMsg[3]);
+	}else{
+		let msg = "사용하실 수 없는 이메일 입니다.";
+		messageService(3, msg, 0);
+		signUpFlag[6] = false;
+	}
+}
+
 // 년, 월, 일 option 태그 추가
-insertDateOptions(select_year, select_month, select_day);
+insertDateOptions(item_select[0], item_select[1], item_select[2]);
 	
 // email option 클릭시 selected 처리
-email_site_select.onchange = () => {
-	 selected_val = email_site_select.options[email_site_select.selectedIndex].value;
-	 if(selected_val == '1'){
-		email_site.value = '';
+item_select[3].onchange = () => {
+	selected_email_val = item_select[3].options[item_select[3].selectedIndex].value;
+
+	if(selected_email_val == '1'){
+		item_ip[6].value = '';
 		email_site.removeAttribute("readonly");
 	}else{
-		email_site.value = selected_val;
-		email_site.setAttribute("readonly", "readonly");
+		item_ip[6].value = selected_email_val;
+		item_ip[6].setAttribute("readonly", "readonly");
 	}
 	checkEmail();
 }
 
 // 이름
 item_ip[0].onkeyup = () => {
-	const username = document.querySelector('#username');
-	signUpData.username = username.value;
 	signUpFlag[0] = true;
 }
-		
+
 // 아이디 중복확인
-id_confirm_btn.onclick = () => {
-	const user_id = document.querySelector('#user_id');
-	if(user_id.value.length > 4){
-		checkId(user_id, success_msg, error_msg[0]);
+submit_btn[0].onclick = () => {
+	if(item_ip[1].value.length > 4){
+		checkId(item_ip[1]);
 	}else{
 		alert('아이디가 너무 짧습니다.');
 	}
 };
-		
-			
-// 비밀번호 정규식
-var regPw = /^.*(?=^.{8,12}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
-let user_ip_pw = "";
 
+// 비밀번호 정규식
 item_ip[2].onkeyup = () => {
-	
-	var user_pw_val = item_ip[2].value;
-	
-	if(regPw.test(user_pw_val)){
-		error_msg[1].style.display = "none";
-		user_ip_pw = user_pw_val;
+	let msg = passwordCheck(item_ip[1].value, item_ip[2].value);
+	if(msg == 'true'){
+		clearMsgNode(errorMsg[1]);
 	}else{
-		error_msg[1].style.display = "block";
+		messageService(1, msg, 0);	
 	}
 };
-		
+
 // 비밀번호 확인
 item_ip[3].onkeyup = () => {		
-	if(item_ip[3].value == user_ip_pw){
-		error_msg[2].style.display = "none";
-		signUpData.password = confirm_pw.value;
+	if(item_ip[3].value == item_ip[2].value){
 		signUpFlag[2] = true;
+		clearMsgNode(errorMsg[2]);
 	}else{
-		error_msg[2].style.display = "block";		
+		let msg = "비밀번호가 다릅니다.";
+		messageService(2, msg, 0);
 		signUpFlag[2] = false;
 	}
 }
-		
+
 // 생년월일
 let selected_year = "";
 let selected_month = "";
 let selected_day = "";
 
-select_year.onchange = () => {
-	selected_year = select_year.options[select_year.selectedIndex].value;
-	console.log(selected_year);
+// year
+item_select[0].onchange = () => {
+	selected_year = item_select[0].options[item_select[0].selectedIndex].value;
 	signUpFlag[3] = true;
 }
 
-select_month.onchange = () => {
-	selected_month = select_month.options[select_month.selectedIndex].value;
+// month
+item_select[1].onchange = () => {
+	selected_month = item_select[1].options[item_select[1].selectedIndex].value;
 	if(selected_month < 10){
 		selected_month = "0" + selected_month;
 	}
-	console.log(selected_month);
-	
-	let last_day = 31;
-	if( selected_month == 2 ) {
-    	last_day = 28;
-    }else if( (selected_month % 2) == 0){
-    	last_day = 30;
-    }
-    select_day.innerHTML = "";
-	for(let j = 1; j <= last_day; j++){
-		if(j == 1){
-		 	select_day.innerHTML += `<option value="${j}" selected="selected">${j}</option>`;
-		 }else{
-		 	select_day.innerHTML += `<option value="${j}">${j}</option>`;
-		 }
-	}
+
+	setDateOption(item_ip[2], selected_month, 0);
 	signUpFlag[4] = true;
 }
 
-select_day.onchange = () => {
-	selected_day = select_day.options[select_day.selectedIndex].value;
+// day
+item_select[2].onchange = () => {
+	selected_day = item_select[2].options[item_select[1].selectedIndex].value;
 	if(selected_day < 10){
 		selected_day = "0" + selected_day;
 	}
-	console.log(selected_day);
 	signUpFlag[5] = true;
 }
 
-
 // 이메일 정규식	
-item_ip[4].onkeyup = () => {
-	checkEmail(user_email_id);
+item_ip[5].onkeyup = () => {
+	checkEmail();
 }
-		
-		
+
+function isEmpty(str){
+	if(typeof str == "undefined" || str == null || str == ''){
+		return '사용가능';
+	}else {
+		return str;
+	}
+}
+
+function signupValidMsg(data){
+	let signupDataObj = JSON.parse(data);
+	if(signupDataObj.code == 400){
+		alert(
+			'유효성 검사 오류.\n' + 
+			'오류코드: ' + signupDataObj.code + '\n' +
+			'오류 내용\n' +
+			'username: ' + isEmpty(signupDataObj.username) + '\n' +
+			'userid: ' + isEmpty(signupDataObj.userid) + '\n' +
+			'password: ' + isEmpty(signupDataObj.password)  + '\n' +
+			'phone: ' + isEmpty(signupDataObj.phone) + '\n' +
+			'birthday: ' + isEmpty(signupDataObj.birthday) + '\n' +
+			'email: ' + isEmpty(signupDataObj.email)
+		);
+	}else if(signupDataObj.code == 200){
+		alert(signupDataObj.msg);
+		location.replace('/auth/sign-in');
+	}
+}
+
+function signup(){
+	let signUpData = {
+		username : item_ip[0].value,
+		userid : item_ip[1].value,
+		password : item_ip[3].value,
+		phone : item_ip[4].value,
+		birthday : selected_year + selected_month + selected_day,
+		email : item_ip[5].value + '@' + item_ip[6].value
+	}
+
+	$.ajax({
+		type: "post",
+		url: "/auth/sign-up",
+		data : signUpData,
+		dataType: "text",
+		success : function(data){
+			signupValidMsg(data);
+		},
+		error: function(){
+			alert('비동기처리 오류');
+		}
+	});
+}
+
 // 회원가입
-submit_btn.onclick = () => {
+submit_btn[1].onclick = () => {
 	
+	// 빈값 방지
 	let count = 0;
 	for(let i = 0; i < signUpFlag.size; i++){
 		if( signUpFlag[i] == false ){
@@ -256,28 +343,7 @@ submit_btn.onclick = () => {
 	}
 	
 	if(count == 0){
-		signUpData.birthday = selected_year + selected_month + selected_day;
-		console.log(signUpData);
-	
-		$.ajax({
-			type: "post",
-			url: "/auth/sign-up",
-			data : JSON.stringify(signUpData),
-			dataType: "text",
-			contentType: "application/json;charset=UTF-8",
-			success : function(data){
-				if(data == 1){
-				alert("회원가입이 완료되었습니다.\n로그인 페이지로 이동합니다.");
-				location.href = "/auth/sign-in";
-				}else{
-					alert("회원가입에 실패했습니다.");
-					console.log(data);
-				}
-			},
-			error: function(){
-				alert('비동기처리 오류');
-			}
-		});
+		signup();
 	}else{
 		alert('형식이 다 채워지지 않았습니다.');
 	}

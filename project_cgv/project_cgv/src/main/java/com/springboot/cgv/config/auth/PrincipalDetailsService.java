@@ -18,15 +18,14 @@ public class PrincipalDetailsService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.getUser(username);
+		System.out.println(username);
+		User user = userRepository.getUserById(username);
 		if(user == null) {
-			return null;
+			throw new UsernameNotFoundException(username + " is not found.");
 		}else {
 			UserDetails principalDetails = new PrincipalDetails(user);
-			System.out.println(user);
+			System.out.println(principalDetails);
 			return principalDetails;
 		}
 	}
-
-	
 }

@@ -38,7 +38,6 @@
     font-size: 14px;
 }
 .si_wrap form{
-    position: relative;
     margin-top: 20px;
     margin-bottom: 15px;
     padding-bottom: 30px;
@@ -72,7 +71,7 @@
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 0; left: 70px;
+    bottom: 110px; left: 100px;
 }
 .save_id input{
     margin-right: 3px;
@@ -86,7 +85,7 @@
 .find_info{
     display: flex;
     position: absolute;
-    bottom:0; right: 72px;
+    bottom:108px; right: 100px;
     padding-left: 0 !important;
 }
 .find_info a{

@@ -9,7 +9,7 @@
 .img_container img{
 	width: 600px; height: auto;
 }
-#su_container{ 
+.container{ 
 	padding: 50px 0 200px;
 	width: 100%; height:100%;
 	position: relative;
@@ -27,10 +27,11 @@
     z-index: 2;
     position: relative;
 }
-.self_authentication_container{
+.wrap_form{
     border-top: 3px solid #898987;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 .box_content{
     padding: 45px 60px 50px;
@@ -51,47 +52,12 @@
     display: flex;
     justify-content: center;
 }
-.inner_box div input{
-    margin-right: 5px;
-    margin-left: 5px;
-    padding: 5px;
-    width: 50px;
-    text-align: center;
-    outline: none;
-    border: 1px solid #898989;
-}
-#param_phone{
-    width: 208px !important;
-}
-.inner_box span{
-    line-height: 35px;
-    font-size: 13px;
-}
-.inner_box button{
-    margin-left: 10px;
-    padding: 8px 10px;
-    width: auto;
-    background-color: var(--cgv_red);
-    font-size: 13px;
-    color: var(--cgv_white);
-    border-radius: 5px;
-    cursor: pointer;
-}
-.inner_box input{
-	width: 208px !important;
-}
-.su_form{
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border-top: 3px solid #898987;
-}
-.su_form dl{
+.wrap_form dl{
     display: flex;
     width: 100%;
     border-bottom: 2px solid #e4e4e4;
 }
-.su_form dt{
+.wrap_form dt{
     padding: 20px;
     width: 150px; height: auto;
     text-align: left;
@@ -99,63 +65,66 @@
     background-color: #e8e8e8;
     border-bottom: 1px solid var(--cgv_white);
 }
-.su_form dd{
+.wrap_form dd{
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
-.su_form input{
-    width: 100px; height: 20px;
+.wrap_form .item_ip{
+    width: 200px; height: 20px;
     padding: 5px;
     outline: none;
     border: 1px solid #b5b5b5;
 }
-.su_form input::placeholder{
+.wrap_form .item_ip::placeholder{
     color: var(--cgv_text_222);
     font-size: 14px;
 }
-.su_form .ip_box{
-    width: 220px;
+.item_ip.phone{
+	width: 150px;
+	margin-right: 10px
 }
-.su_form button{
-    margin-left: 5px;
-    padding: 5px;
-    width: 80px; height: 32px;
-    background-color: rgba(51, 51, 51, 0.7);
-    border-radius: 5px;
-    color: var(--cgv_white);
-    font-size: 14px;
-    cursor: pointer;
+.item_ip.email{
+	width: 100px;
 }
-.su_form span{
+.item_ip.param{
+	text-align: center;
+	background-color: #e2e2e2;
+}
+.wrap_form span{
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--cgv_text_666);
     font-weight: 600;
 }
-.su_form .error_msg{
+.wrap_form .errorMsg{
     margin-top: 5px;
     font-size: 13px;
     color: var(--cgv_red);
 	display: none;
 }
-.su_form .success_msg{
+.wrap_form .successMsg{
     margin-top: 5px;
     font-size: 13px;
     color: blue;
 	display: none;
 }
-.su_form select{
+.wrap_form select{
     margin-right: 5px;
     padding: 2px;
     border: 1px solid #b5b5b5;
     outline: none;
 }
 .submit_btn{
- 	position: absolute; right:0; bottom: -50px;
-	width: 100px !important; height: 40px !important;
-	font-weight: 900;
-	color: var(--cgv_white) !important;
-	background-color: var(--cgv_red) !important;
+	width: 90px; height: 30px;
 	border-radius: 5px;
+	background-color: var(--cgv_red);
+	color: var(--cgv_white);
+	font-size: 14px;
+	font-weight: 900;
+    cursor: pointer;
+}
+.submit_btn.real{
+	position: absolute; right:0; bottom: -50px;
+	width: 100px; height: 40px;
 }
