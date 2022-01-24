@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>    
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,8 +23,8 @@
             <div class="info_wrap">       
                 <div class="my_info info_box">
                     <div class="user_profile"><img src="/images/default_profile.gif"></div>
-                    <h1>하나은님</h1>
-                    <span>nanee0706</span>
+                    <h1>${principal.user.username}님</h1>
+                    <span>${principal.user.userid }</span>
                     <button type="button" class="modify_btn"></button>
                 </div>
                 <div class="sub_info_box info_box">
@@ -41,7 +48,7 @@
             <div class="wish box_container">
                 <div class="description_box">
                     <h3>기대되는 영화</h3>
-                    <a href="mycgv/wish">더보기</a>
+                    <a href="/user/my-cgv/wish">더보기</a>
                 </div>
                 <ul class="inner_box">
                     <li class="empty">찜한 영화가 존재하지 않습니다.</li>
@@ -58,7 +65,7 @@
             <div class="watched box_container">
                 <div class="description_box">
                     <h3>내가 본 영화</h3>
-                    <a href="/user/mycgv/watched">더보기</a>
+                    <a href="/user/my-cgv/watched">더보기</a>
                 </div>
                 <ul class="inner_box">
                     <li class="empty">관람한 영화가 존재하지 않습니다.</li>
@@ -76,7 +83,7 @@
                 <!-- TODO : 내가 관람한 영화 만 리뷰작성 가능 -->
                 <div class="description_box">
                     <h3>내가 쓴 평점</h3>
-                    <a href="/user/mycgv/review">더보기</a>
+                    <a href="/user/my-cgv/review">더보기</a>
                 </div>
                 <ul class="inner_box">
                     <li class="empty">작성한 리뷰가 존재하지 않습니다.</li>

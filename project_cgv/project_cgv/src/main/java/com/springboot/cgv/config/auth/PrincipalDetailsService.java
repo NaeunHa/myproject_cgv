@@ -21,11 +21,9 @@ public class PrincipalDetailsService implements UserDetailsService {
 		System.out.println(username);
 		User user = userRepository.getUserById(username);
 		if(user == null) {
-			throw new UsernameNotFoundException(username + " is not found.");
+			return null;
 		}else {
-			UserDetails principalDetails = new PrincipalDetails(user);
-			System.out.println(principalDetails);
-			return principalDetails;
+			return new PrincipalDetails(user);
 		}
 	}
 }

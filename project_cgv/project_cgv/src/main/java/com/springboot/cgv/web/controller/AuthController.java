@@ -27,8 +27,8 @@ public class AuthController {
 		String authenticationCode = "";
 		int result = authService.checkPhone(phonNum);
 		if(result != 1) {
-			authenticationCode = "123456";
-	//		authenticationCode = coolSMSService.sendAuthenticationCode(phonNum);	
+//			authenticationCode = "123456";
+			authenticationCode = coolSMSService.sendAuthenticationCode(phonNum);	
 		}else {
 			authenticationCode = Integer.toString(result);
 		}

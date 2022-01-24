@@ -21,10 +21,7 @@
                 <div class="tab">로그인</div>
                 <div class="si_wrap">
                     <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>  
-                    <form action="/auth/sign-in" method="post">
-                    	<c:if test="${error }l">
-                    		<p> Error : <c:out value="${exception }"/> </p>
-                    	</c:if>
+                    <form action="/login" method="post">
                         <input type="text" name="username" class="ip_id ip_box">
                         <input type="password" name="password" class="ip_pw ip_box">
                         <button type="submit" class="si_btn">로그인</button>
@@ -37,7 +34,7 @@
                             <a href="/find-password" class="find_pw">비밀번호 찾기</a>
                         </div>
                     </form>
-                    <button type="button" class="oauth2_naver"><img src="/images/btn_loginNaver.jpg" alt=""></button>
+                    <button type="button" class="oauth2_naver" onclick="location.href='/oauth2/authorization/naver'"><img src="/images/btn_loginNaver.jpg" alt=""></button>
                 </div>
             </div>
             <div class="random_img">

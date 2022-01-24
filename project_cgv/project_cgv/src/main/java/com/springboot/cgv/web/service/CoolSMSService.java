@@ -13,8 +13,8 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 @Service
 public class CoolSMSService {
 
-	private final String API_KEY = "NCS8Q6LVHCM3OS9Q";
-	private final String API_SECRET_KEY = "UQWKHOLYKLVIRYH3XWFP3TEXABZBZKW0";
+	private final String API_KEY = "NCSQ2YOVNJMUB8UE";
+	private final String API_SECRET_KEY = "OX1HKE3IZW55BM3NZPBAJBSEYT2IXM75";
 	private final String ADMIN_PHONENUM = "01066704411";
 	
 	// 인증코드 생성 메서드
@@ -42,7 +42,7 @@ public class CoolSMSService {
 		params.put("from", ADMIN_PHONENUM);
 		params.put("type", "SMS");
 		params.put("text", "CGV project 회원가입 인증번호\n인증번호는 ["+authenticationCode+"] 입니다.");
-		params.put("app_version", "cgv project app 1.0");
+		params.put("app_version", "cgv project app 1562884.0");
 		
 		try {
 			coolSMS.send(params);
@@ -52,5 +52,4 @@ public class CoolSMSService {
 		
 		return authenticationCode;
 	}
-	
 }

@@ -31,7 +31,7 @@
 		                    <li class="customer_wrap"><a href="#"><img src="/images/loginCustomer.png" alt=""><span>고객센터</span></a></li>
 	                	</c:when>
 	                	<c:otherwise>	                	
-		                    <li class="signUp_wrap"><a href="/auth/logout"><img src="/images/loginPassword.png" alt=""><span>로그아웃</span></a></li>
+		                    <li class="signUp_wrap"><a href="/logout"><img src="/images/loginPassword.png" alt=""><span>로그아웃</span></a></li>
 		                    <li class="member_wrap"><a href="/user/my-cgv"><img src="/images/loginMember.png" alt=""><span>MY CGV</span></a></li>
 		                    <li class="customer_wrap"><a href="#"><img src="/images/loginCustomer.png" alt=""><span>고객센터</span></a></li>
 	                	</c:otherwise>

@@ -1,17 +1,20 @@
 package com.springboot.cgv.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.RememberMeConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.logout.LogoutHandler;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
-import com.springboot.cgv.config.auth.LoginFailService;
 import com.springboot.cgv.config.auth.PrincipalDetailsService;
+import com.springboot.cgv.config.oauth2.PrincipalOauth2UserService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,11 +23,21 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
-	private LoginFailService loginFailService;
+	private final PrincipalDetailsService principalDetailsService;
+	private final PrincipalOauth2UserService  oauth2UserService;
+	@Qualifier("dataSource")
+	private final DataSource dataSource;
 	
 	@Bean
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
+	}
+	
+	@Bean
+	PersistentTokenRepository tokenRepository() {
+		JdbcTokenRepositoryImpl jdbcTokenRepository = new JdbcTokenRepositoryImpl();
+		jdbcTokenRepository.setDataSource(dataSource);
+		return jdbcTokenRepository;
 	}
 
 	@Override
@@ -40,18 +53,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.and()
 			.formLogin() // 로그인페이지 커스텀
 			.loginPage("/auth/sign-in") // get 요청
-			.loginProcessingUrl("/auth/sign-in") // post 요청
-			.failureHandler(loginFailService)
+			.loginProcessingUrl("/login") // sign in 경로
+			.defaultSuccessUrl("/")
+			.and()
+			.oauth2Login()
+			.loginPage("/auth/sign-in")
+			.userInfoEndpoint()
+			.userService(oauth2UserService)
+			.and()
 			.defaultSuccessUrl("/")
 			.and()
 			.logout() // 로그아웃
-			.logoutUrl("/auth/logout")
+			.logoutUrl("/logout")
 			.logoutSuccessUrl("/")
 			.invalidateHttpSession(true)
+			.deleteCookies("remember-me", "JSESSIONID")
 			.and()
 			.rememberMe() // 쿠키설정
 			.key("remember-me")
-			.rememberMeParameter("remember-me")
+			.tokenRepository(tokenRepository())
+			.userDetailsService(principalDetailsService)
 			.tokenValiditySeconds(86400 * 30);
 			
 	}

@@ -84,6 +84,29 @@ function noKeyPressF5(e){
 	}
 }
 
+/* 숫자만 입력할 수 있게 */
+function fn_press(event, type) {
+if (type == 'numbers') {
+	if (event.keyCode < 48 || event.keyCode > 57) {
+		return false;
+	}
+}
+}
+
+/* 한글은 입력할 수 없게(좌, 우 방향키, 백스페이스, 딜리트, 탭키는 예외) */
+function fn_press_kor(obj) {
+	if (window.event.keyCode == 8 || window.event.keyCode == 9 || window.event.keyCode == 37 ||
+		window.event.keyCode == 39 || window.event.keyCode == 46) {
+		return;
+	}
+	obj.value = obj.value.replace(/[\a-zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');
+}
+
+item_ip[0].onkeyup = (e) => {
+	fn_press(e, item_ip[0].type);
+	fn_press_kor(item_ip[0]);
+}
+
 // 인증번호 문자 보내기
 submit_btn[0].onclick = () => {
 	sendSMS(item_ip[0]);
