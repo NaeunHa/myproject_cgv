@@ -33,31 +33,38 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService{
 		Map<String, Object> attributes = (Map<String, Object>) oAuth2User.getAttributes().get("response");
 		
 		// 정보 가공
+		String provider = userRequest.getClientRegistration().getRegistrationId();
+		System.out.println(provider);
+		String email = (String)attributes.get("email");
+		String userid = email.substring(0, email.lastIndexOf("@"));
+		
 		String phone  = (String)attributes.get("mobile");
 		phone = "010" + phone.substring(4, 8) + phone.substring(9, 13); 
 		
-		String birthday = (String)attributes.get("birthday");
-		String birthyear = (String)attributes.get("birthyear");
-		birthday = birthyear + birthday.substring(0, 2) + birthday.substring(3, 5);
+		String birthday = null;
+		if(attributes.get("birthday") != null) {
+			birthday = (String)attributes.get("birthday");
+			String birthyear = (String)attributes.get("birthyear");
+			birthday = birthyear + birthday.substring(0, 2) + birthday.substring(3, 5);
+		}
 		
-		
-		User userEntity = userRepository.getUserById((String)attributes.get("id"));
+		User userEntity = userRepository.getUserById(userid);
 		if(userEntity == null) {
 			// 첫 로그인
 			Oauth2UserDto oauth2UserDto = Oauth2UserDto.builder()
-													.userid((String)attributes.get("id"))
+													.userid(userid)
 													.username((String)attributes.get("name"))
 													.password(new BCryptPasswordEncoder().encode(UUID.randomUUID().toString()))
 													.birthday(birthday)
 													.phone(phone)
-													.email((String)attributes.get("email"))
+													.email(email)
 													.role("ROLE_USER")
-													.provider(userRequest.getClientRegistration().getRegistrationId())
+													.provider(provider)
 													.build();
 			
 			userEntity = oauth2UserDto.toEntity();
+			System.out.println(userEntity);
 			userRepository.insertUser(userEntity);
-					
 		}
 		
 		return new PrincipalDetails(userEntity, attributes);

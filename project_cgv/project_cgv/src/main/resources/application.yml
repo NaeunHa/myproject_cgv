@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8080
   servlet:
     context-path: /
     session:      timeout: 86400s
@@ -44,7 +44,7 @@ spring:
             - mobile
             client-name: Naver
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8000/auth/login/oauth2/code/naver
+            redirect-uri: http://localhost:8080/login/oauth2/code/naver
         provider: 
           naver:
             authorization-uri: https://nid.naver.com/oauth2.0/authorize

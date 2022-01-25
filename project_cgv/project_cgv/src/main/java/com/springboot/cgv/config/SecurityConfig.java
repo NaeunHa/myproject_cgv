@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.and()
 			.formLogin() // 로그인페이지 커스텀
 			.loginPage("/auth/sign-in") // get 요청
-			.loginProcessingUrl("/login") // sign in 경로
+			.loginProcessingUrl("/login") // post 요청 mapping
 			.defaultSuccessUrl("/")
 			.and()
 			.oauth2Login()

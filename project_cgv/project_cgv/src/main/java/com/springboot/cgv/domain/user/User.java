@@ -32,4 +32,6 @@ public class User {
 	
 	private String membership_level;
 	private int point;
+	private Date point_create_date;
+	private Date point_update_date;
 }

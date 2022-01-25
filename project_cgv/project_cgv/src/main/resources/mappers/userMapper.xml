@@ -35,7 +35,7 @@
 			#{phone},
 			#{email},
 			#{role},
-			null,
+			#{provider},
 			now(),
 			now()
 		);
@@ -59,7 +59,9 @@
 			ud.dtl_create_date,
 			ud.dtl_update_date,
 			mm.membership_level,
-			mm.point
+			mm.point,
+			mm.point_create_date,
+			mm.point_update_date
 		from
 			user_mst um
 			left outer join user_dtl ud on(ud.id = um.id)

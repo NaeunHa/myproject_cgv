@@ -34,6 +34,7 @@ public class SignUpReqDto { // Request Dto (요청)
 				.phone(phone)
 				.email(email)
 				.role("ROLE_USER")
+				.provider(null)
 				.build();
 	}
 }

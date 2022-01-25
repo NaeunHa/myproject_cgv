@@ -11,7 +11,6 @@ import lombok.Data;
 @Data
 public class Oauth2UserDto {
 
-	private int id;
 	@NotBlank
 	private String userid;
 	@NotBlank
