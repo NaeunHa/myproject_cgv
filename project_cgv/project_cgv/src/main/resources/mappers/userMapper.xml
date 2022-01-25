@@ -26,11 +26,11 @@
 	<update id="insertUser" parameterType="com.springboot.cgv.domain.user.User">
 		insert into
 			user_mst
-		value(
+		values(
 			0,
 			#{userid},
-			#{username},
 			#{password},
+			#{username},
 			#{birthday},
 			#{phone},
 			#{email},
@@ -41,6 +41,33 @@
 		);
 	</update>
 	
+	<select id="getUserAllById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
+		select
+			um.id,
+			um.userid,
+			um.password,
+			um.username,
+			um.birthday,
+			um.phone,
+			um.email,
+			um.role,
+			um.provider,
+			um.create_date,
+			um.update_date,
+			ud.nickname,
+			ud.profile_img,
+			ud.dtl_create_date,
+			ud.dtl_update_date,
+			mm.membership_level,
+			mm.point
+		from
+			user_mst um
+			left outer join user_dtl ud on(ud.id = um.id)
+			left outer join membership_mst mm on(mm.id = um.id)
+		where
+			userid = #{userid};
+	</select>
+	
 	<select id="getUserById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
 		select
 			*
@@ -49,5 +76,34 @@
 		where
 			userid = #{userid};
 	</select>
+	
+	<select id="getUserDtlById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
+		select
+			*
+		from
+			user_dtl
+		where
+			userid = #{userid}
+	</select>
+	
+	<select id="checkNickName" resultType="Integer" parameterType="String">
+		select
+			count(nickname)
+		from
+			user_dtl
+		where
+			nickname = #{nickname};
+	</select>
+	
+	<update id="updateUserDtlById"  parameterType="com.springboot.cgv.domain.user.User">
+		update
+			user_dtl
+		set
+			nickname = #{nickname},
+			profile_img = #{profile_img},
+			dtl_update_date = now()
+		where
+			id = #{id}
+	</update>
 	
 </mapper>

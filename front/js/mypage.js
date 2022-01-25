@@ -1,3 +1,7 @@
+/**
+ *  my page
+ */
+
 const modify_btn = document.querySelector('.modify_btn');
 const modal = document.querySelector('#modal');
 const close_btn = document.querySelector('.close_btn');
@@ -20,4 +24,3 @@ close_btn.onclick = () => {
     modal.style.opacity = 0;
     modal.style.zIndex = -1;
 }
-

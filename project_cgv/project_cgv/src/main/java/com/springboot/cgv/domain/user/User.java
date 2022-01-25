@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
 public class User {
@@ -23,4 +25,11 @@ public class User {
 	private Date create_date;
 	private Date update_date;
 
+	private String nickname;
+	private String profile_img;
+	private Date dtl_create_date;
+	private Date dtl_update_date;
+	
+	private String membership_level;
+	private int point;
 }

@@ -49,22 +49,22 @@ public class PageController {
 	
 	@GetMapping("/user/my-cgv")
 	public String mycgvPage() {
-		return "mypage";
+		return "mypage/mypage";
 	}
 	
 	@GetMapping("/user/my-cgv/wish")
 	public String mycgvWishPage() {
-		return "dtl_wish";
+		return "mypage/dtl_wish";
 	}
 	
 	@GetMapping("/user/my-cgv/watched")
 	public String mycgvWatchedPage() {
-		return "dtl_watched";
+		return "mypage/dtl_watched";
 	}
 	
 	@GetMapping("/user/my-cgv/review")
 	public String mycgvReviewPage() {
-		return "dtl_review";
+		return "mypage/dtl_review";
 	}
 	
 	@GetMapping("/movies")

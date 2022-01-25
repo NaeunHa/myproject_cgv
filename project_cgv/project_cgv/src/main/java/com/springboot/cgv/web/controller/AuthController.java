@@ -45,6 +45,7 @@ public class AuthController {
 	
 	@PostMapping("/sign-up")
 	public Object signup(@Valid SignUpReqDto signUpReqDto, BindingResult bindingResult) {
+		System.out.println(signUpReqDto);
 		return  authService.validCheck(signUpReqDto, bindingResult);
 	}
 	

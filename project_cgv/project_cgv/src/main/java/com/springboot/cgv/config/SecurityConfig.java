@@ -12,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
+import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 
 import com.springboot.cgv.config.auth.PrincipalDetailsService;
 import com.springboot.cgv.config.oauth2.PrincipalOauth2UserService;
@@ -74,6 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.tokenRepository(tokenRepository())
 			.userDetailsService(principalDetailsService)
 			.tokenValiditySeconds(86400 * 30);
+			
 			
 	}
 	

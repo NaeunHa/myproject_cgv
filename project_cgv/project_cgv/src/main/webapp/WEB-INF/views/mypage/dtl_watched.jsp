@@ -15,14 +15,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV | 내가 본 영화</title>
     <link rel="stylesheet" href="/css/mypage_dtl.css">
-    <link rel="stylesheet" href="/css/modal.css">
 </head>
 <body>
-	<jsp:include page="include/header.jsp"></jsp:include>
+	<jsp:include page="../include/header.jsp"></jsp:include>
     <section id="mypage_dtl">
         <div class="contents">
             <!-- 왼쪽 세부 메뉴 -->
-            
+            <article class="nav_container">
+			    <div class="user_box">
+			        <img src="/images/default_profile.gif" alt="">
+			        <div class="name_box"><strong class="user_name">${principal.user.username }</strong>님</div>
+			    </div>
+			    <div class="nav_box">
+			        <a href="/user/my-cgv/wish">
+			            <span class="movie_count">1</span>
+			            <span class="nav_title">기대되는 영화</span>
+			        </a>
+			    </div>
+			    <div class="nav_box active">
+			        <a href="/user/my-cgv/watched">
+			            <span class="movie_count">31</span>
+			            <span class="nav_title">내가 본 영화</span>
+			        </a>
+			    </div>
+			    <div class="nav_box">
+			        <a href="/user/my-cgv/review">
+			            <span class="movie_count">1</span>
+			            <span class="nav_title">내가 쓴 평점</span>
+			        </a>
+			    </div>
+			</article>
 
             <!-- 오른쪽 세부 페이지 -->
             <article class="detail_container">
@@ -53,9 +75,7 @@
                 </ul> 
             </article>
         </div>
-        <!-- 모달창 include -->
     </section>
-    <jsp:include page="include/footer.jsp"></jsp:include>
-    <script src="/js/mypage_dtl.js"></script>
+    <jsp:include page="../include/footer.jsp"></jsp:include>
 </body>
 </html>

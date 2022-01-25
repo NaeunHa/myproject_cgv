@@ -11,7 +11,7 @@
     align-items: center;
 }
 .window{
-    width: 700px; height: 410px;
+    width: 700px; height: 440px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,12 +73,12 @@
 }
 .good_img{
     width: 32px; height: 30px;
-    background: url(/img/sprite_egg.png) -23px 5px no-repeat;
+    background: url(/images/sprite_egg.png) -23px 5px no-repeat;
 }
 .bad_img{
     margin-right: 5px;
     width: 35px; height: 30px;
-    background: url(/img/sprite_egg.png) 0 -200px no-repeat;
+    background: url(/images/sprite_egg.png) 0 -200px no-repeat;
 }
 .middle{
     display: flex;
@@ -152,10 +152,94 @@
     position: absolute;
     top: 20px; left: auto; right: 20px;
     width: 18px; height: 18px;
-    background: url(/img/sprite_btn.png) -72px -62px no-repeat;
+    background: url(/images/sprite_btn.png) -72px -62px no-repeat;
     border: none;
     font-size: 0px;
     line-height: 0;
     zoom: 1;
     cursor: pointer;
+}
+
+#mp_content .user_wrap{
+    margin: 10px 0;
+    display: flex;
+    align-items: baseline;
+}
+#mp_content .user_wrap h1{
+    margin-right: 10px;
+    font-size: 21px;
+    font-weight: 600;
+}
+#mp_content .user_wrap span{
+    font-size: 13px;
+}
+#mp_content .content_wrap{
+    padding: 20px;
+    background-color: #e9e9e8;
+}
+#mp_content .content_wrap dl{
+    display: flex;
+}
+
+#mp_content .content_wrap dt{
+    width: 150px;
+    font-size: 13px;
+    color: #333;
+}
+
+#mp_content .content_wrap dd{
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#mp_content .content_wrap span{
+    font-size: 13px;
+    font-weight: 100;
+}
+#mp_content .content_wrap .input_wrap{
+    display: flex;
+    margin-top: 10px;
+}
+#mp_content .content_wrap .input_wrap input{
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#mp_content .content_wrap .img_wrap img{
+    margin-bottom: 5px;
+    width: 73px; height: 73px;
+    border-radius: 50%;
+}
+
+#mp_content .file_btn{
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+#mp_content button{
+    padding: 0 10px;
+    font-size: 13px;
+    color: #333;
+    border: 3px solid #333;
+    background: none;
+    cursor: pointer;
+}
+
+#mp_content .btn_wrap{
+    margin-top: 10px;
+    width: 100%; height:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mp_content .btn_wrap button{
+    height: 100%;
+}
+#mp_content .btn_wrap button.submit_btn{
+    margin-right: 10px;
+    background-color: #333;
+    color: var(--cgv_white);
 }

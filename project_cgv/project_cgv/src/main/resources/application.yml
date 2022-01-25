@@ -62,5 +62,5 @@ mybatis:
   - /mappers/*xml
   
 file:
-  path: D:/myProject_CGV/project_cgv/image/
+  path: D:/myProject_CGV/image/
     

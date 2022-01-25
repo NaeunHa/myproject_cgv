@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
     <section id="mypage">
         <div class="contents">
             <div class="info_wrap">       
                 <div class="my_info info_box">
-                    <div class="membership_icon">V I P</div>
+                    <div class="user_profile"><img src="img/default_profile.gif"></div>
                     <h1>하나은님</h1>
                     <span>nanee0706</span>
+                    <button type="button" class="modify_btn"></button>
                 </div>
                 <div class="sub_info_box info_box">
                     <div class="sub_info">
@@ -122,6 +124,47 @@
                 </div>
             </div>
         </div>
+
+        <div id="modal" class="">
+            <div class="window">
+                <div class="popup">
+                    <div class="modal_title">나의 프로필 수정</div>
+                    <div id="mp_content" class="modal_content">
+                        <div class="user_wrap">
+                            <h1>하나은님</h1>
+                            <span>neha888</span>
+                        </div>
+                        <div class="content_wrap">
+                            <dl>
+                                <dt>닉네임</dt>
+                                <dd>
+                                    <span>한글, 영문, 숫자 혼용 가능(한글기준 10자 이내)</span>
+                                    <div class="input_wrap">
+                                        <input type="text" class="nick_name" maxlength="10">
+                                        <button type="button" class="check_btn">중복확인</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>프로필 이미지</dt>
+                                <dd>
+                                    <div class="img_wrap"><img src="img/default_profile.gif" alt=""></div>
+                                    <span>JPG, GIF, BMP 파일만 등록 가능합니다. (최대 3M)</span>
+                                    <input type="file" class="file_btn" value="파일 선택">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="btn_wrap">
+                            <button type="button" class="submit_btn">등록하기</button>
+                            <button type="button" class="cancle_btn">취소</button>
+                        </div>
+                    </div>
+                    <button class="close_btn" type="button"></button>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <script src="js/mypage.js"></script>
 </body>
 </html>

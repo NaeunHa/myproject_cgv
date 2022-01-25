@@ -21,9 +21,27 @@
     margin-right: 30px;
 }
 .my_info{
-    padding: 10px 60px;
+    padding: 10px 50px;
     width: auto;
     border-right: 5px solid #ffffff;
+    position: relative;
+}
+.user_profile img{
+    margin-right: 10px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.modify_btn{
+	width: 17px; height: 20px;
+    margin: 5px 0 0 0;
+    background: url(../img/sprite_btn.png) no-repeat 0 -218px;
+    cursor: pointer;
+    position: absolute;
+    top:56px; right:20px;
 }
 .membership_icon{
     margin-right: 10px;
