@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV | 회원정보 수정</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/mypage_nav.css">
+    <link rel="stylesheet" href="css/mypage_dtl.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <section id="mypage">
+        <div class="contents">
+        
+            <div class="info_wrap">       
+                <div class="my_info info_box">
+                    <div class="user_profile"><img src="img/default_profile.gif"></div>
+                    <h1>하나은님</h1>
+                    <span>nanee0706</span>
+                    <button type="button" class="modify_btn"></button>
+                </div>
+                <div class="sub_info_box info_box">
+                    <div class="sub_info">
+                        <div>
+                            <h2>MEMBERSHIP</h2>
+                            <span>나의 멤버쉽 등급</span>
+                        </div>
+                        <div><strong>VIP</strong></div>
+                        
+                    </div>
+                    <div class="sub_info">
+                        <div>
+                            <h2>CGV POINT</h2>
+                            <span>사용가능 포인트</span>
+                        </div>
+                        <div><strong>2,707</strong> 점</div>
+                    </div>
+                </div>
+            </div>
+            <article class="mypage_container">
+                <!-- 오른쪽 메뉴 -->
+                <div class="mypage_nav">
+                    <div class="mypage_nav_box">
+                        <div class="nav_wrap">
+                            <dl>
+                                <dt><a href="/user/my-cgv">나의 영화 기록</a></dt>
+                                <dd><a href="/user/my-cgv/wish">기대되는 영화</a></dd>
+                                <dd><a href="/user/my-cgv/watched">내가 본 영화</a></dd>
+                                <dd><a href="/user/my-cgv/review">내가 쓴 평점</a></dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="#">CGV 포인트</a></dt>
+                                <dd><a href="#">적립/사용내역</a></dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="#">나의 예매 내역</a></dt>
+                                <dd><a href="#">예매내역</a></dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="#">기프트샵</a></dt>
+                                <dd><a href="#">결제내역</a></dd>
+                            </dl>
+                            <dl class="now">
+                                <dt><a href="/user/my-cgv/personal">회원정보</a></dt>
+                                <dd class="now"><a href="">개인정보 변경</a></dd>
+                                <dd><a href="#">회원탈퇴</a></dd>
+                            </dl>
+                            <dl>
+                                <dt><a href="#">나의 문의내역</a></dt>
+                                <dd><a href="#">1:1 문의</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+	
+                <!-- 오른쪽 세부 -->
+                <div class="mypage_content">
+                    <h1 class="detail_title">회원정보 수정</h1>
+                    <div id="detail_box3">
+                        <h4>회원님의 소중한 정보를 안전하게 관리하세요.</h4>
+                        <form class="table update_form">
+                            <dl>
+                                <dt>이름</dt>
+                                <dd>하나은</dd>
+                            </dl> 
+                            <dl>
+                                <dt>아이디</dt>
+                                <dd>neh888</dd>
+                            </dl>
+                            <dl>
+                                <dt>비밀번호 <button type="button">변경</button></dt>
+                                <dd><input type="password" class="item_ip"></dd>
+                                <!-- 비밀번호 정규식 -->
+                                <div class="errorMsg"></div>
+                            </dl>
+                            <dl>
+                                <dt>비밀번호 확인</dt>
+                                <dd><input type="password" class="item_ip"></dd>
+                                <!-- 비밀번호 확인 -->
+                                <div class="errorMsg"></div>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>1997년 07월 06일</dd>
+                            </dl>
+                            <dl>
+                                <dt>휴대전화<button type="button">변경</button></dt>
+                                <dd>
+                                    <span class="user_phone">010 - 6670 - 4411</span>
+                                    <input type="text" class="item_ip">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>이메일<button type="button">변경</button></dt>
+                                <dd>
+                                    <span class="user_email">nanee0706@naver.com</span>
+                                    <input type="text" class="item_ip">
+                                </dd>
+                            </dl>
+                        </form>
+                        <div class="btn_wrap">
+                            <button class="submit_btn">수정하기</button>
+                            <button class="cancle_btn">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

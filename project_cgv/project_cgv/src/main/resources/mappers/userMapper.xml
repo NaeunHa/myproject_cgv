@@ -97,13 +97,26 @@
 			nickname = #{nickname};
 	</select>
 	
-	<update id="updateUserDtlById"  parameterType="com.springboot.cgv.domain.user.User">
+	<update id="updateUserDtl"  parameterType="com.springboot.cgv.domain.user.User">
 		update
 			user_dtl
 		set
 			nickname = #{nickname},
 			profile_img = #{profile_img},
 			dtl_update_date = now()
+		where
+			id = #{id}
+	</update>
+	
+	<update id="updatePersonal"  parameterType="com.springboot.cgv.domain.user.User">
+		update
+			user_mst
+		set
+			password = #{password},
+			birthday = #{birthday},
+			phone = #{phone},
+			email = #{email},
+			update_date = now()
 		where
 			id = #{id}
 	</update>

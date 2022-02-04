@@ -1,67 +1,11 @@
-#mypage_dtl{
-    width: 100%;
-    position: relative;
-}
-#mypage_dtl span,h1,h3,h4,a,p{
-    color: var(--cgv_text_222);
-}
-#mypage_dtl .contents{
-    padding: 40px 0;
-    display: flex;
-    justify-content: left;
-}
-#mypage_dtl .nav_container{
-    width: 160px;
-    margin-right: 30px;
-}
-#mypage_dtl .user_box{
-    height: 200px;
-    margin-bottom: 15px;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 1px solid #cbc9c2;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-#mypage_dtl .user_box > img{
-    margin-bottom: 20px;
-    width: 90px;
-    border-radius: 50%;
-}
-#mypage_dtl .nav_box a{
-    margin-bottom: 15px;
-    padding: 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border: 1px solid #cbc9c2;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-#mypage_dtl .active{
-    border-radius: 10px;
-    background-color: var(--cgv_red);
-}
-#mypage_dtl .active span{
-    color: var(--cgv_white) !important;
-}
-#mypage_dtl .nav_box .movie_count{
-    font-size: 22px;
-    font-weight: 700;
-}
-#mypage_dtl .nav_title{
+.nav_title{
     font-size: 14px;
 }
-#mypage_dtl .detail_container{
-    width: 720px;
+.detail_container{
+	margin-left: 30px;
+    width: 800px;
 }
-#mypage_dtl .detail_title{
+.detail_title{
     padding: 20px 0;
     font-size: 25px;
     border-bottom: 2px solid #000;
@@ -245,7 +189,7 @@
     background-size: 30px 30px;
     cursor: pointer;
     position: absolute;
-    top: 0; right: 0;
+    top: 0; right: 10px;
 }
 #detail_box2 span{
     font-size: 12px;
@@ -266,3 +210,108 @@
     line-height: 25px;
 }
 
+/* check_password, personal */
+#detail_box3 h4{
+    margin-top: -10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #e2e2e0;
+}
+#detail_box3 .table{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #b8b6aa;
+}
+#detail_box3 dl{
+    width: 50%;height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#detail_box3 dt{
+    width: 30%;
+    font-size: 14px;
+}
+#detail_box3 dd > span{
+    font-size: 14px;
+    font-weight: 100;
+}
+#detail_box3 dd input.item_ip{
+    padding: 2px 5px;
+    outline: none;
+    border: 1px solid #b8b6aa;
+}
+#detail_box3 .btn_wrap{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#detail_box3 .submit_btn{
+    width: 60px; height: 30px;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+    cursor: pointer;
+    margin-right: 10px;
+}
+#detail_box3 .update_form{
+    padding: 0;
+    align-items: baseline;
+}
+#detail_box3 .update_form dl{
+    width: 100%; height: 70px;
+    border-bottom: 1px solid #dddddd;
+}
+#detail_box3 .update_form dt{
+    padding-left: 20px;
+    width: 30%;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 70px;
+    background-color: #f8f8f8;
+}
+#detail_box3 .update_form dt button{
+    margin-left: 5px;
+    padding: 5px 8px;
+    font-size: 12px;
+    background-color: var(--cgv_white);
+    border: 1px solid #b8b6aa;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#detail_box3 .update_form dd{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+#detail_box3 .cancle_btn{
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+#detail_box3 .hidden_box{
+	display: none;
+}
+
+#detail_box3 .errorMsg{
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--cgv_red);
+	display: none;
+}
+
+#detail_box3 .email_box input{
+	width: 100px;
+}l
+
+#detail_box3 .item_select{
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}

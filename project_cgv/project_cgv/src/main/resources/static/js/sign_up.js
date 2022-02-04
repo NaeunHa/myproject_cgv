@@ -267,7 +267,7 @@ item_select[1].onchange = () => {
 
 // day
 item_select[2].onchange = () => {
-	selected_day = item_select[2].options[item_select[1].selectedIndex].value;
+	selected_day = item_select[2].options[item_select[2].selectedIndex].value;
 	if(selected_day < 10){
 		selected_day = "0" + selected_day;
 	}

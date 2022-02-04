@@ -1,10 +1,10 @@
 /**
  *  my page
  */
-
+const update_btn = document.querySelector('.update_btn');
 const modify_btn = document.querySelector('.modify_btn');
-const modal = document.querySelector('#modal');
-const close_btn = document.querySelector('.close_btn');
+const modal = document.querySelectorAll('.modal');
+const close_btn = document.querySelectorAll('.close_btn');
 const profile_img = document.querySelector('.profile_img');
 const userid = document.querySelector('.userid');
 const nickname = document.querySelector('.nickname');
@@ -16,21 +16,31 @@ const form = document.querySelector('form');
 
 let checknicknameFlag = false;
 
-modify_btn.onclick = () => {
-    if(modal.classList.contains('show')){
-        modal.classList.remove('show');
-        modal.style.opacity = 0;
-        modal.style.zIndex = -1;
-    }else{
-        modal.classList.add('show');
-        modal.style.opacity = 1;
-        modal.style.zIndex = 1000;
+function popupModal(index){
+    modal[index].classList.add('show');
+    modal[index].style.opacity = 1;
+    modal[index].style.zIndex = 1000;
+}
+
+function closeModal(index){
+    modal[index].classList.remove('show');
+    location.reload();
+}
+
+update_btn.onclick = () => {
+    popupModal(0);
+}
+
+if(modify_btn != null){
+    modify_btn.onclick = () => {
+        popupModal(1);
     }
 }
 
-close_btn.onclick = () => {
-    modal.classList.remove('show');
-    location.reload();
+for(let i = 0; i < close_btn.length; i++){
+    close_btn[i].onclick = () => {
+        closeModal(i);
+    }
 }
 
 cancle_btn.onclick = () => {
@@ -138,4 +148,3 @@ function update_info(){
         }
     }
 }
-

@@ -11,5 +11,6 @@ public interface UserRepository {
 	public User getUserById(String userid);
 	public User getUserDtlById(String userid);
 	public int checkNickName(String nickName);
-	public int updateUserDtlById(User user);
+	public int updateUserDtl(User user);
+	public int updatePersonal(User user);
 }

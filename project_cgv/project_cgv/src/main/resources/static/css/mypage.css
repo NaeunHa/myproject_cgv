@@ -1,5 +1,5 @@
 #mypage{
-    padding: 50px;
+    padding: 50px 0;
     width: 100%;
 }
 #mypage span,h1,h2,h3,h4,strong,div{
@@ -35,7 +35,7 @@
     font-size: 13px;
     font-weight: 700;
 }
-.modify_btn{
+.update_btn{
 	width: 17px;
     height: 20px;
     margin: 5px 0 0 0;
@@ -45,8 +45,8 @@
     top:56px; right:20px;
 }
 .my_info h1{
-    margin-right: 10px;
-    font-size: 30px;
+    margin-right: 5px;
+    font-size: 25px;
 }
 .my_info span{
     margin-top: 20px;
@@ -79,7 +79,75 @@
     text-decoration: underline;
     color: #943588;
 }
-
+.mypage_container{
+    display: flex;
+}
+.mypage_nav{
+    width: 165px;
+}
+.mypage_nav dl{
+    margin-bottom: 20px;
+}
+.mypage_nav dt{
+    margin-bottom: 10px;
+    width: 90%;
+}
+.mypage_nav dt a{
+    display: inline-block;
+    padding: 5px;
+    width: 100%; height: 34px;
+    font-size: 17px;
+    line-height: 34px;
+}
+.mypage_nav dd{
+    margin-bottom: 5px;
+    width: 100%;
+}
+.mypage_nav dd a{
+    display: inline-block;
+    padding: 2px 0 2px 20px;
+    width: 70%;
+    font-size: 13px;
+    font-weight: 200;
+}
+.mypage_nav dl.now > dt > a{
+    background-color: var(--cgv_red);
+    color: var(--cgv_white);
+}
+.mypage_nav dl.now > dd.now > a{
+    color: var(--cgv_red);
+    font-weight: 900;
+    font-size: 13px;
+    position: relative;
+}
+.mypage_nav dl.now > dd > a::before{
+    content: ">";
+    position: absolute; top: 3px; right: 0;
+    font-weight: 900;
+    font-size: 13px;
+    color: var(--cgv_red);
+}
+.mypage_nav  dl:hover > dt > a{
+    background-color: var(--cgv_red);
+    color: var(--cgv_white);
+}
+.mypage_nav dl:hover > dd:hover > a{
+    color: var(--cgv_red);
+    font-weight: 900;
+    font-size: 13px;
+    position: relative;
+}
+.mypage_nav dl:hover > dd:hover > a::before{
+    content: ">";
+    position: absolute; top: 3px; right: 0;
+    font-weight: 900;
+    font-size: 13px;
+    color: var(--cgv_red);
+}
+.mypage_content{
+    margin-left: 20px;
+    width: 800px;
+}
 .box_container{
     margin-bottom: 30px;
     display: flex;

@@ -1,6 +1,3 @@
-const modify_btn = document.querySelector('.modify_btn');
-const modal = document.querySelector('#modal');
-const close_btn = document.querySelector('.close_btn');
 const goodbad_box = document.querySelectorAll('.goodbad_box');
 const text_length = document.querySelector('.text_length');
 const review_txt  = document.querySelector('.review_txt');
@@ -10,18 +7,6 @@ const ok_btn = document.querySelector('.ok_btn');
 let feeling_flag = 0;
 // 0: good, 1: bad
 
-modify_btn.onclick = () => {
-    console.log(modal.classList.contains('show'));
-    if(modal.classList.contains('show')){
-        modal.classList.remove('show');
-        modal.style.opacity = 0;
-        modal.style.zIndex = -1;
-    }else{
-        modal.classList.add('show');
-        modal.style.opacity = 1;
-        modal.style.zIndex = 1000;
-    }
-}
 
 for(let i = 0; i < goodbad_box.length; i++){
 	goodbad_box[i].onclick = () => {
@@ -44,13 +29,6 @@ review_txt.onkeyup = () => {
 	}
 	
 	text_length.innerText = review_txt.value.length;
-}
-
-
-close_btn.onclick = () => {
-    modal.classList.remove('show');
-    modal.style.opacity = 0;
-    modal.style.zIndex = -1;
 }
 
 

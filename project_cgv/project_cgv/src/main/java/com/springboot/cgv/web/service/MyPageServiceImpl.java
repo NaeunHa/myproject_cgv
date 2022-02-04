@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.springboot.cgv.config.auth.PrincipalDetails;
@@ -19,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class MyPageServiceImpl implements MyPageSevice{
+public class MyPageServiceImpl implements MyPageService{
 
 	@Value("${file.path}")
 	private String filePath;
@@ -33,7 +34,8 @@ public class MyPageServiceImpl implements MyPageSevice{
 		
 	public void deleteProfileImgFile(PrincipalDetails principalDetails) {
 		String imgUrl = principalDetails.getUser().getProfile_img();
-		if(!imgUrl.equals("profile/default_profile.gif")) {
+		System.out.println(imgUrl);
+		if(! imgUrl.equals("profile/default_profile.gif")) {
 			File file = new File(filePath + imgUrl);
 			if(file.exists()) {
 				file.delete();
@@ -70,10 +72,51 @@ public class MyPageServiceImpl implements MyPageSevice{
 			userEntity.setProfile_img(profileImg);
 		}
 		
-		result += userRepository.updateUserDtlById(userEntity);
+		result = userRepository.updateUserDtl(userEntity);
 		if(result == 1) {
 			principalDetails.getUser().setNickname(userEntity.getNickname());
 			principalDetails.getUser().setProfile_img(userEntity.getProfile_img());
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	@Override
+	public boolean checkPassword(PrincipalDetails principalDetails, String password) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		return encoder.matches(password, principalDetails.getPassword());
+	}
+	
+	@Override
+	public boolean updatePersonalInfo(PrincipalDetails principalDetails, MyPageReqDto myPageReqDto) {
+		int id = principalDetails.getUser().getId();
+		
+		User personalEntity = myPageReqDto.personalEntitiy(id);
+		int result = 0;
+		
+		if(personalEntity.getPassword() == null) {
+			personalEntity.setPassword(principalDetails.getPassword());
+		}else {
+			personalEntity.setPassword(new BCryptPasswordEncoder().encode(personalEntity.getPassword()));
+		}
+		
+		if(personalEntity.getBirthday() == null) {
+			personalEntity.setBirthday(principalDetails.getUser().getBirthday());
+		}
+		if(personalEntity.getPhone() == null) {
+			personalEntity.setPhone(principalDetails.getUser().getPhone());
+		}
+		if(personalEntity.getEmail() == null) {
+			personalEntity.setEmail(principalDetails.getUser().getEmail());
+		}
+		
+		result = userRepository.updatePersonal(personalEntity);
+		if(result == 1) {
+			principalDetails.getUser().setPassword(personalEntity.getPassword());
+			principalDetails.getUser().setBirthday(personalEntity.getBirthday());
+			principalDetails.getUser().setPhone(personalEntity.getPhone());
+			principalDetails.getUser().setEmail(personalEntity.getEmail());
 			return true;
 		}else {
 			return false;

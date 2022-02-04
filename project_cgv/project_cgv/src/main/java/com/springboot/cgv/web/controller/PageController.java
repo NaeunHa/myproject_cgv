@@ -67,6 +67,16 @@ public class PageController {
 		return "mypage/dtl_review";
 	}
 	
+	@GetMapping("/user/my-cgv/check-password")
+	public String mycgvCheckPasswordPage() {
+		return "mypage/dtl_checkpassword";
+	}
+	
+	@GetMapping("/user/my-cgv/personal")
+	public String mycgvPersonalPage() {
+		return "mypage/dtl_personal";
+	}
+	
 	@GetMapping("/movies")
 	public String moviesPage() {
 		return "movie_chart";
