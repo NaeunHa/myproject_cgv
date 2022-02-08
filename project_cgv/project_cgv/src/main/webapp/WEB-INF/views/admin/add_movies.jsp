@@ -31,10 +31,14 @@
                 </nav>
                 <article>
                     <h3>상영할 영화의 정보를 등록합니다.</h3>
-                    <form action="">
+                    <form>
 	                    <c:choose>
 	                    	<c:when test="${not empty movieDetailData }">
-	                    		<div class="table_wrap">
+	                    		<div class="table_wrap">	                    			
+		                            <dl>
+		                                <dt>영화코드</dt>
+		                                <dd><input type="text" name="movie_code" value="${movieDetailData.movieCd }"></dd>
+		                            </dl>
 		                            <dl>
 		                                <dt>영화명(국문)</dt>
 		                                <dd><input type="text" name="movie_title_kor" value="${movieDetailData.movieNm }"></dd>
@@ -58,9 +62,8 @@
 		                            <dl>
 		                                <dt>배우</dt>
 		                                <dd>
-		                                	<input type="hidden" class="actorsNm" value="${movieDetailData.actorsNm }">
-		                                	<textarea name="movie_actors" class="movie_actors">
-		                                </textarea></dd>
+		                                	<textarea name="movie_actors" class="movie_actors">${movieDetailData.actorsNm }</textarea>
+		                                </dd>
 		                            </dl>
 		                            <dl>
 		                                <dt>개봉일</dt>
@@ -78,6 +81,7 @@
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="12">12세
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="15">15세
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="19">청소년 관람 불가
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="undefined">미정
 		                                </dd>
 		                            </dl>
 		                            <dl>
@@ -89,13 +93,13 @@
 		                            </dl>
 		                            <dl>
 		                                <dt>영화 설명</dt>
-		                                <dd><textarea name="movie_description" class="ip_item"></textarea></dd>
+		                                <dd><textarea name="movie_description" class="ip_item" maxlength="500" required></textarea></dd>
 		                            </dl>
 		                            <dl>
 		                                <dt>포스터</dt>
 		                                <dd class="file_box">
-		                                    <img src="/image/movie_poster/default_poster.png" alt="">
-		                                    <input type="file" name="movie_poster_img" class="media_item">
+		                                    <img src="/image/movie_poster/default_poster.png" alt="" class="poster_img">
+		                                    <input type="file" name="movie_poster_img" class="img_item" onchange="loadImg()">
 		                                </dd>
 		                            </dl>
 		                            <dl>
@@ -108,6 +112,10 @@
 	                    	</c:when>
 	                    	<c:otherwise>
 	                    		<div class="table_wrap">
+		                            <dl>
+		                                <dt>영화코드</dt>
+		                                <dd><input type="text" name="movie_code" class="ip_item"></dd>
+		                            </dl>
 		                            <dl>
 		                                <dt>영화명(국문)</dt>
 		                                <dd><input type="text" name="movie_title_kor" class="ip_item"></dd>
@@ -130,7 +138,7 @@
 		                            </dl>
 		                            <dl>
 		                                <dt>배우</dt>
-		                                <dd><textarea type="text" name="movie_actors" class="ip_item"></textarea></dd>
+		                                <dd><textarea name="movie_actors" class="ip_item"></textarea></dd>
 		                            </dl>
 		                            <dl>
 		                                <dt>개봉일</dt>
@@ -147,6 +155,7 @@
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="12">12세
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="15">15세
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="19">청소년 관람 불가
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="undefined">미정
 		                                </dd>
 		                            </dl>
 		                            <dl>
@@ -163,8 +172,8 @@
 		                            <dl>
 		                                <dt>포스터</dt>
 		                                <dd class="file_box">
-		                                    <img src="/image/movie_poster/default_poster.png" alt="">
-		                                    <input type="file" name="movie_poster_img" class="media_item">
+		                                    <img src="/image/movie_poster/default_poster.png" alt="" class="poster_img">
+		                                    <input type="file" name="movie_poster_img" class="img_item" onchange="loadImg()" >
 		                                </dd>
 		                            </dl>
 		                            <dl>
@@ -177,7 +186,7 @@
 	                    	</c:otherwise>
                         </c:choose>
                         <div class="btn_wrap">
-                            <button type="submit">등록하기</button>
+                            <button type="button" onclick="addMovieSubmit()">등록하기</button>
                         </div>
                     </form>
                 </article>
@@ -185,5 +194,6 @@
         </div>
     </section>
     <jsp:include page="../include/footer.jsp"></jsp:include>
+    <script type="text/javascript" src="/js/add_movies.js"></script>
 </body>
 </html>

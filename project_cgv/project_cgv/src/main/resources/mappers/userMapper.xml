@@ -23,7 +23,7 @@
 			userid = #{userid};
 	</select>
 	
-	<update id="insertUser" parameterType="com.springboot.cgv.domain.user.User">
+	<insert id="insertUser" parameterType="com.springboot.cgv.domain.user.User">
 		insert into
 			user_mst
 		values(
@@ -39,7 +39,7 @@
 			now(),
 			now()
 		);
-	</update>
+	</insert>
 	
 	<select id="getUserAllById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
 		select

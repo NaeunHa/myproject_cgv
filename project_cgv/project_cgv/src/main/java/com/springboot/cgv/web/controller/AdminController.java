@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.cgv.web.dto.movie.AddMovieReqDto;
+import com.springboot.cgv.web.service.AdminService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -14,9 +15,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AdminController {
 	
+	private final AdminService adminService;
+	
 	@PostMapping("add-movie")
-	public String addMovieData(@RequestParam AddMovieReqDto addMovieReqDto) {
-		return "";
+	public boolean addMovieData(AddMovieReqDto addMovieReqDto) {
+		return adminService.addMovieData(addMovieReqDto);
 	}
 	
 }

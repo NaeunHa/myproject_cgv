@@ -56,6 +56,9 @@ spring:
     url: jdbc:mariadb://localhost:8001/cgv?serverTimezone=Asia/Seoul
     username: root
     password: toor
+    
+  servlet:    multipart:      max-file-size: 50MB
+      max-request-size: 50MB
 
 mybatis:
   mapper-locations:
@@ -63,4 +66,3 @@ mybatis:
   
 file:
   path: D:/myProject_CGV/image/
-    

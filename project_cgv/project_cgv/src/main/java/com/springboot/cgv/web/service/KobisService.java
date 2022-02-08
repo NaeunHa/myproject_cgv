@@ -112,7 +112,9 @@ public class KobisService {
 		StringBuilder builder = new StringBuilder();
 		for(int i = 0; i < data.size(); i++) {
 			builder.append(((JSONObject)data.get(i)).get(keyName).toString());
+			builder.append(", ");
 		}
+		builder.delete(builder.length()-2, builder.length());
 		String dataStr = builder.toString();
 		return dataStr;
 	}
@@ -126,7 +128,6 @@ public class KobisService {
 		
 		try {
 			Object obj = jsonParser.parse(response);
-			System.out.println(obj.toString());
 			JSONObject jsonObject = (JSONObject) obj;
 			JSONObject parse_result = (JSONObject) jsonObject.get("movieInfoResult");
 			JSONObject list = (JSONObject) parse_result.get("movieInfo");				
@@ -137,11 +138,12 @@ public class KobisService {
 			JSONArray actors = (JSONArray) list.get("actors");
 			
 			movieList = KobisDto.builder()
+								.movieCd(list.get("movieCd").toString())
 								.movieNm(list.get("movieNm").toString())
 								.movieNmEn(list.get("movieNmEn").toString())
 								.showTm(list.get("showTm").toString())
 								.openDt(list.get("openDt").toString())
-								.prdtStatNm(list.get("prdStatNm").toString())
+								.prdtStatNm(list.get("prdtStatNm").toString())
 								.watchGradeNm(((JSONObject)((JSONArray) list.get("audits")).get(0)).get("watchGradeNm").toString())
 								.genreNm(makeStringData(genres, "genreNm"))
 								.directorNm(makeStringData(directors, "peopleNm"))
