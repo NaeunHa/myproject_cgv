@@ -1,0 +1,64 @@
+.kobisDataWrap{
+    margin-left: 20px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.kobisDataWrap h3{
+    color: var(--cgv_text_222);
+    padding: 10px 0;
+    
+}
+.kobisDataWrap table{
+    padding: 5px 0;
+    border-top: 2px solid rgb(136, 136, 136);
+    border-bottom: 2px solid rgb(136, 136, 136);
+}
+.kobisDataWrap tr.listName td{
+    font-weight: 900;
+    font-size: 13px;
+    background-color: rgba(218, 218, 218, 0.185);
+    border: none;
+}
+.kobisDataWrap tr.listName td:first-child{
+    background: none;
+}
+.kobisDataWrap td{
+    overflow: hidden;
+    min-width: 40px;
+    max-width: 170px;
+    padding: 7px 2px;
+    font-size: 12.4px;
+    text-align: center;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-orient: vertical;
+    border-right: 1px solid rgba(218, 218, 218, 0.185);
+}
+.kobisDataWrap tr td:first-child, .kobisDataWrap tr td:last-child{
+    border-right: none;
+}
+.kobisDataWrap button{
+    padding: 4px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+.pageController{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.pageController button{
+    margin-right: 5px;
+    width: 22px; height: 22px;
+    line-height: 1;
+    background-color: rgb(163, 163, 163);
+}
+.pageController button:hover {
+	
+}

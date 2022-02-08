@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV 관리자 | 영화 추가</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/add_movie.css">
+</head>
+<body>
+    <section>
+        <div class="contents">
+            <div class="container">
+                <nav>
+                    <h2>영화 관리</h2>
+                    <ul>
+                        <li><a href="#">최신 영화 목록</a></li>
+                        <li><a href="#">cgv 등록 영화 목록</a></li>
+                        <li><a href="#" class="on">영화 등록</a></li>
+                    </ul>
+                </nav>
+                <article>
+                    <h3>상영할 영화의 정보를 등록합니다.</h3>
+                    <form action="">
+                        <div class="table_wrap">
+                            <dl>
+                                <dt>영화명(국문)</dt>
+                                <dd><input type="text" name="movieNm_kor"></dd>
+                            </dl>
+                            <dl>
+                                <dt>영화명(영문)</dt>
+                                <dd><input type="text" name="movieNm_eng"></dd>
+                            </dl>
+                            <dl>
+                                <dt>장르</dt>
+                                <dd><input type="text" name="movie_genre"></dd>
+                            </dl>
+                            <dl>
+                                <dt>감독</dt>
+                                <dd><input type="text" name="movie_director"></dd>
+                            </dl>
+                            <dl>
+                                <dt>배우</dt>
+                                <dd><textarea type="text" name="movie_actors"></textarea></dd>
+                            </dl>
+                            <dl>
+                                <dt>개봉일</dt>
+                                <dd><input type="date" name="movie_release_date"></dd>
+                            </dl>
+                            <dl>
+                                <dt>상영종료일</dt>
+                                <dd><input type="date" name="movie_close_date"></dd>
+                            </dl>
+                            <dl>
+                                <dt>시청연령</dt>
+                                <dd class="radio_limited_age">
+                                    <input type="radio" name="movie_limited_age" value="all" checked>전체
+                                    <input type="radio" name="movie_limited_age" value="12">12세
+                                    <input type="radio" name="movie_limited_age" value="18">15세
+                                    <input type="radio" name="movie_limited_age" value="19">청소년 관람 불가
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>상영시간</dt>
+                                <dd>
+                                    <input type="text" name="movie_runtime">
+                                    <span>ex) 120분</span>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>영화 설명</dt>
+                                <dd><textarea type="text" name="movie_description"></textarea></dd>
+                            </dl>
+                            <dl>
+                                <dt>포스터</dt>
+                                <dd class="file_box">
+                                    <img src="img/default_poster.png" alt="">
+                                    <input type="file" name="movie_poster_img">
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>트레일러</dt>
+                                <dd class="file_box">
+                                    <input type="file" name="movie_trailer_mp4">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="btn_wrap">
+                            <button type="submit">등록하기</button>
+                        </div>
+                    </form>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

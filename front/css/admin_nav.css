@@ -1,0 +1,30 @@
+#admin nav h2{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+#admin nav li{
+    width: 120px; height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#admin nav li a{
+    display: inline-block;
+    width: 100%; height: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}
+#admin nav li a:hover{
+    color: var(--cgv_white);
+    font-weight: 900;
+    background-color: var(--cgv_red);
+}
+#admin nav li a.on{
+    color: var(--cgv_white);
+    font-weight: 900;
+    background-color: var(--cgv_red);
+}

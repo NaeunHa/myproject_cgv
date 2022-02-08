@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -48,6 +49,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		
 		http.authorizeRequests() // 사용자의 인증 객체
+			.antMatchers("/admin/**")
+			.hasRole("ADMIN")
 			.antMatchers("/user/**") // 해당 mapping 들은
 			.authenticated() // 인증이 필요하다.
 			.anyRequest() // 이외의 mapping 들은
@@ -76,8 +79,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.tokenRepository(tokenRepository())
 			.userDetailsService(principalDetailsService)
 			.tokenValiditySeconds(86400 * 30);
-			
-			
+	}
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.inMemoryAuthentication()
+			.withUser("admin")
+			.password(passwordEncoder().encode("admin1234"))
+			.roles("ADMIN");
+		super.configure(auth);
 	}
 	
 }

@@ -27,7 +27,6 @@ public class PageController {
 	
 	@GetMapping("/auth/sign-up")
 	public String signupPage(Model model, @PathVariable @RequestParam String phone) {
-		System.out.println(phone);
 		model.addAttribute("phone", phone);
 		return "auth/sign_up";
 	}
@@ -86,4 +85,15 @@ public class PageController {
 	public String moviesDeatilPage() {
 		return "movie_dtl";
 	}
+	
+	@GetMapping("/admin/add-movie")
+	public String addmoviePage() {
+		return "admin/add_movies";
+	}
+	
+	@GetMapping("/admin/cgv-movie-list")
+	public String movieList() {
+		return "admin/cgv_movie_list";
+	}
+
 }

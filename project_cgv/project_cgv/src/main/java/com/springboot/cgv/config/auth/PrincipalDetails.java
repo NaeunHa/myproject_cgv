@@ -1,5 +1,6 @@
 package com.springboot.cgv.config.auth;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
@@ -7,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+import com.springboot.cgv.domain.movie.Movie;
 import com.springboot.cgv.domain.user.User;
 
 import lombok.Data;
@@ -66,7 +68,17 @@ public class PrincipalDetails implements UserDetails, OAuth2User{
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		Collection<GrantedAuthority> collection = new ArrayList<GrantedAuthority>();
+		collection.add(new GrantedAuthority() {
+			
+			private static final long serialVersionUID = 1L;
+			
+			@Override
+			public String getAuthority() {
+				return user.getRole();
+			}
+		});
+		return collection;
 	}
 
 	@Override

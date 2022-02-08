@@ -1,0 +1,119 @@
+.container{
+    width: 100%;
+    display: flex;
+}
+nav h2{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+nav li{
+    width: 120px; height: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+nav li a{
+    display: inline-block;
+    width: 100%; height: 100%;
+    line-height: 2;
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}
+nav li a:hover{
+    color: var(--cgv_white);
+    font-weight: 900;
+    background-color: var(--cgv_red);
+}
+nav li a.on{
+    color: var(--cgv_white);
+    font-weight: 900;
+    background-color: var(--cgv_red);
+}
+
+article{
+    margin-left: 50px;
+    width: 75%;
+    padding: 15px 0;
+}
+article h3{
+    padding: 10px 0;
+    margin-bottom: 3px;
+}
+article .table_wrap{
+    margin-bottom: 10px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+article dl{
+    display: flex;
+}
+article dt{
+    padding: 10px;
+    width: 120px;
+    border-right: 1px solid rgb(219, 219, 219);
+    border-bottom: 2px solid #fff;
+    background-color: #fbfbfb;
+}
+article dd{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article dd.radio_limited_age{
+    flex-direction: row;
+}
+article dd.radio_limited_age input:first-child{
+    margin-left: 0;
+}
+article dd.radio_limited_age input{
+    margin-left: 10px;
+    margin-right: 3px;
+}
+article dd input{
+    border: 1px solid #e4e4e4;
+    outline: none;
+    padding: 5px 3px;
+}
+
+article dd textarea{
+    padding: 5px;
+    width: 500px;
+    min-height: 150px;
+    border: 1px solid #e4e4e4;
+    resize: none;
+    outline: none;
+    overflow-y: auto;
+}
+article dd img{
+    width: 200px;
+}
+article dd span{
+    align-self: baseline;
+    font-size: 13px;
+    font-weight: 100;
+}
+article dd.file_box{
+    flex-direction: column;
+    align-items: baseline;
+}
+article dd.file_box input{
+    border: none;
+}
+
+.btn_wrap{
+    width: 100%;
+    text-align: right;
+}
+
+.btn_wrap button{
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+    cursor: s;
+}

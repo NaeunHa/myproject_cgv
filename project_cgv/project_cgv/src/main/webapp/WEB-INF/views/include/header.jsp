@@ -87,6 +87,17 @@
                             <dd><a href="#" class="event_discount_btn">제휴/할인</a></dd>
                         </dl>
                     </li>
+                    <c:if test="${(principal.user.role == 'ROLE_ADMIN')}">
+	                    <li>
+	                        <a href="#" class="mn">관리자</a>
+	                        <dl class="sub_nav">
+	                            <dt><a href="/admin/cgv-movie-list">영화관리</a></dt>
+	                            <dd><a href="/admin/cgv-movie-list">cgv 영화 목록</a></dd>
+	                            <dd><a href="/admin/latest-movie-list?page=1">최신 영화 목록</a></dd>
+	                            <dd><a href="/admin/add-movie">영화 등록</a></dd>
+	                        </dl>
+	                    </li>
+                    </c:if>
                 </ul>
                 <div class="search_wrap"><input class="ip_search" type="text" placeholder="2월엔 해적"><img src="/images/search.png" alt=""></div>
             </div>
