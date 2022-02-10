@@ -5,7 +5,6 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -13,10 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
-import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
-import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
 
 import com.springboot.cgv.config.auth.PrincipalDetailsService;
+//import com.springboot.cgv.config.auth.RememberMeCookieService;
 import com.springboot.cgv.config.oauth2.PrincipalOauth2UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -27,7 +25,9 @@ import lombok.RequiredArgsConstructor;
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	private final PrincipalDetailsService principalDetailsService;
+//	private final RememberMeCookieService rememberMeService;
 	private final PrincipalOauth2UserService  oauth2UserService;
+	
 	@Qualifier("dataSource")
 	private final DataSource dataSource;
 	
@@ -77,17 +77,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.rememberMe() // 쿠키설정
 			.key("remember-me")
 			.tokenRepository(tokenRepository())
+			.alwaysRemember(false)
+//			.rememberMeServices(rememberMeService)
 			.userDetailsService(principalDetailsService)
 			.tokenValiditySeconds(86400 * 30);
-	}
-	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-			.withUser("admin")
-			.password(passwordEncoder().encode("admin1234"))
-			.roles("ADMIN");
-		super.configure(auth);
 	}
 	
 }

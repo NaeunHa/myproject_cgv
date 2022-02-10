@@ -21,6 +21,7 @@ public class Movie {
 	private String movie_title_kor;
 	private String movie_title_eng;
 	private String movie_genre;
+	private String movie_nation;
 	private String movie_limited_age;
 	private String movie_description;
 	private String movie_actors;

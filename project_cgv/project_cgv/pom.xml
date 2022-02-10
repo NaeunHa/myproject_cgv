@@ -11,13 +11,29 @@
 	<groupId>com.cgv</groupId>
 	<artifactId>project_cgv</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>project_cgv</name>
 	<description>CGV project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
+	<repositories>
+		<repository>
+			<id>local-repository</id>
+			<name>local repository</name>
+			<url>file://${lib.dir}</url>
+		</repository>
+	</repositories>
 	<dependencies>
 	<!-- spring-boot-starter-tomcat -->
+		<dependency>
+			<groupId>kobis-opcl-rest-v1.0</groupId>
+		    <artifactId>kobis-opcl-rest-v1.0</artifactId>
+		    <version>1.0</version>
+		    <scope>system</scope>
+		    <systemPath>${basedir}/lib/kobis-opcl-rest-v1.0.jar</systemPath>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -163,6 +179,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -90,10 +90,5 @@ public class PageController {
 	public String addmoviePage() {
 		return "admin/add_movies";
 	}
-	
-	@GetMapping("/admin/cgv-movie-list")
-	public String movieList() {
-		return "admin/cgv_movie_list";
-	}
 
 }

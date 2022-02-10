@@ -12,6 +12,11 @@
     padding: 10px 0;
     margin-bottom: 3px;
 }
+#admin article h3 strong{
+    color: #000;
+    font-weight: 900;
+    font-size: 19px;
+}
 #admin article .table_wrap{
     margin-bottom: 10px;
     border-top: 2px solid #333;
@@ -87,4 +92,14 @@
     color: var(--cgv_white);
     background-color: var(--cgv_red);
     cursor: pointer;
+}
+#admin .trailer{
+	width: 500px;
+}
+#admin input:read-only{
+	background-color: #dddddd; 
+}
+#admin input[type=file]{
+	background: none;
+	font-size: 13px;
 }

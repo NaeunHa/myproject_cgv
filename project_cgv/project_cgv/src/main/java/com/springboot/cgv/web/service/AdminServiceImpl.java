@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.springboot.cgv.domain.movie.Movie;
 import com.springboot.cgv.domain.movie.MovieRepository;
 import com.springboot.cgv.web.dto.movie.AddMovieReqDto;
+import com.springboot.cgv.web.dto.movie.updateMovieDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,7 +29,7 @@ public class AdminServiceImpl implements AdminService{
 	
 	private final MovieRepository movieRepository;
 	
-//	public void deletePosterImgFile(PrincipalDetails principalDetails) {
+//	public void deletePosterImgFile() {
 //		String imgUrl = principalDetails.getUser().getProfile_img();
 //		System.out.println(imgUrl);
 //		if(! imgUrl.equals("profile/default_profile.gif")) {
@@ -47,12 +50,12 @@ public class AdminServiceImpl implements AdminService{
 			fileObj = addMovieReqDto.getMovie_trailer_mp4(); 
 		}
 		
-		String fileExtension = fileObj.getOriginalFilename().substring(fileObj.getOriginalFilename().lastIndexOf("."), fileObj.getOriginalFilename().length());
+		String fileExtension = fileObj.getOriginalFilename().substring(fileObj.getOriginalFilename().lastIndexOf("."));
 		String movieFileName = addMovieReqDto.getMovie_code() + "_" + addMovieReqDto.getMovie_release_date().subSequence(4, 8) + fileExtension;
 		Path movieFilePath = Paths.get(filePath, filePathStr + addMovieReqDto.getMovie_code() + "/" + movieFileName);
 		File file = new File(filePath + filePathStr + addMovieReqDto.getMovie_code());
 		if(!file.exists()) {
-			file.mkdir();
+			file.mkdirs();
 		}
 		try {
 			Files.write(movieFilePath, fileObj.getBytes());
@@ -69,8 +72,11 @@ public class AdminServiceImpl implements AdminService{
 		int result = 0;
 		String imgName = makeFile(addMovieReqDto, true);
 		movieEntity.setMovie_poster_img(imgName);
-		String videoName = makeFile(addMovieReqDto, false);
-		movieEntity.setMovie_trailer_mp4(videoName);
+		
+		if(addMovieReqDto.getMovie_trailer_mp4() == null ) {
+			String videoName = makeFile(addMovieReqDto, false);
+			movieEntity.setMovie_trailer_mp4(videoName);			
+		}
 		
 		result = movieRepository.insertMovieData(movieEntity);
 		if(result == 1) {
@@ -78,6 +84,24 @@ public class AdminServiceImpl implements AdminService{
 		}else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<Movie> getMovieList() {
+		List<Movie> movieList = movieRepository.getMovieAll();
+		return movieList;
+	}
+	
+	@Override
+	public Movie getMovie(String movieCode) {
+		Movie movieData = movieRepository.getMovieByCode(movieCode);
+		return movieData;
+	}
+	
+	@Override
+	public boolean updateMovieData(updateMovieDto updateMovieDto) {
+		
+		return false;
 	}
 
 }

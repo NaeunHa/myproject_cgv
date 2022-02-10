@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV ADMIN | 최신 영화 리스트</title>
-    <link rel="stylesheet" href="/css/latest_movie_list.css">
+    <link rel="stylesheet" href="/css/movie_list.css">
     <link rel="stylesheet" href="/css/admin_nav.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
                         <li><a href="/admin/add-movie">영화 등록</a></li>
                     </ul>
                 </nav>
-	            <article class="kobisDataWrap">
+	            <article class="movieDataWrap">
 	            	<h3>영화진흥위원회에 등록된 최신 영화 정보입니다.</h3>
             		<table border="1">
             			<tr class="listName">

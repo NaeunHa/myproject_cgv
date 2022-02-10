@@ -77,13 +77,13 @@
 		                                <dt>시청연령</dt>
 		                                <dd class="radio_limited_age">
 		                                	<input type="hidden" class="watchGradeNm" value="${movieDetailData.watchGradeNm }">
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="all" checked>전체
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="12">12세
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="15">15세
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="19">청소년 관람 불가
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="undefined">미정
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="11" value="11" checked><label for="11">전체</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="12" value="12"><label for="12">12세</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="15" value="15"><label for="15">15세</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="19" value="19"><label for="19">청소년 관람 불가</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="00" value="00"><label for="00">미정</label>
 		                                </dd>
-		                            </dl>
+		                            </dl>a
 		                            <dl>
 		                                <dt>상영시간</dt>
 		                                <dd>
@@ -151,11 +151,11 @@
 		                            <dl>
 		                                <dt>시청연령</dt>
 		                                <dd class="radio_limited_age">
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="all" checked>전체
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="12">12세
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="15">15세
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="19">청소년 관람 불가
-		                                    <input type="radio" class="radio_age" name="movie_limited_age" value="undefined">미정
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="11" value="11" checked><label for="11">전체</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="12" value="12"><label for="12">12세</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="15" value="15"><label for="15">15세</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="19" value="19"><label for="19">청소년 관람 불가</label>
+		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="00" value="00"><label for="00">미정</label>
 		                                </dd>
 		                            </dl>
 		                            <dl>
@@ -167,7 +167,7 @@
 		                            </dl>
 		                            <dl>
 		                                <dt>영화 설명</dt>
-		                                <dd><textarea type="text" name="movie_description" class="ip_item"></textarea></dd>
+		                                <dd><textarea name="movie_description" class="ip_item"></textarea></dd>
 		                            </dl>
 		                            <dl>
 		                                <dt>포스터</dt>

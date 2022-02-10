@@ -13,6 +13,7 @@
 			#{movie_title_kor},
 			#{movie_title_eng},
 			#{movie_genre},
+			#{movie_nation},
 			#{movie_limited_age},
 			#{movie_description},
 			#{movie_director},
@@ -26,4 +27,22 @@
 			now()
 		);	
 	</insert>
+	
+	<select id="getMovieAll" resultType="com.springboot.cgv.domain.movie.Movie">
+		select
+			*
+		from
+			movie_mst
+		order by
+			movie_create_date desc;
+	</select>
+	
+	<select id="getMovieByCode" resultType="com.springboot.cgv.domain.movie.Movie">
+		select
+			*
+		from
+			movie_mst
+		where
+			movie_code = #{movie_code};
+	</select>
 </mapper>

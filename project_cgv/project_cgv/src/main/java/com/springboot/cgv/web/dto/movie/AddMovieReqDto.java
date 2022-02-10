@@ -13,6 +13,7 @@ public class AddMovieReqDto {
 	private String movie_title_kor;
 	private String movie_title_eng;
 	private String movie_genre;		
+	private String movie_nation;
 	private String movie_limited_age;
 	private String movie_description;
 	private String movie_actors;
@@ -29,6 +30,7 @@ public class AddMovieReqDto {
 					.movie_title_kor(movie_title_kor)
 					.movie_title_eng(movie_title_eng)
 					.movie_genre(movie_genre)
+					.movie_nation(movie_nation)
 					.movie_limited_age(movie_limited_age)
 					.movie_description(movie_description)
 					.movie_actors(movie_actors)

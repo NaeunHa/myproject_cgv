@@ -12,7 +12,27 @@ const radio_age = document.querySelectorAll('.radio_age');
 const img_item = document.querySelector('.img_item'); // 포스터
 const poster_img = document.querySelector('.poster_img'); // img
 const media_item = document.querySelector('.media_item'); // 트레일러
+const limitedAge = document.querySelector('.watchGradeNm'); // hidden - limited_age
 const form = document.querySelector('form');
+
+window.onload = () => {
+    if(limitedAge != null){
+        setLimitedAge();
+    }
+}
+
+function setLimitedAge(){
+    let ageVal = limitedAge.value.substring(0,2);
+    console.log(ageVal);
+    for(let i=0; radio_age.length; i++){  	      
+        if(radio_age[i].value == ageVal){
+            document.getElementById(`${ageVal}`).checked = "true";
+           // radio_age[i].checked = "true";
+//        }else{
+//            radio_age[i].checked = "false";
+        }
+    }
+}
 
 let checkedAge = "";
 function getLimitedAge(){
@@ -60,4 +80,17 @@ function addMovieSubmit(){
             }
         })
     }
+}
+
+function updateAllSubmit(){
+    // multipart로 form 데이터 보내기
+    
+}
+
+function updateTextSubmit(){
+    // formData가 아닌 직접 Data 만들어서!
+}
+
+function updateMovieSubmit(){
+    // file이 바뀌었는지 확인 !
 }
