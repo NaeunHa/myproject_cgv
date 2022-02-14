@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,13 +19,15 @@ import org.springframework.web.multipart.MultipartFile;
 import com.springboot.cgv.domain.movie.Movie;
 import com.springboot.cgv.domain.movie.MovieRepository;
 import com.springboot.cgv.web.dto.movie.AddMovieReqDto;
+import com.springboot.cgv.web.dto.movie.IndexMovieDto;
+import com.springboot.cgv.web.dto.movie.MovieChartDto;
 import com.springboot.cgv.web.dto.movie.updateMovieDto;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class AdminServiceImpl implements AdminService{
+public class MovieServiceImpl implements MovieService{
 	
 	@Value("${file.path}")
 	private String filePath;
@@ -96,6 +101,50 @@ public class AdminServiceImpl implements AdminService{
 	public Movie getMovie(String movieCode) {
 		Movie movieData = movieRepository.getMovieByCode(movieCode);
 		return movieData;
+	}
+	
+	public int calDate(String releaseDate) {
+		String openDate = releaseDate.substring(0, 4) + "-" + releaseDate.substring(4, 6) + "-" + releaseDate.substring(6, 8);
+		int calDay = 0;
+		try {
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+			Date openDay = format.parse(openDate);
+			Date today = new Date();
+			long calDate =  today.getTime() - openDay.getTime();
+			int calDateDays = (int) calDate / (24*60*60*1000);
+			if(calDateDays < 0) {
+				calDay = Math.abs(calDateDays);
+			}else {
+				calDay = 0;
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return calDay;
+	}
+	
+	@Override
+	public List<IndexMovieDto> getIndexMovieList() {
+		List<Movie> movieList = movieRepository.getIndexMovieList();
+		List<IndexMovieDto> indexMovieList =  new ArrayList<IndexMovieDto>();
+		for(Movie movie : movieList) {
+			IndexMovieDto indexMovieDto = movie.toIndexEntity();
+			int openDDay = calDate(movie.getMovie_release_date());
+			indexMovieDto.setDDay(openDDay);
+			indexMovieList.add(indexMovieDto);
+		}
+		return indexMovieList;
+	}
+	
+	@Override
+	public List<MovieChartDto> getMovieChartList() {
+		List<Movie> movieList = movieRepository.getMovieChartList();
+		List<MovieChartDto> movieChartList = new ArrayList<MovieChartDto>();
+		for(Movie movie : movieList) {
+			MovieChartDto movieChartDto = movie.toChartEntity();
+			movieChartList.add(movieChartDto);
+		}
+		return movieChartList;
 	}
 	
 	@Override

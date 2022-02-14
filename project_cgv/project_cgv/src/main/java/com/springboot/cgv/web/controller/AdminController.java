@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.springboot.cgv.domain.movie.Movie;
 import com.springboot.cgv.web.dto.movie.AddMovieReqDto;
 import com.springboot.cgv.web.dto.movie.updateMovieDto;
-import com.springboot.cgv.web.service.AdminService;
+import com.springboot.cgv.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,24 +20,24 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AdminController {
 	
-	private final AdminService adminService;
+	private final MovieService movieService;
 	
 	@PostMapping("add-movie")
 	public boolean addMovieData(AddMovieReqDto addMovieReqDto) {
-		return adminService.addMovieData(addMovieReqDto);
+		return movieService.addMovieData(addMovieReqDto);
 	}
 	
 	@GetMapping("cgv-movie-list")
 	public ModelAndView cgvMovieListPage() {
 		ModelAndView mav = new ModelAndView("admin/cgv_movie_list");
-		mav.addObject("movieList", adminService.getMovieList());
+		mav.addObject("movieList", movieService.getMovieList());
 		return mav;
 	}
 	
 	@GetMapping("cgv-movie-detail")
 	public ModelAndView cgvMovieDetailPage(@RequestParam String movieCd) {
 		ModelAndView mav = new ModelAndView("admin/cgv_movie_dtl");
-		mav.addObject("movieData", adminService.getMovie(movieCd));
+		mav.addObject("movieData", movieService.getMovie(movieCd));
 		return mav;
 	}
 	

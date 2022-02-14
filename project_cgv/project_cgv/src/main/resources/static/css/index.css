@@ -123,18 +123,14 @@
     border-radius: 15px;
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 5%);
 }
-.slide_container{
-    position: relative;
-    z-index: 1;
-}
-.slide_container .slide{
+.movies_wrap{
     position: relative;
     width: 100%; height: 100%;
     z-index: 1;
     display: flex;
     transition-property: transform;
     box-sizing: content-box;
-    transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);    
 }
 .movie{
     width: 170.4px;
@@ -202,12 +198,11 @@
     z-index: 3;
     text-shadow: 2px 5px 5px rgb(0 0 0 / 45%);
 }
-.movie_title a{
-    display: block;
+.movie_title{
     flex-basis: 100%;
     overflow: hidden;
     margin-top: 14px;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--cgv_text_222);
     line-height: 1.5;
     text-align: center;
@@ -248,8 +243,20 @@
     color: var(--cgv_white);
     background-color: var(--cgv_red);
 }
-.movie_hover a:hover{
-    opacity: 0.8;
+.movie_hover{
+	display: none;
+}
+.movie .img_wrap:hover .movie_hover{
+    display: flex;
+}
+.movie .img_wrap:hover .limit_age{
+    display: none;
+}
+.movie .img_wrap:hover .chart_count{
+    display: none;
+}
+.movie .img_wrap:hover .d_day{
+    display: none;
 }
 #event_lists{
     padding: 60px 0 6px;
@@ -282,7 +289,6 @@
     z-index: 1;
     transition-property: transform;
     box-sizing: content-box;
-    background-color: thistle;
     margin-right: 25px;
 }
 .event .img_wrap{

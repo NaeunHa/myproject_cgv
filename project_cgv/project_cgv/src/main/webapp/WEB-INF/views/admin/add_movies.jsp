@@ -83,7 +83,7 @@
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="19" value="19"><label for="19">청소년 관람 불가</label>
 		                                    <input type="radio" class="radio_age" name="movie_limited_age" id="00" value="00"><label for="00">미정</label>
 		                                </dd>
-		                            </dl>a
+		                            </dl>
 		                            <dl>
 		                                <dt>상영시간</dt>
 		                                <dd>

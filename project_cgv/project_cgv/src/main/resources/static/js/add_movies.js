@@ -89,6 +89,26 @@ function updateAllSubmit(){
 
 function updateTextSubmit(){
     // formData가 아닌 직접 Data 만들어서!
+    $.ajax({
+        type: "post",
+        url: "/admin/add-movie",
+        data: formData,
+        dataType: "text",
+        enctype: "multipart/form-data",
+        processData: false,
+        contentType: false,
+        success: function(data){
+            if(data == "true"){
+                alert("등록 성공");
+                location.href = "/admin/cgv-movie-list";
+            }else{
+                alert('등록 실패');
+            }
+        },
+        error: function(){
+            alert("비동기 처리 오류");
+        }
+    })
 }
 
 function updateMovieSubmit(){

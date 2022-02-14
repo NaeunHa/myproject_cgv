@@ -45,4 +45,27 @@
 		where
 			movie_code = #{movie_code};
 	</select>
+	
+	<select id="getIndexMovieList" resultType="com.springboot.cgv.domain.movie.Movie">
+		select
+			movie_code,
+			movie_title_kor,
+			movie_release_date,
+			movie_limited_age,
+			movie_poster_img
+		from
+			movie_mst
+		limit 5;
+	</select>
+	
+	<select id="getMovieChartList" resultType="com.springboot.cgv.domain.movie.Movie">
+		select
+			movie_code,
+			movie_title_kor,
+			movie_release_date,
+			movie_poster_img
+		from
+			movie_mst
+		limit 20;
+	</select>
 </mapper>

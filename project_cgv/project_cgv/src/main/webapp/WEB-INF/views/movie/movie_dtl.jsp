@@ -11,35 +11,35 @@
     <link rel="stylesheet" href="/css/movie_dtl.css">
 </head>
 <body>
-	<jsp:include page="include/header.jsp"></jsp:include>
+	<jsp:include page="../include/header.jsp"></jsp:include>
     <section id="movie_dtl">
         <div class="contents">
             <h1 class="md_title">영화상세</h1>
             <div class="md_container">
                 <div>
                     <div class="img_wrap">
-                        <img src="/images/poster2.jpg" alt="" class="movie_poster">
-                        <img src="/images/grade-15.png" alt="" class="grade_img">
+                        <img src="/image/${movieData.movie_poster_img }" alt="" class="movie_poster">
+                        <img src="/image/movie_grade/${movieData.movie_limited_age }.png" alt="" class="grade_img">
                     </div>
                 </div>
                 <div class="md_content_wrap">
                     <div class="title_wrap">
                         <div>
-                            <h1 class="movie_title">스파이더맨-노 웨이 홈</h1>
-                            <span class="movie_title_eng">Spiderman: No Way Home</span>
+                            <h1 class="movie_title">${movieData.movie_title_kor }</h1>
+                            <span class="movie_title_eng">${movieData.movie_title_eng }</span>
                         </div>
                         <div class="status_box now">현재상영중</div>
                     </div>
                     <div class="md_info_wrap">
                         <div class="info_box">
-                            <span class="director">감독 : 존 왓츠 /</span>
-                            <span class="actors"> 배우 : 톰 홀랜드 ,  젠데이아 콜먼 ,  베네딕트 컴버배치 ,  존 파브로 ,  제이콥 배덜런 ,  마리사 토메이 ,  알프리드 몰리나</span>
+                            <span class="director">감독 : ${movieData.movie_director } /</span>
+                            <span class="actors"> 배우 : ${movieData.movie_actors }</span>
                         </div>
                         <div class="info_box">
-                            <span class="genre">장르 : 액션, 어드벤처, SF /</span>
-                            <span class="grade_text">기본 : 12세 이상,</span>
-                            <span class="run_time">148분</span>
-                            <span class="made_country">미국</span>
+                            <span class="genre">장르 : ${movieData.movie_genre } /</span>
+                            <span class="grade_text">기본 : ${movieData.movie_limited_age }세 이상,</span>
+                            <span class="run_time">${movieData.movie_runtime }분</span>
+                            <span class="made_country">${movieData.movie_nation }</span>
                         </div>
                     </div>
                     <div class="btn_box">
@@ -56,14 +56,13 @@
                 <div class="description_wrap">
                     <div class="description_title">영화 설명</div>
                     <p class="description_content description_text">
-                        영화 &lt;스파이더맨: 노 웨이 홈&gt;은 정체가 탄로난 스파이더맨 '피터 파커'(톰 홀랜드)가 문제를 해결하기 위해 '닥터 스트레인지'(베네딕트 컴버배치)의 도움을 받던 중 뜻하지 않게 멀티버스가 열리게 되고,
-                        이를 통해 '닥터 옥토퍼스'(알프리드 몰리나) 등 각기 다른 차원의 숙적들이 나타나며 사상 최악의 위기를 맞게 되는 이야기를 그린 마블 액션 블록버스터.
+                        ${movieData.movie_description }
                     </p>
                 </div>
                 <div class="description_wrap">
                     <div class="description_title">트레일러</div>
                     <div class="description_content trailer_wrap">
-                        <video src="http://h.vod.cgv.co.kr/vodCGVa/84949/84949_194592_1200_128_960_540.mp4" alt="" autoplay preload="auto" muted controls></video>
+                        <video src="/image/${movieData.movie_trailer_mp4 }" alt="" autoplay preload="auto" muted controls></video>
                     </div>
                 </div>
                 <div class="description_wrap">
@@ -88,6 +87,6 @@
             </div>
         </div>
     </section>
-    <jsp:include page="include/footer.jsp"></jsp:include>
+    <jsp:include page="../include/footer.jsp"></jsp:include>
 </body>
 </html>

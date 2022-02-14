@@ -86,11 +86,11 @@ function noKeyPressF5(e){
 
 /* 숫자만 입력할 수 있게 */
 function fn_press(event, type) {
-if (type == 'numbers') {
-	if (event.keyCode < 48 || event.keyCode > 57) {
-		return false;
+	if (type == 'numbers') {
+		if (event.keyCode < 48 || event.keyCode > 57) {
+			return false;
+		}
 	}
-}
 }
 
 /* 한글은 입력할 수 없게(좌, 우 방향키, 백스페이스, 딜리트, 탭키는 예외) */

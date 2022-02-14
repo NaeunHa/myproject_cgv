@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 그 이상의 감동. CGV</title>
     <link rel="stylesheet" href="/css/index.css">
-  
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div id="main_container">
@@ -42,31 +42,11 @@
                 <div class="controller">
                     <div class="ctr_left">무비차트</div>
                     <div class="ctr_right">
-                        <a href="#" class="all_btn">전체보기</a>
+                        <a href="/movies" class="all_btn">전체보기</a>
                     </div>
                 </div>
-                <div class="slide_container movies_wrap">
-                    <div class="slide">
-                        <div class="movie">
-                            <div class="img_wrap">
-                                <div class="movie_poster">
-                                    <img src="/images/spiderman.jpg" alt="">
-                                </div>
-                                <div class="limit_age">
-                                    <img src="/images/grade-12.png" alt="">
-                                </div>
-                                <div class="d_day">
-                                    <span>D-</span><span class="d_day_text">1</span>
-                                </div>
-                                <div class="chart_count">1</div>
-                                <div class="movie_hover">
-                                    <a href="#" class="movie_detail_btn">상세보기</a>
-                                    <a href="#" class="movie_reserve_btn">예약하기</a>
-                                </div>
-                            </div>
-                            <div class="movie_title"><a href="#">스파이더맨-노웨이 홈</a></div>
-                        </div>
-                    </div>
+                <div class="movies_wrap">
+                 	
                 </div>
             </div>
         </section>
@@ -94,7 +74,7 @@
                 <ul class="goods_list_wrap">
                     <li>
                         <dl class="goods_list">
-                            <dt>영화관람권 <a href="" class="more_btn">더보기</a></dt>
+                            <dt>영화관람권 <a href="#" class="more_btn">더보기</a></dt>
                             <dd>
                                 <a href="#">
                                     <div class="goods_img"><img src="/images/goods.jpg" alt=""></div>
@@ -117,7 +97,7 @@
                     </li>
                     <li>
                         <dl class="goods_list">
-                            <dt>기프트카드<a href="" class="more_btn">더보기</a></dt>
+                            <dt>기프트카드<a href="#" class="more_btn">더보기</a></dt>
                             <dd>
                                 <a href="#">
                                     <div class="goods_img"><img src="/images/giftcard.jpg" alt=""></div>
@@ -140,7 +120,7 @@
                     </li>
                     <li>
                         <dl class="goods_list">
-                            <dt>콤보<a href="" class="more_btn">더보기</a></dt>
+                            <dt>콤보<a href="#" class="more_btn">더보기</a></dt>
                             <dd>
                                 <a href="#">
                                     <div class="goods_img"><img src="/images/combo.jpg" alt=""></div>
@@ -202,7 +182,6 @@
         </section>
         <jsp:include page="include/footer.jsp"></jsp:include>
     </div>
-    <script src="/js/index.js"></script>
-    
+    <script type="text/javascript" src="/js/get_movie_data.js"></script>
 </body>
 </html>

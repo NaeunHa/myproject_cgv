@@ -1,22 +1,24 @@
 package com.springboot.cgv.web.controller;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.springboot.cgv.config.auth.PrincipalDetails;
+import com.springboot.cgv.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
 public class PageController {
+	
+	private final MovieService movieService;
 
 	@GetMapping({"/", "/index"})
-	public String indexPage(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+	public String indexPage() {
 		return "index";
 	}
 	
@@ -38,12 +40,12 @@ public class PageController {
 	
 	@GetMapping("/find-id")
 	public String findIdPage() {
-		return "find_id";
+		return "auth/find_id";
 	}
 	
 	@GetMapping("/find-password")
 	public String findPwPage() {
-		return "find_pw";
+		return "auth/find_pw";
 	}
 	
 	@GetMapping("/user/my-cgv")
@@ -78,12 +80,7 @@ public class PageController {
 	
 	@GetMapping("/movies")
 	public String moviesPage() {
-		return "movie_chart";
-	}
-	
-	@GetMapping("/movies/detail-view")
-	public String moviesDeatilPage() {
-		return "movie_dtl";
+		return "movie/movie_chart";
 	}
 	
 	@GetMapping("/admin/add-movie")

@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 import com.springboot.cgv.domain.user.User;
+import com.springboot.cgv.web.dto.movie.IndexMovieDto;
+import com.springboot.cgv.web.dto.movie.MovieChartDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,4 +35,22 @@ public class Movie {
 	private String movie_close_date;
 	private LocalDateTime movie_create_date;
 	private LocalDateTime movie_update_date;
+	
+	public IndexMovieDto toIndexEntity() {
+		return IndexMovieDto.builder()
+						.movie_code(movie_code)
+						.movie_title_kor(movie_title_kor)
+						.movie_limited_age(movie_limited_age)
+						.movie_poster_img(movie_poster_img)
+						.movie_release_date(movie_release_date)
+						.build();
+	}
+	public MovieChartDto toChartEntity() {
+		return MovieChartDto.builder()
+						.movie_code(movie_code)
+						.movie_title_kor(movie_title_kor)
+						.movie_poster_img(movie_poster_img)
+						.movie_release_date(movie_release_date)
+						.build();
+	}
 }
