@@ -9,7 +9,7 @@ const goAddMovieBtn = document.querySelectorAll('.goAddMovieBtn');
 
 let curPage = Number(curPageObj.value);
 console.log("curPage : " + curPage);
-let lastPage = 4;
+let lastPage = 6;
 
 for(let i = 0; i < lastPage; i++){
     indexWrap.innerHTML += `<button class="pageIndex">${i+1}</button>`;

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.springboot.cgv.domain.user.UserRepository">
+
+	<select id="checkPhone" parameterType="com.springboot.cgv.domain.user.User" resultType="Integer">
+		select
+			count(phone)
+		from
+			user_mst
+		where
+			phone = #{phone};
+	</select>
+	
+	<select id="checkUserId" parameterType="com.springboot.cgv.domain.user.User" resultType="Integer">
+		select
+			count(userid)
+		from
+			user_mst
+		where
+			userid = #{userid};
+	</select>
+	
+	<insert id="insertUser" parameterType="com.springboot.cgv.domain.user.User">
+		insert into
+			user_mst
+		values(
+			0,
+			#{userid},
+			#{password},
+			#{username},
+			#{birthday},
+			#{phone},
+			#{email},
+			#{role},
+			#{provider},
+			now(),
+			now()
+		);
+	</insert>
+	
+	<select id="getUserAllById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
+		select
+			um.id,
+			um.userid,
+			um.password,
+			um.username,
+			um.birthday,
+			um.phone,
+			um.email,
+			um.role,
+			um.provider,
+			um.create_date,
+			um.update_date,
+			ud.nickname,
+			ud.profile_img,
+			ud.dtl_create_date,
+			ud.dtl_update_date,
+			mm.membership_level,
+			mm.point,
+			mm.point_create_date,
+			mm.point_update_date
+		from
+			user_mst um
+			left outer join user_dtl ud on(ud.id = um.id)
+			left outer join membership_mst mm on(mm.id = um.id)
+		where
+			userid = #{userid};
+	</select>
+	
+	<select id="getUserById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
+		select
+			*
+		from 
+			user_mst
+		where
+			userid = #{userid};
+	</select>
+	
+	<select id="getUserDtlById" resultType="com.springboot.cgv.domain.user.User" parameterType="String">
+		select
+			*
+		from
+			user_dtl
+		where
+			userid = #{userid}
+	</select>
+	
+	<select id="checkNickName" resultType="Integer" parameterType="String">
+		select
+			count(nickname)
+		from
+			user_dtl
+		where
+			nickname = #{nickname};
+	</select>
+	
+	<update id="updateUserDtl"  parameterType="com.springboot.cgv.domain.user.User">
+		update
+			user_dtl
+		set
+			nickname = #{nickname},
+			profile_img = #{profile_img},
+			dtl_update_date = now()
+		where
+			id = #{id}
+	</update>
+	
+	<update id="updatePersonal"  parameterType="com.springboot.cgv.domain.user.User">
+		update
+			user_mst
+		set
+			password = #{password},
+			birthday = #{birthday},
+			phone = #{phone},
+			email = #{email},
+			update_date = now()
+		where
+			id = #{id}
+	</update>
+	
+</mapper>

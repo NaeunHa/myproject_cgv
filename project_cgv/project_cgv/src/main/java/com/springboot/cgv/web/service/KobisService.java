@@ -65,11 +65,15 @@ public class KobisService {
 			JSONObject jsonObject = (JSONObject) obj;
 			JSONObject parse_result = (JSONObject) jsonObject.get("movieListResult");
 			jsonArray =  (JSONArray) parse_result.get("movieList");
+			System.out.println(jsonArray.size());
 			
 			jsonArray.forEach(n -> {
 				JSONObject list = (JSONObject) n;
 				JSONArray companyArray = (JSONArray) list.get("companys");
-				if(!companyArray.toString().equals("[]")) {	
+				JSONArray directorArray = (JSONArray) list.get("directors");
+				
+							
+				if(companyArray.toString().equals("[]") && directorArray.toString().equals("[]")) {	
 					KobisDto kobisReqDto = KobisDto.builder()
 							.curPage(page)
 							.movieCd(list.get("movieCd").toString())
@@ -80,10 +84,60 @@ public class KobisService {
 							.prdtStatNm(list.get("prdtStatNm").toString())
 							.repNationNm(list.get("repNationNm").toString())
 							.typeNm(list.get("typeNm").toString())
-							.directorNm(((JSONObject)((JSONArray) list.get("directors")).get(0)).get("peopleNm").toString())
-							.companyNm(((JSONObject)((JSONArray) list.get("companys")).get(0)).get("companyNm").toString())
+							.directorNm("undefine")
+							.companyNm("undefine")
+							.build();
+						
+						movieList.add(kobisReqDto);
+				}else if(directorArray.toString().equals("[]")) {	
+					KobisDto kobisReqDto = KobisDto.builder()
+							.curPage(page)
+							.movieCd(list.get("movieCd").toString())
+							.movieNm(list.get("movieNm").toString())
+							.movieNmEn(list.get("movieNmEn").toString())
+							.genreAlt(list.get("genreAlt").toString())
+							.openDt(list.get("openDt").toString())
+							.prdtStatNm(list.get("prdtStatNm").toString())
+							.repNationNm(list.get("repNationNm").toString())
+							.typeNm(list.get("typeNm").toString())
+							.directorNm("undefine")
+							.companyNm(((JSONObject)companyArray.get(0)).get("companyNm").toString())
 							.build();
 					
+					movieList.add(kobisReqDto);
+					
+				}else if(companyArray.toString().equals("[]")) {	
+					KobisDto kobisReqDto = KobisDto.builder()
+							.curPage(page)
+							.movieCd(list.get("movieCd").toString())
+							.movieNm(list.get("movieNm").toString())
+							.movieNmEn(list.get("movieNmEn").toString())
+							.genreAlt(list.get("genreAlt").toString())
+							.openDt(list.get("openDt").toString())
+							.prdtStatNm(list.get("prdtStatNm").toString())
+							.repNationNm(list.get("repNationNm").toString())
+							.typeNm(list.get("typeNm").toString())
+							.directorNm(((JSONObject) directorArray.get(0)).get("peopleNm").toString())
+							.companyNm("undefine")
+							.build();
+					
+					movieList.add(kobisReqDto);
+					
+				}else {
+					KobisDto kobisReqDto = KobisDto.builder()
+								.curPage(page)
+								.movieCd(list.get("movieCd").toString())
+								.movieNm(list.get("movieNm").toString())
+								.movieNmEn(list.get("movieNmEn").toString())
+								.genreAlt(list.get("genreAlt").toString())
+								.openDt(list.get("openDt").toString())
+								.prdtStatNm(list.get("prdtStatNm").toString())
+								.repNationNm(list.get("repNationNm").toString())
+								.typeNm(list.get("typeNm").toString())
+								.directorNm(((JSONObject)directorArray.get(0)).get("peopleNm").toString())
+								.companyNm(((JSONObject)companyArray.get(0)).get("companyNm").toString())
+								.build();
+								
 					movieList.add(kobisReqDto);
 				}
 			});

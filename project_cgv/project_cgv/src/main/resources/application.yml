@@ -53,9 +53,14 @@ spring:
             user-name-attribute: response #회원정보를 json으로 전달할 때 response라는 KEY값으로 데이터를 전달.
        
   datasource:    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:8001/cgv?serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://localhost:3306/cgv?serverTimezone=Asia/Seoul
     username: root
     password: toor
+    
+#  datasource:#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:8001/cgv?serverTimezone=Asia/Seoul
+#    username: root
+#    password: toor
 
 #  datasource:#    driver-class-name: org.mariadb.jdbc.Driver
 #    url: jdbc:mariadb://database-study-1.coke7izzfgha.us-east-1.rds.amazonaws.com:3306/cgv?serverTimezone=Asia/Seoul
@@ -70,5 +75,6 @@ mybatis:
   - /mappers/*xml
   
 file:
-  path: D:/myProject_CGV/image/
+  path: /Users/nanee/project_cgv/myproject_cgv/image/
+#  path: D:/myProject_CGV/image/
 #  path: /home/ubuntu/image

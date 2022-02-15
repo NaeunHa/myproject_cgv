@@ -1,0 +1,317 @@
+.nav_title{
+    font-size: 14px;
+}
+.detail_container{
+	margin-left: 30px;
+    width: 800px;
+}
+.detail_title{
+    padding: 20px 0;
+    font-size: 25px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+/* review */
+#detail_box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+}
+#detail_box1 .content_box{
+    padding: 20px 0;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    border-bottom: 1px solid #ceccc0;
+    position: relative;
+}
+#detail_box1 .content_box .img_wrap{
+    margin-right: 20px;
+    padding: 2px;
+}
+#detail_box1 .img_wrap a img{
+    width: 120px; height: 170px;
+}
+#detail_box1 .content_wrap{
+    width: 75%; height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+#detail_box1 .movie_title{
+    font-size: 18px;
+    font-weight: 900;
+}
+#detail_box1 .user_wrap{
+    position: relative;
+}
+#detail_box1 .user_wrap span{
+    display: inline-block;
+    font-size: 13px;
+    position: relative;
+    margin-right: 5px;
+}
+#detail_box1 .user_wrap > span:last-child::before{
+    content: "";
+    width: 1px; height: 8px;
+    background: #b1b1ab;
+    position: absolute;
+    left: -5px; top: 5px;
+}
+#detail_box1 .review_text{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+#detail_box1 .review_text p{
+    overflow: hidden;
+    max-height: 103px; 
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+}
+#detail_box1 .content_bottom{
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+#detail_box1 .modify_btn{
+    color: var(--cgv_text_666);
+    background-color: var(--cgv_white);
+    cursor: pointer;
+}
+#detail_box1  .like_wrap{
+    position: relative;
+    margin-left: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#detail_box1 .like_wrap::before{
+    content: "";
+    width: 2px; height: 2px;
+    display: inline-block;
+    background: #b1b1ab;
+    position: absolute;
+    left: -7px; top: 8px;
+}
+#detail_box1 .like_wrap > img{
+    margin-right: 5px;
+    width: 13px; height: 13px;
+}
+#detail_box1 .like_wrap span{
+    font-size: 14px;
+}
+#detail_box1 .delete_btn{
+    width: 20px; height: 20px;
+    background-size: 40px 40px;
+    background: url(/images/sprite_icon.png) -195px -39px no-repeat;
+    cursor: pointer;
+}
+
+/* watched */
+#detail_box1 .title_wrap{
+    margin-top: 20px;
+}
+#detail_box1 .title_wrap .movie_title{
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: -10px;
+}
+#detail_box1 .movie_title_eng{
+    width: auto; height: auto;
+    color: var(--cgv_text_666);
+    font-size: 13px;
+    font-weight: 900;
+}
+#detail_box1 .date_wrap span, .location_wrap span{
+    font-size: 12px;
+    font-weight: 900;
+}
+#detail_box1 .myreview_wrap{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+#detail_box1 .myreview_wrap .review_icon{
+    margin-right: 6px;
+    width: 22px; height: 22px;
+}
+#detail_box1 .myreview_wrap .bad_icon{
+    background: transparent url(/images/sprite_egg.png) 0px 0 no-repeat;
+}
+#detail_box1 .myreview_wrap .bad_icon::after{
+    content: '별로에요';
+    display: block;
+    margin-left: 25px;
+    width: 100px;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 22px;
+}
+#detail_box1 .myreview_wrap .good_icon{
+    background: transparent url(/images/sprite_egg.png) -24px 0 no-repeat;
+}
+#detail_box1 .myreview_wrap .good_icon::after{
+    content: '좋았어요';
+    display: block;
+    margin-left: 25px;
+    width: 100px;
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 22px;
+}
+
+/* wish */
+#detail_box2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-left: -74.5px;
+}
+#detail_box2 .content_box{
+    margin: 0 0 40px 74.5px;
+    width: 190px; height: 360px;
+    position: relative;
+}
+#detail_box2 .img_wrap img{
+    width: 100%; height: auto;
+    margin-bottom: 10px;
+}
+#detail_box2 .delete_btn{
+    width: 30px; height: 30px;
+    background: url(/images/btn_del02.png) no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0; right: 10px;
+}
+#detail_box2 span{
+    font-size: 12px;
+    color: var(--cgv_text_666);
+}
+#detail_box2 .dday_date{
+    color: var(--cgv_red);
+    font-weight: 900;
+}
+#detail_box2 .reserve_btn{
+    margin-top: 7px;
+    display: block;
+    width: 97px; height: 25px;
+    background-color: var(--cgv_red);
+    border-radius: 5px;
+    color: var(--cgv_white);
+    text-align: center;
+    line-height: 25px;
+}
+
+/* check_password, personal */
+#detail_box3 h4{
+    margin-top: -10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #e2e2e0;
+}
+#detail_box3 .table{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #b8b6aa;
+}
+#detail_box3 dl{
+    width: 50%;height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#detail_box3 dt{
+    width: 30%;
+    font-size: 14px;
+}
+#detail_box3 dd > span{
+    font-size: 14px;
+    font-weight: 100;
+}
+#detail_box3 dd input.item_ip{
+    padding: 2px 5px;
+    outline: none;
+    border: 1px solid #b8b6aa;
+}
+#detail_box3 .btn_wrap{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#detail_box3 .submit_btn{
+    width: 60px; height: 30px;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+    cursor: pointer;
+    margin-right: 10px;
+}
+#detail_box3 .update_form{
+    padding: 0;
+    align-items: baseline;
+}
+#detail_box3 .update_form dl{
+    width: 100%; height: 70px;
+    border-bottom: 1px solid #dddddd;
+}
+#detail_box3 .update_form dt{
+    padding-left: 20px;
+    width: 30%;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 70px;
+    background-color: #f8f8f8;
+}
+#detail_box3 .update_form dt button{
+    margin-left: 5px;
+    padding: 5px 8px;
+    font-size: 12px;
+    background-color: var(--cgv_white);
+    border: 1px solid #b8b6aa;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#detail_box3 .update_form dd{
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+#detail_box3 .cancle_btn{
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 900;
+    cursor: pointer;
+}
+#detail_box3 .hidden_box{
+	display: none;
+}
+
+#detail_box3 .errorMsg{
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--cgv_red);
+	display: none;
+}
+
+#detail_box3 .email_box input{
+	width: 100px;
+}l
+
+#detail_box3 .item_select{
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}

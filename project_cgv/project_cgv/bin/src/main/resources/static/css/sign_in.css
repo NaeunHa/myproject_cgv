@@ -1,0 +1,113 @@
+#sign_in{
+    width: 100%;
+}
+#sign_in .contents{
+    padding: 60px 30px 251px 30px;
+    display: flex;
+    justify-content: center;
+}
+.si_container{
+    margin-right: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 480px;
+}
+.tab{
+    margin-bottom: -2.5px;
+    width: 100px; height: 37px;
+    background-color: var(--cgv_red);
+    border-radius: 10px 10px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cgv_white);
+    text-align: center;
+    line-height: 37px;
+    z-index: 2;
+    cursor: pointer;
+}
+.si_wrap{
+    position: relative;
+    padding: 30px;
+    width: 410px; height: 266px;
+    border-top: 2px solid #898987;
+    border-bottom: 2px solid #898987;
+}
+.si_wrap p{
+    font-size: 14px;
+}
+.si_wrap form{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ip_box{
+    width: 215px; height: 35px;
+    padding: 0 5px 0 42px;
+    outline: none;
+    border: 2px solid #b5b5b5;
+    line-height: 33px;
+}
+.ip_id{
+    margin-bottom: 5px;
+    background: url(/images/sprite_icon.png) 12px -230px no-repeat;
+}
+.ip_pw{
+    margin-bottom: 5px;
+    background: url(/images/sprite_icon.png) 12px -260px no-repeat;
+}
+.si_btn{
+    width: 264px; height: 35px;
+    border: 2px solid var(--cgv_red);
+    background-color: var(--cgv_red);
+    color: var(--cgv_white);
+    cursor: pointer;
+}
+.save_id{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 110px; left: 100px;
+}
+.save_id input{
+    margin-right: 3px;
+    width: 13px; height: 13px;
+}
+.save_id label{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 10px;
+}
+.find_info{
+    display: flex;
+    position: absolute;
+    bottom:108px; right: 100px;
+    padding-left: 0 !important;
+}
+.find_info a{
+    display: inline-block;
+    margin-left: 5px;
+    text-decoration: underline;
+}
+
+.oauth2_naver{
+    margin: 0 71px;
+    cursor: pointer;
+}
+
+.random_img{
+    padding: 20px 10px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    
+}
+.random_img img{
+    width: 220px;
+    border-radius: 30px
+}

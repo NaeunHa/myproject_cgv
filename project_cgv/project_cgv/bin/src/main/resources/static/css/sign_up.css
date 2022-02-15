@@ -1,0 +1,130 @@
+#sign_up{
+    padding-top: 40px;
+    width: 100%; height: auto;
+    position: relative;
+}
+.img_container{
+    text-align: center;
+}
+.img_container img{
+	width: 600px; height: auto;
+}
+.container{ 
+	padding: 50px 0 200px;
+	width: 100%; height:100%;
+	position: relative;
+}
+.tab{
+    margin-bottom: -1px;
+    width: 100px; height: 37px;
+    background-color: var(--cgv_red);
+    border-radius: 10px 10px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cgv_white);
+    text-align: center;
+    line-height: 37px;
+    z-index: 2;
+    position: relative;
+}
+.wrap_form{
+    border-top: 3px solid #898987;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.box_content{
+    padding: 45px 60px 50px;
+    align-items: center;
+}
+.box_content h3{
+    margin: 20px 0;
+    text-align: center;
+}
+.inner_box{
+    border-top: 2px solid #898989;
+    background-color: #f7f6ea;
+    padding: 20px;
+    text-align: center;
+}
+.inner_box div{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.wrap_form dl{
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid #e4e4e4;
+}
+.wrap_form dt{
+    padding: 20px;
+    width: 150px; height: auto;
+    text-align: left;
+    font-weight: 900;
+    background-color: #e8e8e8;
+    border-bottom: 1px solid var(--cgv_white);
+}
+.wrap_form dd{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.wrap_form .item_ip{
+    width: 200px; height: 20px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid #b5b5b5;
+}
+.wrap_form .item_ip::placeholder{
+    color: var(--cgv_text_222);
+    font-size: 14px;
+}
+.item_ip.phone{
+	width: 150px;
+	margin-right: 10px
+}
+.item_ip.email{
+	width: 100px;
+}
+.item_ip.param{
+	text-align: center;
+	background-color: #e2e2e2;
+}
+.wrap_form span{
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--cgv_text_666);
+    font-weight: 600;
+}
+.wrap_form .errorMsg{
+    margin-top: 5px;
+    font-size: 13px;
+    color: var(--cgv_red);
+	display: none;
+}
+.wrap_form .successMsg{
+    margin-top: 5px;
+    font-size: 13px;
+    color: blue;
+	display: none;
+}
+.wrap_form select{
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}
+.submit_btn{
+	width: 90px; height: 30px;
+	border-radius: 5px;
+	background-color: var(--cgv_red);
+	color: var(--cgv_white);
+	font-size: 14px;
+	font-weight: 900;
+    cursor: pointer;
+}
+.submit_btn.real{
+	position: absolute; right:0; bottom: -50px;
+	width: 100px; height: 40px;
+}

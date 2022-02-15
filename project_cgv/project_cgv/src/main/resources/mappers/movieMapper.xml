@@ -55,6 +55,8 @@
 			movie_poster_img
 		from
 			movie_mst
+		order by
+			movie_release_date desc
 		limit 5;
 	</select>
 	
@@ -66,6 +68,8 @@
 			movie_poster_img
 		from
 			movie_mst
+		order by
+			movie_release_date desc
 		limit 20;
 	</select>
 </mapper>

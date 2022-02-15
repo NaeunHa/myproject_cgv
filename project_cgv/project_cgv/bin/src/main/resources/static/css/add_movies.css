@@ -1,0 +1,105 @@
+#admin .container{
+	padding: 30px 0 50px 0;
+    width: 100%;
+    display: flex;
+}
+#admin article{
+    margin-left: 50px;
+    width: 75%;
+    padding: 15px 0;
+}
+#admin article h3{
+    padding: 10px 0;
+    margin-bottom: 3px;
+}
+#admin article h3 strong{
+    color: #000;
+    font-weight: 900;
+    font-size: 19px;
+}
+#admin article .table_wrap{
+    margin-bottom: 10px;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+}
+#admin article dl{
+    display: flex;
+}
+#admin article dt{
+    padding: 10px;
+    width: 120px;
+    border-right: 1px solid rgb(219, 219, 219);
+    border-bottom: 2px solid #fff;
+    background-color: #fbfbfb;
+}
+#admin article dd{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#admin article dd.radio_limited_age{
+    flex-direction: row;
+}
+#admin article dd.radio_limited_age input:first-child{
+    margin-left: 0;
+}
+#admin article dd.radio_limited_age input{
+    margin-left: 10px;
+    margin-right: 3px;
+}
+#admin article dd input{
+    padding: 5px 3px;
+	width: auto;
+	min-width: 20px;
+	max-width: 400px;
+    border: 1px solid #e4e4e4;
+    outline: none;
+}
+
+#admin article dd textarea{
+    padding: 5px;
+    width: 500px;
+    min-height: 150px;
+    border: 1px solid #e4e4e4;
+    resize: none;
+    outline: none;
+    overflow-y: auto;
+}
+#admin article dd img{
+    width: 200px;
+}
+#admin article dd span{
+    align-self: baseline;
+    font-size: 13px;
+    font-weight: 100;
+}
+#admin article dd.file_box{
+    flex-direction: column;
+    align-items: baseline;
+}
+#admin article dd.file_box input{
+    border: none;
+}
+#admin .btn_wrap{
+    width: 100%;
+    text-align: right;
+}
+#admin .btn_wrap button{
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--cgv_white);
+    background-color: var(--cgv_red);
+    cursor: pointer;
+}
+#admin .trailer{
+	width: 500px;
+}
+#admin input:read-only{
+	background-color: #dddddd; 
+}
+#admin input[type=file]{
+	background: none;
+	font-size: 13px;
+}

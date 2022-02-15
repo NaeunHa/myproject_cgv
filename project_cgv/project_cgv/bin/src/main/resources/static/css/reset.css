@@ -1,0 +1,37 @@
+*{
+    font-family:'Noto Sans KR', '맑은 고딕', '돋움', Dotum, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-all;
+    color: var(--cgv_text_666);
+}
+a{
+    color: var(--cgv_text_666);
+    text-decoration: none;
+}
+
+ul, li{
+    list-style: none;
+}
+
+img{
+    vertical-align: middle;
+}
+
+@font-face {
+    font-family: cjone;
+    src: url(../font/CJ+ONLYONE+Medium.ttf);
+    font-weight: 100;
+}
+
+:root {
+    /* color */
+    --cgv_red: #fb4357;
+    --cgv_text_222: #222;
+    --cgv_text_666: #666;
+    --cgv_border: #eee;
+    --cgv_white: #fff;
+}
