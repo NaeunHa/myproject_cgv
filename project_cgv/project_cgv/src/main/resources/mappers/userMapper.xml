@@ -5,7 +5,7 @@
 	
 <mapper namespace="com.springboot.cgv.domain.user.UserRepository">
 
-	<select id="checkPhone" parameterType="com.springboot.cgv.domain.user.User" resultType="Integer">
+	<select id="checkPhone" parameterType="String" resultType="Integer">
 		select
 			count(phone)
 		from
@@ -119,6 +119,34 @@
 			update_date = now()
 		where
 			id = #{id}
+	</update>
+	
+	<select id="getUserIdByPhone" resultType="String" parameterType="String">
+		select
+			userid
+		from
+			user_mst
+		where
+			phone = #{phone};
+	</select>
+	
+	<select id="getUserPassword" resultType="String" parameterType="String">
+		select
+			password
+		from
+			user_mst
+		where
+			userid = #{userid};
+	</select>
+	
+	<update id="updatePasswordById" parameterType="com.springboot.cgv.domain.user.User">
+		update
+			user_mst
+		set
+			password = #{password},
+			update_date = now()
+		where
+			userid = #{userid};
 	</update>
 	
 </mapper>

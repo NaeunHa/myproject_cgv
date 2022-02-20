@@ -2,12 +2,16 @@ package com.springboot.cgv.web.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.cgv.config.auth.PrincipalDetails;
+import com.springboot.cgv.web.dto.auth.PasswordReqDto;
 import com.springboot.cgv.web.dto.auth.SignUpReqDto;
 import com.springboot.cgv.web.service.AuthService;
 import com.springboot.cgv.web.service.CoolSMSService;
@@ -35,7 +39,7 @@ public class AuthController {
 		return authenticationCode;
 	}
 	
-	@PostMapping("/sign-up/confirm-id/{userId}")
+	@PostMapping("/confirm-id/{userId}")
 	public int confirmId(@PathVariable String userId) {
 		int result = 0;
 		result = authService.confirmId(userId);
@@ -47,6 +51,30 @@ public class AuthController {
 	public Object signup(@Valid SignUpReqDto signUpReqDto, BindingResult bindingResult) {
 		System.out.println(signUpReqDto);
 		return  authService.validCheck(signUpReqDto, bindingResult);
+	}
+	
+	@PostMapping("/find/check-phone/{phoneNum}")
+	public String checkphoneNum(@PathVariable String phoneNum) {
+		String code = "";
+		int result = authService.checkPhone(phoneNum);
+		if(result == 1) {
+			code = "123456";
+//			code = coolSMSService.sendAuthenticationCode(phonNum);
+		}else {
+			code = null;
+		}
+		return code;
+	}
+	
+	@PostMapping("/find/checked-phone/{phoneNum}")
+	public String getUserId(@PathVariable String phoneNum) {
+		return authService.findUserId(phoneNum);
+	}
+	
+	@PatchMapping("/update/password")
+	public Object updatePassword(PasswordReqDto passwordReqDto) {
+		System.out.println(passwordReqDto);
+		return authService.updatePassword(passwordReqDto);
 	}
 	
 }

@@ -124,7 +124,7 @@ function checkId(id){
 
 	$.ajax({
 		type: "post",
-		url: "/auth/sign-up/confirm-id/" + id.value,
+		url: "/auth/confirm-id/" + id.value,
 		success: function(data){
 			console.log(data);
 			if(data == 0){

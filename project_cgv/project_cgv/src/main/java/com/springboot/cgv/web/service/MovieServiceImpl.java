@@ -78,7 +78,7 @@ public class MovieServiceImpl implements MovieService{
 		String imgName = makeFile(addMovieReqDto, true);
 		movieEntity.setMovie_poster_img(imgName);
 		
-		if(addMovieReqDto.getMovie_trailer_mp4() == null ) {
+		if(addMovieReqDto.getMovie_trailer_mp4() != null ) {
 			String videoName = makeFile(addMovieReqDto, false);
 			movieEntity.setMovie_trailer_mp4(videoName);			
 		}

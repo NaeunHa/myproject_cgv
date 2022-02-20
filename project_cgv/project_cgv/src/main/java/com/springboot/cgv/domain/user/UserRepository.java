@@ -13,4 +13,7 @@ public interface UserRepository {
 	public int checkNickName(String nickName);
 	public int updateUserDtl(User user);
 	public int updatePersonal(User user);
+	public String getUserIdByPhone(String phone);
+	public String getUserPassword(String userid);
+	public int updatePasswordById(User user);
 }

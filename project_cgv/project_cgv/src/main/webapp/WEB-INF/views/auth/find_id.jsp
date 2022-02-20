@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/find.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<jsp:include page="../include/header.jsp"></jsp:include>
@@ -33,11 +34,22 @@
                             <h3>휴대폰 인증을 통해 본인인증 후 아이디 찾기를 할 수 있습니다.</h3>
                             <div class="inner_box">
                                 <h4>휴대폰으로 찾기</h4>
-                                <div>
-                                    <input type="text" placeholder="010" readonly> -
-                                    <input type="text" id="phone_middle"> - 
-                                    <input type="text" id="phone_end">
-                                    <button type="button" class="certification_btn">인증하기</button>
+                                <div class="phone_box"> 
+                                    <input type="text" class="ip_phone" maxlength="11">
+                                    <button type="button" class="send_btn">인증하기</button>
+                                </div>
+                                <div class="code_box">
+                                	<input type="text" class="ip_code">
+                                	<button type="button" class="check_btn">인증하기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box_content">
+                            <h3>로그인을 원하시면 로그인 창으로 이동해 주세요.</h3>
+                            <div class="inner_box">
+                                <h4>고객님의 아이디</h4>
+                                <div class="id_box">
+                                    
                                 </div>
                             </div>
                         </div>
@@ -56,5 +68,6 @@
         </div>
     </section>
     <jsp:include page="../include/footer.jsp"></jsp:include>
+  	<script type="text/javascript" src="/js/find_id.js"></script>
 </body>
 </html>

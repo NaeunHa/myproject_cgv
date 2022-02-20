@@ -57,31 +57,40 @@
     text-align: center;
 }
 .inner_box{
-    border-top: 2px solid #898989;
-    background-color: #f7f6ea;
     padding: 20px;
-    text-align: center;
+    background-color: #f7f6ea;
 }
-.inner_box div{
-    margin: 20px 0;
+.inner_box dl{
+	margin: 0 auto;
+	width: 44%;
+	padding-bottom: 10px; 
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    align-items: center;
+    position: relative;
 }
-.inner_box div input{
-    margin-right: 5px;
-    margin-left: 5px;
+.inner_box dt{
+    width: 130px; height: auto;
+    font-size: 15px;
+    text-align: right;
+    font-weight: 600;
+}
+.inner_box dd{
+	width: 100%; height: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.inner_box input{
     padding: 5px;
-    width: 100px;
+    width: 140px;
     outline: none;
     border: 1px solid #898989;
 }
 #user_id{
     margin-left: 10px;
     width: 200px;
-}
-.inner_box span{
-    line-height: 35px;
-    font-size: 13px;
 }
 .inner_box button{
     margin-left: 10px;
@@ -92,6 +101,12 @@
     color: var(--cgv_white);
     border-radius: 5px;
     cursor: pointer;
+}
+.inner_box .errorMsg{
+	color: var(--cgv_red);
+	font-size: 13px;
+	position: absolute;
+	top: 40px; left: 85px;
 }
 .contact_wrap{
     padding: 30px 20px;

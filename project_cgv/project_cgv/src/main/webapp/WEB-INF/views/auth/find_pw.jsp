@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/find.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<jsp:include page="../include/header.jsp"></jsp:include>
@@ -30,13 +31,49 @@
                     <div class="find_box">
                         <div class="box_title"><h3>비밀번호 재설정</h3></div>
                         <div class="box_content">
-                            <h3>비밀번호를 재설정할 아이디를 입력해주세요.</h3>
+                            <h3>비밀번호를 재설정할 사용자의 아이디와 휴대폰을 입력해주세요.</h3>
                             <div class="inner_box">
-                                <div>
-                                    <span>아이디</span>
-                                    <input type="text" id="user_id">
-                                    <button type="button" class="certification_btn">조회</button>
-                                </div>
+	                            <dl>
+	                                <dt>아이디</dt>
+	                                <dd><input type="text" class="id_ip"></dd>
+	                            </dl>
+	                            <dl>
+	                            	<dt>휴대폰</dt>
+	                            	<dd>
+	                            		<input type="text" class="ip_phone" maxlength="11">
+	                                    <button type="button" class="send_btn">인증</button>
+	                            	</dd>
+	                            </dl>
+	                            <dl class="code_box">
+	                            	<dt>인증번호</dt>
+	                            	<dd>
+	                            		<div>
+	                            		
+	                            		</div>
+	                            		<input type="text" class="ip_code" maxlength="6">
+	                                	<button type="button" class="check_btn">확인</button>
+	                            	</dd>
+	                            </dl>
+                            </div>
+                        </div>
+                        <div class="box_content">
+                            <h3>비밀번호를 재설정합니다.</h3>
+                            <div class="inner_box">
+	                            <dl>
+	                                <dt>비밀번호</dt>
+	                                <dd>
+	                                    <input type="password" class="pw_ip">
+	                                </dd>
+	                                <dd class="errorMsg"></dd>
+	                            </dl>
+	                            <dl>
+	                                <dt>비밀번호 확인</dt>
+	                                <dd>
+	                                	<input type="password" class="pw_ip">
+		                                <button type="button" class="set_btn">설정</button>
+	                                </dd>
+	                                <dd class="errorMsg"></dd>
+	                            </dl>
                             </div>
                         </div>
                     </div>
@@ -54,5 +91,6 @@
         </div>
     </section>
     <jsp:include page="../include/footer.jsp"></jsp:include>
+    <script type="text/javascript" src="/js/find_pw.js"></script>
 </body>
 </html>
