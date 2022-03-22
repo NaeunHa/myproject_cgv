@@ -19,6 +19,8 @@ const submit_btn = document.querySelectorAll('.submit_btn');
 const birth_select = document.querySelectorAll('.birth_select');
 //[0]: year, [1]: month, [2]: day
 const item_select = document.querySelector('.item_select'); // 이메일 확장자 선택
+//[0]: 비밀번호, [1]: 휴대폰, [2] 이메일
+const submit_btn = document.querySelectorAll('.submit_btn'); // 수정 버
 
 const set_birth_btn = document.querySelector('.set_birth_btn');
 const birth_empty_box = document.querySelector('.birth_empty_box');
@@ -187,7 +189,7 @@ function sendSMS(phoneNum){
 		
 		$.ajax({
 			type: "post",
-			url: "/auth/sign-up/sendSMS/" + phone,
+			url: "/auth/sendSMS/" + phone,
 			success: function(data){
 
 				if(data != 1){
@@ -400,7 +402,7 @@ submit_btn[2].onclick = () => {
 
     $.ajax({
         type: "patch",
-        url: "/user/my-cgv/update-peronal-info",
+        url: "/user/account/update-peronal-info",
         data: updateUserInfoData,
         dataType: "text",
         success: function(data){

@@ -16,7 +16,7 @@ function sendSMS(phoneNum){
 		
 		$.ajax({
 			type: "post",
-			url: "/auth/sign-up/sendSMS/" + phone,
+			url: "/auth/sendSMS/" + phone,
 			success: function(data){
 
 				if(data != 1){

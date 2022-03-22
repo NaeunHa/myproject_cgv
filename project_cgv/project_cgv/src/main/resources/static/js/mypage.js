@@ -66,7 +66,7 @@ function checkNickName () {
     if(nickname.value.length > 1){
         $.ajax({
             type: "post",
-            url: '/user/my-cgv/check-nickname/' + nickname.value,
+            url: '/user/account/check/' + nickname.value,
             dataType: "text",
             success: function(data){
                 if(data == 0){
@@ -97,7 +97,7 @@ function changeAll() {
 
     $.ajax({
         type: 'patch',
-        url: '/user/my-cgv/update-info',
+        url: '/user/account/update/user-detail',
         data: formData,
         dataType: "text",
         enctype: 'multipart/form-data',
@@ -120,7 +120,7 @@ function changeAll() {
 function changeNickName (){
     $.ajax({
         type: 'patch',
-        url: '/user/my-cgv/update-info',
+        url: '/user/account/update/user-detail',
         data:{"nickname" : nickname.value},
         dataType:"text",
         success: function(data){

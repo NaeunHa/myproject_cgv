@@ -149,4 +149,11 @@
 			userid = #{userid};
 	</update>
 	
+	<delete id="withdrawalUserById" parameterType="Integer">
+		delete from
+			user_mst
+		where
+			id = #{id};
+	</delete>
+	
 </mapper>

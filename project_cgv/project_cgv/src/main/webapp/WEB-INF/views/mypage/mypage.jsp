@@ -17,46 +17,15 @@
 </head>
 <body>
 	<jsp:include page="../include/header.jsp"></jsp:include>
+	
     <div id="mypage">
         <div class="contents">
         
             <jsp:include page="../include/mypage_header.jsp"></jsp:include>
             
             <!-- 오른쪽 메뉴 -->
-            <article class="mypage_container">
-                <div class="mypage_nav">
-                    <div class="mypage_nav_box">
-                        <div class="nav_wrap">
-                            <dl class="now">
-                                <dt><a href="/user/my-cgv">나의 영화 기록</a></dt>
-		                        <dd><a href="/user/my-cgv/wish">기대되는 영화</a></dd>
-		                        <dd><a href="/user/my-cgv/watched">내가 본 영화</a></dd>
-		                        <dd><a href="/user/my-cgv/review">내가 쓴 평점</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="#">CGV 포인트</a></dt>
-                                <dd><a href="#">적립/사용내역</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="#">나의 예매 내역</a></dt>
-                                <dd><a href="#">예매내역</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="#">기프트샵</a></dt>
-                                <dd><a href="#">결제내역</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="/user/my-cgv/check-password">회원정보</a></dt>
-                                <dd><a href="/user/my-cgv/check-password">개인정보 변경</a></dd>
-                                <dd><a href="#">회원탈퇴</a></dd>
-                            </dl>
-                            <dl>
-                                <dt><a href="#">나의 문의내역</a></dt>
-                                <dd><a href="#">1:1 문의</a></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
+            <article class="mypage_container">   
+                <jsp:include page="../include/mypage_nav.jsp"></jsp:include>
                 <div class="mypage_content">
 		            <div class="wish box_container">
 		                <div class="description_box">

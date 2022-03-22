@@ -48,9 +48,9 @@
 		                        <dd><a href="#">결제내역</a></dd>
 		                    </dl>
 		                    <dl>
-		                        <dt><a href="/user/my-cgv/check-password">회원정보</a></dt>
-		                        <dd><a href="/user/my-cgv/check-password">개인정보 변경</a></dd>
-		                        <dd><a href="#">회원탈퇴</a></dd>
+		                        <dt><a href="/user/account/check/password">회원정보</a></dt>
+                                <dd class="now"><a href="/user/account/check/password">개인정보 변경</a></dd>
+                                <dd><a href="/user/account/check/password">회원탈퇴</a></dd>
 		                    </dl>
 		                    <dl>
 		                        <dt><a href="#">나의 문의내역</a></dt>

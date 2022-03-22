@@ -1,0 +1,101 @@
+#reserve .contents{
+    width: 996px;
+    overflow: hidden;
+}
+.container{
+    width: 100%; height: 595px;
+    display: flex;
+    justify-content: left;
+    background-color: #f2f0e5;
+    box-sizing: border-box;
+}
+
+.movie{
+    width: 30%;
+}
+.col_box:first-child{
+    border-left: 3px solid #ccc;
+}
+.col_box{
+    width: auto; height: 100%;
+    border-right: 3px solid #ccc;
+}
+.col_title{
+    text-align: center;
+    padding: 10px;
+    color: var(--cgv_white);
+    width: auto;
+    background-color: #333333;
+}
+.col_content{
+    margin: 15px;
+}
+
+.movie .col_content ul li a{
+    width: auto;
+    display: flex;
+    margin: 5px;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+.movie .col_content ul li img{
+    margin-right: 10px;
+    width: 28px;
+}
+.movie .col_content ul li span{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.theater{
+    width: 30%; height: 100%;
+}
+.theater .list_wrap > li{
+    position: relative;
+    display: flex;
+}
+.theater .list_wrap > li > a{
+    padding: 5px 8px 5px 0;
+    width: 130px; height: 30px;
+    line-height: 30px;
+    text-align: right;
+    background-color: #e6e4d9;
+    position: absolute;
+}
+.theater .list_wrap > li:nth-child(2) > a{
+    top: 45px; left: 0;
+}
+.theater .list_wrap > li:nth-child(3) > a{
+    top: 90px; left: 0;
+}
+.theater .list_wrap > li > a > span{
+    font-size: 14px;
+    font-weight: 500;
+    width: 150px;
+}
+.theater .detail_wrap{
+    width: 120px; height: 100%;
+    position: absolute;
+    left: 140px;
+    overflow: scroll;
+    display: none;
+    background-color: darkkhaki;
+}
+.theater .detail_wrap.active{
+    display: block;
+}
+.theater .detail_wrap li{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #ccc;
+}
+.theater .detail_wrap li a{
+    background-color: lightblue;
+    padding: 0 10px;
+    width: 100%;height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+}

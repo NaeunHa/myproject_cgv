@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,13 +21,13 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/auth/")
 public class AuthController {
 
 	private final AuthService authService;
 	private final CoolSMSService coolSMSService;
 	
-	@PostMapping("/sign-up/sendSMS/{phonNum}")
+	@PostMapping("sendSMS/{phonNum}")
 	public String sendSMS(@PathVariable String phonNum) {
 		String authenticationCode = "";
 		int result = authService.checkPhone(phonNum);
@@ -39,7 +40,7 @@ public class AuthController {
 		return authenticationCode;
 	}
 	
-	@PostMapping("/confirm-id/{userId}")
+	@PostMapping("confirm-id/{userId}")
 	public int confirmId(@PathVariable String userId) {
 		int result = 0;
 		result = authService.confirmId(userId);
@@ -47,34 +48,30 @@ public class AuthController {
 		return result;
 	}
 	
-	@PostMapping("/sign-up")
+	@PostMapping("sign-up")
 	public Object signup(@Valid SignUpReqDto signUpReqDto, BindingResult bindingResult) {
 		System.out.println(signUpReqDto);
 		return  authService.validCheck(signUpReqDto, bindingResult);
 	}
 	
-	@PostMapping("/find/check-phone/{phoneNum}")
-	public String checkphoneNum(@PathVariable String phoneNum) {
+	@PostMapping("check/{phoneNum}")
+	public String checkphoneAndSendSMS(@PathVariable String phoneNum) {
 		String code = "";
 		int result = authService.checkPhone(phoneNum);
 		if(result == 1) {
 			code = "123456";
-//			code = coolSMSService.sendAuthenticationCode(phonNum);
+//			code = coolSMSService.sendAuthenticationCode(phoneNum);
 		}else {
 			code = null;
 		}
 		return code;
 	}
 	
-	@PostMapping("/find/checked-phone/{phoneNum}")
-	public String getUserId(@PathVariable String phoneNum) {
+	@PostMapping("find-id/checked-phone/{phoneNum}")
+	public String getUserIdByPhonNum(@PathVariable String phoneNum) {
 		return authService.findUserId(phoneNum);
 	}
 	
-	@PatchMapping("/update/password")
-	public Object updatePassword(PasswordReqDto passwordReqDto) {
-		System.out.println(passwordReqDto);
-		return authService.updatePassword(passwordReqDto);
-	}
+	
 	
 }

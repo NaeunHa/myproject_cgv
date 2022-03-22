@@ -1,20 +1,24 @@
 /**
  *  비밀번호 확인
  */
-
+ 
 function checkPassword (){
 	const item_ip = document.querySelector('.item_ip');
     if(item_ip.value.length > 3){
         $.ajax({
             type: "post",
-            url: "/user/my-cgv/check-password",
+            url: "/user/account/check/password",
             data: {"password" : item_ip.value},
             dataType: "text",
             success: function(data){
             	console.log(data);
                 if(data == 'true'){
-                    alert('인증되었습니다.');
-                    location.href = '/user/my-cgv/personal';
+					let link = document.location.href;
+					if(link.indexOf("personal") != -1){
+						moveToPersonal();
+					}else{
+						moveToWithdrawal();
+					}
                 }else{
                 	alert('비밀번호가 다릅니다');
                 }
@@ -27,3 +31,13 @@ function checkPassword (){
     	alert('입력값이 짧습니다.');
     }
 }
+
+function moveToPersonal(){
+	location.href = '/user/account/personal';
+}
+
+
+function moveToWithdrawal(){
+	location.href = '/user/account/withdrawal';
+}
+

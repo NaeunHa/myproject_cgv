@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGV | 기대되는 영화</title>
+    <title>CGV | 비밀번호 확인</title>
     <link rel="stylesheet" href="/css/mypage_nav.css">
     <link rel="stylesheet" href="/css/mypage_dtl.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -49,9 +49,9 @@
                                 <dd><a href="#">결제내역</a></dd>
                             </dl>
                             <dl class="now">
-                                <dt><a href="/user/my-cgv/check-password">회원정보</a></dt>
-                                <dd class="now"><a href="/user/my-cgv/check-password">개인정보 변경</a></dd>
-                                <dd><a href="#">회원탈퇴</a></dd>
+                                <dt><a href="/user/account/redirect/personal">회원정보</a></dt>
+					            <dd><a href="/user/account/redirect/personal">개인정보 변경</a></dd>
+					            <dd><a href="/user/account/redirect/withdrawal">회원탈퇴</a></dd>
                             </dl>
                             <dl>
                                 <dt><a href="#">나의 문의내역</a></dt>

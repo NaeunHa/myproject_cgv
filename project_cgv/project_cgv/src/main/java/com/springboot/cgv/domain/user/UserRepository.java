@@ -16,4 +16,5 @@ public interface UserRepository {
 	public String getUserIdByPhone(String phone);
 	public String getUserPassword(String userid);
 	public int updatePasswordById(User user);
+	public int withdrawalUserById(int id);
 }

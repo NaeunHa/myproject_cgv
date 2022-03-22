@@ -68,15 +68,31 @@ public class PageController {
 		return "mypage/dtl_review";
 	}
 	
-	@GetMapping("/user/my-cgv/check-password")
+	@GetMapping("/user/account/check/password")
 	public String mycgvCheckPasswordPage() {
 		return "mypage/dtl_checkpassword";
 	}
 	
-	@GetMapping("/user/my-cgv/personal")
+	@GetMapping("/user/account/redirect/personal")
+	public String mycgvPersonalRedirect() {
+		return "redirect:/user/account/check/password?redirect=personal";
+	}
+	
+	@GetMapping("/user/account/redirect/withdrawal")
+	public String withdrawalRedirect() {
+		return "redirect:/user/account/check/password?redirect=withdrawal";
+	}
+	
+	@GetMapping("user/account/personal")
 	public String mycgvPersonalPage() {
 		return "mypage/dtl_personal";
 	}
+	
+	@GetMapping("user/account/withdrawal")
+	public String withdrawalPage() {
+		return "mypage/dtl_withdrawal";
+	}
+	
 	
 	@GetMapping("/movies")
 	public String moviesPage() {
