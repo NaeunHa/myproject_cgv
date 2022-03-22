@@ -72,6 +72,10 @@ public class AuthController {
 		return authService.findUserId(phoneNum);
 	}
 	
-	
+	@PatchMapping("update/password")
+	public Object updatePassword(PasswordReqDto passwordReqDto) {
+		System.out.println(passwordReqDto);
+		return authService.updatePassword(passwordReqDto);
+	}
 	
 }

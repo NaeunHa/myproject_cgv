@@ -59,6 +59,18 @@
 .inner_box{
     padding: 20px;
     background-color: #f7f6ea;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.inner_box > div.boxes_wrap{
+	display: flex;
+	justify-content: center;
+}
+.boxes_wrap .box{
+	margin-bottom: 15px;
+	display: flex;
+	justify-content: center;
 }
 .inner_box dl{
 	margin: 0 auto;

@@ -33,15 +33,19 @@
                         <div class="box_content">
                             <h3>휴대폰 인증을 통해 본인인증 후 아이디 찾기를 할 수 있습니다.</h3>
                             <div class="inner_box">
-                                <h4>휴대폰으로 찾기</h4>
-                                <div class="phone_box"> 
-                                    <input type="text" class="ip_phone" maxlength="11">
-                                    <button type="button" class="send_btn">인증하기</button>
-                                </div>
-                                <div class="code_box">
-                                	<input type="text" class="ip_code">
-                                	<button type="button" class="check_btn">인증하기</button>
-                                </div>
+                                <h3>휴대폰으로 찾기</h3>
+                          		<div class="boxes_wrap">
+                          			<div>
+                          				<div class="phone_box box"> 
+		                                    <input type="text" class="ip_phone" maxlength="11">
+		                                    <button type="button" class="send_btn">인증하기</button>
+		                                </div>
+		                                <div class="code_box box">
+		                                	<input type="text" class="ip_code">
+		                                	<button type="button" class="check_btn">인증하기</button>
+		                                </div>
+                          			</div>
+                          		</div>
                             </div>
                         </div>
                         <div class="box_content">

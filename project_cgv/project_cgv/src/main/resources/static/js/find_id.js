@@ -22,7 +22,7 @@ function sendMessage(phoneNum){
 		
 		 $.ajax({
 			type: "post",
-			url: "/auth/find/check-phone/" + phoneNum,
+			url: "/auth/check/" + phoneNum,
 			dataType: "text",
 			success: function(data){
 				console.log(data.length);
@@ -52,7 +52,7 @@ function checkCode(data){
 		
 		$.ajax({
 			type: "post",
-			url: "/auth/find/checked-phone/"+phoneNum,
+			url: "/auth/find-id/checked-phone/"+phoneNum,
 			dataType: "text",
 			success: function(data){
 				box_content[0].style.display = "none";

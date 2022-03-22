@@ -37,12 +37,6 @@ public class AccountController {
 		return accountService.checkPassword(principalDetails, password);
 	}
 	
-	@PatchMapping("update/password")
-	public Object updatePassword(PasswordReqDto passwordReqDto) {
-		System.out.println(passwordReqDto);
-		return accountService.updatePassword(passwordReqDto);
-	}
-	
 	@PatchMapping("update/user")
 	public boolean updatePersonal(MyPageReqDto myPageReqDto, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		return accountService.updatePersonalInfo(principalDetails, myPageReqDto);

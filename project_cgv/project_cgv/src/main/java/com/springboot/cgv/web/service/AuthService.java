@@ -13,4 +13,5 @@ public interface AuthService {
 	public int confirmId(String userId);
 	public SignUpRespDto<?> validCheck(SignUpReqDto signUpReqDto, BindingResult bindingResult);
 	public String findUserId(String phone);
+	PasswordRespDto updatePassword(PasswordReqDto passwordReqDto);
 }

@@ -34,15 +34,15 @@
 		                </div>
 		                <ul class="inner_box">
 		                    <li class="empty">찜한 영화가 존재하지 않습니다.</li>
-		                    <li class="content_box">
-		                    	<!-- js로 정보 가공시켜서 innerHTML -->
+		                    <!-- <li class="content_box">
+		                    	js로 정보 가공시켜서 innerHTML
 		                        <a href="/user/movies/detail-view">
 		                            <h4>특송</h4>
 		                            <img src="/images/poster2.jpg" alt="" class="poster_img">
 		                            <img src="/images/grade-12.png" alt="" class="grade_img">
 		                            <span>2022.01.12 개봉</span>
 		                        </a>
-		                    </li>
+		                    </li> -->
 		                </ul>
 		            </div>
 		            <div class="watched box_container">
@@ -52,15 +52,15 @@
 		                </div>
 		                <ul class="inner_box">
 		                    <li class="empty">관람한 영화가 존재하지 않습니다.</li>
-		                    <li class="content_box" >
-		                       	<!-- js로 정보 가공시켜서 innerHTML -->
+		                    <!-- <li class="content_box" >
+		                       	js로 정보 가공시켜서 innerHTML
 		                        <a href="#">
 		                            <h4>웨스트 사이드 스토리</h4>
 		                            <img src="/images/poster2.jpg" alt="" class="poster_img">
 		                            <img src="/images/grade-12.png" alt="" class="grade_img">
 		                            <span>2022.01.12 개봉</span>
 		                        </a>
-		                    </li>
+		                    </li> -->
 		                </ul>
 		            </div>
 		            <div class="my_review box_container">
@@ -71,15 +71,15 @@
 		                </div>
 		                <ul class="inner_box">
 		                    <li class="empty">작성한 리뷰가 존재하지 않습니다.</li>
-		                    <li class="content_box">
-		                    	<!-- js로 정보 가공시켜서 innerHTML -->
+		                    <!-- <li class="content_box">
+		                    	js로 정보 가공시켜서 innerHTML
 		                        <a href="/movies/detail-view">
 		                            <h4>스파이더맨-노웨이홈</h4>
 		                            <img src="/images/poster2.jpg" alt="" class="poster_img">
 		                            <img src="/images/grade-12.png" alt="" class="grade_img">
 		                            <span>2022-01-14 관람</span>
 		                        </a>
-		                    </li>
+		                    </li> -->
 		                </ul>
 		            </div>
 		       	</div>

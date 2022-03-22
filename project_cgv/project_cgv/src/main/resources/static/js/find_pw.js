@@ -28,7 +28,7 @@ function sendMessage(phoneNum){
 		
 		 $.ajax({
 			type: "post",
-			url: "/auth/find/check-phone/" + phoneNum,
+			url: "/auth/check/" + phoneNum,
 			dataType: "text",
 			success: function(data){
 				console.log(data.length);
@@ -97,8 +97,7 @@ function updatePassword(checkPasswordFlag){
 			success: function(data){
 				let passwordRespObj = JSON.parse(data);
 				console.log(passwordRespObj);
-				
-				
+		
 				if(passwordRespObj.code == 200){
 					alert('비밀번호가 재설정 되었습니다.\n 로그인 창으로 이동합니다.');
 					location.href = "/auth/sign-in";

@@ -11,6 +11,5 @@ public interface AccountService {
 	boolean updateUserInfo(PrincipalDetails principalDetails, MyPageReqDto myPageReqDto);
 	boolean checkPassword(PrincipalDetails principalDetails, String password);
 	boolean updatePersonalInfo(PrincipalDetails principalDetails, MyPageReqDto myPageReqDto);
-	PasswordRespDto updatePassword(PasswordReqDto passwordReqDto);
 	int withdrawalUser(PrincipalDetails principalDetails);
 }
