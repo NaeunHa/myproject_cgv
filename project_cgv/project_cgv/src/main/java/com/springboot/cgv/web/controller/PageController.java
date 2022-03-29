@@ -1,5 +1,6 @@
 package com.springboot.cgv.web.controller;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.cgv.config.auth.PrincipalDetails;
 import com.springboot.cgv.web.service.MovieService;
 
 import lombok.RequiredArgsConstructor;
@@ -74,12 +76,18 @@ public class PageController {
 	}
 	
 	@GetMapping("/user/account/redirect/personal")
-	public String mycgvPersonalRedirect() {
+	public String mycgvPersonalRedirect(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		if(principalDetails.getUser().getProvider() != null) {
+			return "redirect:/user/account/personal";
+		}
 		return "redirect:/user/account/check/password?redirect=personal";
 	}
 	
 	@GetMapping("/user/account/redirect/withdrawal")
-	public String withdrawalRedirect() {
+	public String withdrawalRedirect(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		if(principalDetails.getUser().getProvider() != null) {
+			return "redirect:/user/account/withdrawal";
+		}
 		return "redirect:/user/account/check/password?redirect=withdrawal";
 	}
 	

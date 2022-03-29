@@ -112,7 +112,6 @@
 		update
 			user_mst
 		set
-			password = #{password},
 			birthday = #{birthday},
 			phone = #{phone},
 			email = #{email},

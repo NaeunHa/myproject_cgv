@@ -15,6 +15,7 @@ const file_btn = document.querySelector('.file_btn');
 const form = document.querySelector('form');
 
 let checknicknameFlag = false;
+let fileChangeFlag = false;
 
 function popupModal(index){
     modal[index].classList.add('show');
@@ -47,8 +48,6 @@ cancle_btn.onclick = () => {
     modal.classList.remove('show');
     location.reload();
 }
-
-let fileChangeFlag = false;
 
 function lodaImg(){
     let file = file_btn.files[0];

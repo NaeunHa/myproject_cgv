@@ -77,13 +77,13 @@
                                 	<span>${principal.user.userid }</span>
                                	</dd>
                             </dl>
-                            <dl>
-                                <dt>비밀번호 <button type="button" class="change_btn">변경</button></dt>
+                           <c:if test="${empty (principal.user.provider)}">
+                           	<dl>
+                                <dt>비밀번호<button type="button" class="change_btn">변경</button></dt>
                                 <dd class="hidden_box">
                                 	<input type="password" class="item_ip">
                                 	<div class="errorMsg"></div>                                
                                 </dd>
-                                <!-- 비밀번호 정규식 -->
                             </dl>
                             <dl class="hidden_box">
                                 <dt>비밀번호 확인</dt>
@@ -91,69 +91,95 @@
                                 	<input type="password" class="item_ip">
 	                                <div class="errorMsg"></div>
                                 </dd>
-                                <dd><button class="submit_btn">수정하기</button></dd>
+                                <dd><button type="button" class="update_personal_btn">수정하기</button></dd>
                             </dl>
+                           </c:if>
                             <dl>
-	                          	<c:choose>
-	                          		<c:when test="${empty(principal.user.birthday)}">
-	                          			<dt>생년월일<button type="button" class="set_birth_btn">설정하기</button></dt>
-	                          			<dd class="birth_empty_box">
-	                          				<span>설정이 되어있지 않습니다. 설정을 원하시면 <strong>'설정하기'</strong> 버튼을 클릭해주세요.</span>
-	                          			</dd>
-                         				<dd class="set_bith_hidden_box">
-		                           			<div>
-				                               <select class="birth_select"></select>년 
-				                               <select class="birth_select"></select>월
-				                               <select class="birth_select"></select>일
-				                           </div>
-				                           <span>설정하신 생일을 기준으로 15일 전 생일쿠폰이 발행됩니다.</span>
-			                         	</dd>
-	                          		</c:when>
-	                          		<c:otherwise>  
-	                          			<dt>생년월일</dt>
-                         				<dd>                              		
-		                            		<input type="hidden" class="principal_birth" value="${principal.user.birthday }">
-		                            		<span class="user_birth"></span>
-		                            	</dd>
-	                          		</c:otherwise>
-	                          	</c:choose>
+	                		<c:choose>
+	                   		<c:when test="${empty(principal.user.birthday)}">
+	                   			<dt>생년월일<button type="button" class="set_birth_btn">설정</button></dt>
+	                   			<dd class="birth_empty_box">
+	                   				<span>설정이 되어있지 않습니다. 설정을 원하시면 <strong>'설정'</strong> 버튼을 클릭해주세요.</span>
+	                   			</dd>
+                 				<dd class="set_bith_hidden_box hidden_box">
+	                      			<div>
+			                            <select class="birth_select"></select>년 
+			                            <select class="birth_select"></select>월
+			                            <select class="birth_select"></select>일
+			                            <button type="button" class="update_birth_btn">설정하기</button>
+		                        	</div>
+	                       	   		<span>설정하신 생일을 기준으로 15일 전 생일쿠폰이 발행됩니다.</span>
+	                    		</dd>
+	                   		</c:when>
+	                   		<c:otherwise>  
+	                   			<dt>생년월일</dt>
+                				<dd>
+                					<input type="hidden" class="principal_birth" value="${principal.user.birthday }">
+                					<span class="user_birth"></span>
+                				</dd>
+	                   		</c:otherwise>
+	                   	</c:choose>
                             </dl>
-                            <dl>
-                                <dt>휴대전화<button type="button" class="change_btn">변경</button></dt>
-                                <dd class="now_info">
-	                               	<input type="hidden" class="user_info" value="${principal.user.phone }">
-                                    <span class="user_phone"></span>
-                                </dd>
-                                <dd class="hidden_box">
-                                    <input type="tel" class="item_ip" maxlength="11">
-									<button class="submit_btn">인증하기</button>
+                        <c:choose>
+                       		<c:when test="${empty (principal.user.provider)}">
+                     			<dl>
+	                              <dt>휴대전화<button type="button" class="change_btn">변경</button></dt>
+	                              <dd class="now_info">
+	                              	<input type="hidden" class="user_info" value="${principal.user.phone }">
+	                                <span class="user_phone"></span>
+                            	  </dd>
+                              	  <dd class="hidden_box">
+                                  	<input type="tel" class="item_ip" maxlength="11">
+									<button type="button" class="sendSMS_btn">인증하기</button>
 									<div class="code_box">
-	                                    <input type="text" class="item_ip" maxlength="6">
-										<button class="submit_btn">확인</button>									
+                                  		<input type="text" class="item_ip" maxlength="6">
+										<button type="button" class="update_personal_btn">확인</button>									
 									</div>	                                
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>이메일<button type="button" class="change_btn">변경</button></dt>
-                                <dd class="now_info">
-                                	<input hidden="hidden" class="user_info" value="${principal.user.email }">
-                                    <span>${principal.user.email }</span>
-                                </dd>
-                                <dd class="hidden_box email_box">
-                                	<div>
-										<input type="text" class="item_ip"> @ <input type="text" class="item_ip email">
-		                                <select class="item_select">
-		                                    <option  value="1" selected="selected">직접입력</option>
-		                                    <option  value="naver.com">네이버</option>
-		                                    <option  value="gmail.com">구글</option>
-		                                    <option value="hanmail.net">다음</option>
-		                                    <option value="nate.com">네이트</option>
-		                                </select>                                	
-                                	</div>
-	                                <div class="errorMsg"></div>   
-                                </dd>
-                                <dd class="hidden_box"><button class="submit_btn">수정하기</button></dd>
-                            </dl>
+                             	 </dd>
+                          		</dl>
+                       		</c:when>
+                       		<c:otherwise>
+                       			<dl>
+                           			<dt>휴대전화</dt>
+                    				<dd>
+                    				  <input type="hidden" class="user_info" value="${principal.user.phone }">
+	                               	  <span class="user_phone"></span>
+                    				</dd>
+                        		</dl>
+                       		</c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            	<c:when test="${empty (principal.user.provider)}">
+                            	<dl>
+	                                <dt>이메일<button type="button" class="change_btn">변경</button></dt>
+	                                <dd class="now_info">
+	                                	<input hidden="hidden" class="user_info" value="${principal.user.email }">
+	                                    <span>${principal.user.email }</span>
+	                                </dd>
+	                                <dd class="hidden_box email_box">
+	                                	<div>
+											<input type="text" class="item_ip"> @ <input type="text" class="item_ip email">
+			                                <select class="item_select">
+			                                    <option value="1" selected="selected">직접입력</option>
+			                                    <option value="naver.com">네이버</option>
+			                                    <option value="gmail.com">구글</option>
+			                                    <option value="hanmail.net">다음</option>
+			                                    <option value="nate.com">네이트</option>
+			                                </select>                                	
+	                                	</div>
+		                                <div class="errorMsg"></div>   
+	                                </dd>
+	                                <dd class="hidden_box"><button type="button" class="update_personal_btn">수정하기</button></dd>
+                           		</dl>
+                            	</c:when>
+                            	<c:otherwise>
+                         		<dl>
+                           			<dt>이메일</dt>
+                    				<dd><span>${principal.user.email }</span></dd>
+                        		</dl>
+                            	</c:otherwise>
+                            </c:choose>
+                            
                         </form>
                     </div>
                 </div>

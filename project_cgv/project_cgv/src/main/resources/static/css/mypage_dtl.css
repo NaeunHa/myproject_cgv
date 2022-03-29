@@ -249,7 +249,7 @@
     display: flex;
     justify-content: center;
 }
-#detail_box3 .submit_btn{
+#detail_box3 .submit_btn, .update_personal_btn, .sendSMS_btn, .update_birth_btn{
     width: 60px; height: 30px;
     font-size: 12px;
     font-weight: 900;
@@ -307,7 +307,11 @@
 
 #detail_box3 .email_box input{
 	width: 100px;
-}l
+}
+
+#detail_box3 .code_box{
+	display: none;
+}
 
 #detail_box3 .item_select{
     margin-right: 5px;

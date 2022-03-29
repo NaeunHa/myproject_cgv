@@ -13,7 +13,6 @@ public class MyPageReqDto {
 	private String nickname;
 	private MultipartFile file;
 	
-	private String password;
 	private String birthday;
 	private String phone;
 	private String email;
@@ -28,7 +27,6 @@ public class MyPageReqDto {
 	public User personalEntitiy(int id) {
 		return User.builder()
 				.id(id)
-				.password(password)
 				.birthday(birthday)
 				.phone(phone)
 				.email(email)

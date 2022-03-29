@@ -96,13 +96,7 @@ public class AccountServiceImpl implements AccountService{
 		
 		User personalEntity = myPageReqDto.personalEntitiy(id);
 		int result = 0;
-		
-		if(personalEntity.getPassword() == null) {
-			personalEntity.setPassword(principalDetails.getPassword());
-		}else {
-			personalEntity.setPassword(new BCryptPasswordEncoder().encode(personalEntity.getPassword()));
-		}
-		
+		System.out.println(myPageReqDto);
 		if(personalEntity.getBirthday() == null) {
 			personalEntity.setBirthday(principalDetails.getUser().getBirthday());
 		}
@@ -115,21 +109,30 @@ public class AccountServiceImpl implements AccountService{
 		
 		result = userRepository.updatePersonal(personalEntity);
 		if(result == 1) {
-			principalDetails.getUser().setPassword(personalEntity.getPassword());
+			System.out.println("principal set!");
 			principalDetails.getUser().setBirthday(personalEntity.getBirthday());
 			principalDetails.getUser().setPhone(personalEntity.getPhone());
 			principalDetails.getUser().setEmail(personalEntity.getEmail());
 			return true;
 		}else {
+			System.out.println("false");
 			return false;
 		}
 	}
+	
+	public void deleteProfileFileById(int id) {
+		File file = new File(filePath + "profile" + '/' + id);
+		if(file.exists()) {
+			file.delete();
+		}
+	} 
 
 	@Override
 	public int withdrawalUser(PrincipalDetails principalDetails) {
 		int id = principalDetails.getUser().getId();
 		int result = userRepository.withdrawalUserById(id);
 		if(result == 1) {
+			deleteProfileFileById(id);
 			return 1;
 		}else {
 			return 0;
